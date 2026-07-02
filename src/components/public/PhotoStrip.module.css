@@ -78,11 +78,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 clamp(20px, 5vw, 80px);
   margin-bottom: 24px;
   position: relative;
   z-index: 3;
-  max-width: 100%;
+  width: 100%;
 }
 
 .dragHint {
@@ -314,11 +313,10 @@
   }
 
   .controlsRow {
-    /* On mobile: stack left-side hint above arrows, or keep row but reduce padding */
-    padding: 0 16px;
+    /* On mobile: keep row but reduce margins; wrap prevented for clean single line */
     margin-bottom: 14px;
     gap: 12px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .dragHint {

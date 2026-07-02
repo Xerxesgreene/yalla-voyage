@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './PhotoStrip.module.css';
@@ -25,7 +26,6 @@ export default function PhotoStrip() {
   const isDragging   = useRef(false);
   const dragStartX   = useRef(0);
   const scrollStart  = useRef(0);
-  const isMobile     = useRef(false);
 
   // Progress bar
   const [progress, setProgress] = useState(0);
@@ -38,29 +38,16 @@ export default function PhotoStrip() {
     if (max > 0) setProgress(outer.scrollLeft / max);
   }, []);
 
-  // ── Detect mobile / touch ────────────────────────────────────────────────
-  useEffect(() => {
-    isMobile.current = window.matchMedia('(max-width: 900px)').matches;
-    const mq = window.matchMedia('(max-width: 900px)');
-    const onChange = (e: MediaQueryListEvent) => { isMobile.current = e.matches; };
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
-  }, []);
-
-  // ── GSAP Scroll-parallax (desktop auto-scroll) ──────────────────────────
+  // ── GSAP Scroll-parallax auto-scroll (works on ALL screen sizes) ─────────
   useEffect(() => {
     const container = containerRef.current;
     const track     = trackRef.current;
     if (!container || !track) return;
 
-    // Only run parallax on desktop; on mobile native scroll handles it
-    const runParallax = !window.matchMedia('(max-width: 900px)').matches;
-    if (!runParallax) return;
-
     const anim = gsap.fromTo(track,
-      { x: '8%' },
+      { x: '5%' },
       {
-        x: '-38%',
+        x: '-35%',
         ease: 'none',
         scrollTrigger: {
           trigger: container,
@@ -73,7 +60,6 @@ export default function PhotoStrip() {
     );
 
     return () => {
-      // Scope cleanup: only kill the ST associated with our animation
       anim.scrollTrigger?.kill();
       anim.kill();
     };
@@ -220,12 +206,14 @@ export default function PhotoStrip() {
                   <span className={styles.cardCoords}>{p.coords}</span>
                 </div>
                 <div className={styles.cardImageContainer}>
-                  <img
+                  <Image
                     src={p.src}
                     alt={p.label}
+                    fill
+                    sizes="(max-width: 900px) 80vw, 30vw"
                     className={styles.cardImg}
-                    loading="lazy"
                     draggable={false}
+                    priority={false}
                   />
                   <div className={styles.cardOverlay} />
                   <div className={styles.cardLabelOverlay}>{p.label}</div>

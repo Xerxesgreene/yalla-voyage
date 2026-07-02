@@ -73,7 +73,7 @@
   margin-top: 20px;
 }
 
-/* ── Controls row: drag hint + nav arrows ──────────────────────────────── */
+/* ── Controls row: drag hint + nav arrows ──────────────────────── */
 .controlsRow {
   display: flex;
   align-items: center;
@@ -82,6 +82,7 @@
   margin-bottom: 24px;
   position: relative;
   z-index: 3;
+  max-width: 100%;
 }
 
 .dragHint {
@@ -215,8 +216,11 @@
 }
 
 .cardImg {
-  width: 100%;
-  height: 100%;
+  /* next/image fill mode requires position:absolute, inset:0 — override base */
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   /* prevent drag of image interfering with pointer drag */
@@ -310,12 +314,21 @@
   }
 
   .controlsRow {
-    padding: 0 20px;
-    margin-bottom: 16px;
+    /* On mobile: stack left-side hint above arrows, or keep row but reduce padding */
+    padding: 0 16px;
+    margin-bottom: 14px;
+    gap: 12px;
+    flex-wrap: wrap;
   }
 
   .dragHint {
-    font-size: 0.62rem;
+    font-size: 0.6rem;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .navArrows {
+    flex-shrink: 0;
   }
 
   .arrowBtn {
@@ -325,15 +338,13 @@
 
   .stripOuter {
     padding: 24px 0;
-    /* On mobile, freely scroll — no GSAP x translation */
     overflow-x: auto;
   }
 
+  /* Do NOT override GSAP transform on mobile anymore — auto-scroll works on all sizes */
   .strip {
     gap: clamp(16px, 3vw, 24px);
-    padding: 0 20px;
-    /* Reset GSAP x offset on mobile to keep cards in natural scroll flow */
-    transform: none !important;
+    padding: 0 16px;
   }
 
   .stripCard {

@@ -1,0 +1,218 @@
+/* Page Hero */
+.pageHero {
+  position: relative;
+  height: 55vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.pageHeroBg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(44, 26, 7, 0.85), rgba(92, 66, 9, 0.75)),
+    url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1400&q=80') center/cover no-repeat;
+}
+
+.pageHeroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-secondary-light);
+  margin-bottom: 16px;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-weight: 800;
+  color: var(--color-white);
+  margin-bottom: 16px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  letter-spacing: -0.02em;
+}
+
+.pageSubtitle {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 520px;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Socials Section */
+.socialsSection {
+  background: var(--color-beige-lightest);
+}
+
+.socialsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Social Card */
+.socialCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 36px 32px;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--color-beige-mid);
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.socialCard:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: var(--shadow-xl);
+  border-color: transparent;
+}
+
+.socialCard:hover .cardGlow {
+  opacity: 0.12;
+}
+
+.socialCard:hover .cardArrow {
+  transform: translateX(6px);
+  color: var(--color-primary);
+}
+
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.iconWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.socialCard:hover .iconWrap {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+.cardBody {
+  flex: 1;
+}
+
+.platform {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-secondary);
+  margin-bottom: 4px;
+}
+
+.handle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+  line-height: 1.65;
+}
+
+.cardArrow {
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+  color: var(--color-text-muted);
+  transition: all 0.35s ease;
+}
+
+/* Location Strip */
+.locationStrip {
+  background: var(--color-primary-dark);
+  padding: 48px 0;
+}
+
+.locationInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.locationItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 40px;
+}
+
+.locationDivider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255,255,255,0.1);
+}
+
+.locationIcon {
+  font-size: 1.4rem;
+}
+
+.locationLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-secondary-light);
+  margin-bottom: 4px;
+}
+
+.locationValue {
+  font-size: 0.92rem;
+  color: rgba(245, 239, 224, 0.8);
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .socialsGrid {
+    grid-template-columns: 1fr;
+  }
+  .locationInner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .locationDivider {
+    width: 48px;
+    height: 1px;
+  }
+}

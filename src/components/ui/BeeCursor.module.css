@@ -1,0 +1,64 @@
+.beeWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 50px;
+  pointer-events: none;
+  z-index: var(--z-cursor, 9999);
+  will-change: transform;
+}
+
+/* Gentle floating bob on the whole bee */
+.beeWrap > svg {
+  animation: beeBob 2.2s ease-in-out infinite;
+  overflow: visible;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(80, 10, 30, 0.22));
+}
+
+/* ─── Wing flap animations ──────────────────────────────────────── */
+/*
+  Wings pivot from the thorax centre (≈ x=40, y=37).
+  We use scaleY to simulate the wing beating in perspective.
+  Minimum scaleY is 0.38 so wings always remain clearly visible.
+*/
+
+.wingLeft {
+  transform-origin: 40px 37px;
+  animation: flapLeft 0.13s ease-in-out infinite alternate;
+}
+
+.wingRight {
+  transform-origin: 40px 37px;
+  animation: flapRight 0.13s ease-in-out infinite alternate;
+  animation-delay: 0.04s;
+}
+
+@keyframes flapLeft {
+  from {
+    transform: scaleY(1) translateX(-2px);
+    opacity: 0.90;
+  }
+  to {
+    transform: scaleY(0.38) translateX(-1px);
+    opacity: 0.72;
+  }
+}
+
+@keyframes flapRight {
+  from {
+    transform: scaleY(1) translateX(2px);
+    opacity: 0.90;
+  }
+  to {
+    transform: scaleY(0.38) translateX(1px);
+    opacity: 0.72;
+  }
+}
+
+/* Subtle whole-body float */
+@keyframes beeBob {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-5px) rotate(1.5deg); }
+}

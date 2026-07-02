@@ -170,7 +170,9 @@ export default function Hero() {
     return () => {
       hero.removeEventListener('mousemove', handleMouseMove);
       hero.removeEventListener('mouseleave', handleMouseLeave);
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      // Only kill the scroll timeline we created — not all global triggers
+      scrollTl.kill();
+      tl.kill();
     };
   }, []);
 

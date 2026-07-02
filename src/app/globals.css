@@ -104,7 +104,6 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: none;
 }
 
 img {
@@ -123,10 +122,14 @@ ul, ol {
 }
 
 button {
-  cursor: none;
   border: none;
   background: none;
   font-family: var(--font-body);
+}
+
+/* Custom cursor only on pointer-capable devices */
+@media (pointer: fine) {
+  body, button, .btn, a { cursor: none; }
 }
 
 /* ============================================

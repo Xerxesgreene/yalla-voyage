@@ -1,6 +1,7 @@
+/* ── PhotoStrip Section ─────────────────────────────────────────────────── */
 .stripSection {
   background: var(--cream);
-  padding: clamp(80px, 10vw, 150px) 0;
+  padding: clamp(80px, 10vw, 150px) 0 clamp(50px, 6vw, 80px);
   overflow: hidden;
   position: relative;
   border-top: 1px solid rgba(44, 26, 20, 0.05);
@@ -35,13 +36,14 @@
   background: rgba(44, 26, 20, 0.03);
 }
 
+/* ── Section Header ─────────────────────────────────────────────────────── */
 .sectionHeader {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-bottom: clamp(60px, 7vw, 100px);
+  margin-bottom: clamp(40px, 5vw, 70px);
   padding: 0 20px;
   position: relative;
   z-index: 2;
@@ -57,6 +59,12 @@
   line-height: 1.15;
 }
 
+.sectionTitle em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--hot-pink);
+}
+
 .dividerLine {
   width: 50px;
   height: 1px;
@@ -65,13 +73,82 @@
   margin-top: 20px;
 }
 
+/* ── Controls row: drag hint + nav arrows ──────────────────────────────── */
+.controlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 5vw, 80px);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 3;
+}
+
+.dragHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.navArrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrowBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(44, 26, 20, 0.15) !important;
+  background: var(--cream) !important;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer !important;
+  transition: background 0.25s var(--ease-out), border-color 0.25s var(--ease-out), transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+  flex-shrink: 0;
+}
+
+.arrowBtn:hover {
+  background: var(--dark) !important;
+  border-color: var(--dark) !important;
+  color: var(--cream);
+  transform: scale(1.08);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Scrollable Outer ───────────────────────────────────────────────────── */
 .stripOuter {
   width: 100%;
   position: relative;
   z-index: 2;
   padding: 40px 0;
+  /* Allow horizontal scroll for drag/touch — scrollbar hidden via CSS */
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  cursor: grab;
 }
 
+.stripOuter:active {
+  cursor: grabbing;
+}
+
+/* Hide scrollbar across browsers */
+.stripOuter::-webkit-scrollbar { display: none; }
+.stripOuter { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* ── GSAP Track ─────────────────────────────────────────────────────────── */
 .strip {
   display: flex;
   gap: clamp(30px, 4vw, 55px);
@@ -80,13 +157,14 @@
   will-change: transform;
 }
 
-/* Staggered Floating Layout */
+/* ── Staggered Floating Cards ───────────────────────────────────────────── */
 .stripCard {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: clamp(260px, 25vw, 360px);
   flex-shrink: 0;
+  scroll-snap-align: start;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -141,6 +219,10 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  /* prevent drag of image interfering with pointer drag */
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 .cardImageContainer:hover .cardImg {
@@ -150,8 +232,30 @@
 .cardOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(44, 26, 20, 0.12) 0%, transparent 40%);
+  background: linear-gradient(to top, rgba(44, 26, 20, 0.22) 0%, transparent 50%);
   pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Destination label that appears inside the image on hover */
+.cardLabelOverlay {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(250, 243, 238, 0.0);
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  transition: color 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(6px);
+  text-shadow: 0 2px 12px rgba(44, 26, 20, 0.4);
+}
+
+.cardImageContainer:hover .cardLabelOverlay {
+  color: rgba(250, 243, 238, 0.92);
+  transform: translateY(0);
 }
 
 .cardMeta {
@@ -179,29 +283,88 @@
   margin: 0;
 }
 
+/* ── Progress Bar ───────────────────────────────────────────────────────── */
+.progressBar {
+  position: relative;
+  z-index: 3;
+  width: clamp(120px, 30vw, 280px);
+  height: 2px;
+  background: rgba(44, 26, 20, 0.08);
+  border-radius: 99px;
+  margin: 12px auto 0;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--hot-pink);
+  border-radius: 99px;
+  transition: width 0.2s ease;
+  min-width: 8%;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .sectionHeader {
-    margin-bottom: clamp(35px, 5vw, 55px);
+    margin-bottom: clamp(24px, 4vw, 40px);
   }
+
+  .controlsRow {
+    padding: 0 20px;
+    margin-bottom: 16px;
+  }
+
+  .dragHint {
+    font-size: 0.62rem;
+  }
+
+  .arrowBtn {
+    width: 36px;
+    height: 36px;
+  }
+
   .stripOuter {
-    padding: 10px 0;
+    padding: 24px 0;
+    /* On mobile, freely scroll — no GSAP x translation */
+    overflow-x: auto;
   }
+
   .strip {
-    gap: clamp(18px, 3vw, 28px);
-    padding: 0 4vw;
+    gap: clamp(16px, 3vw, 24px);
+    padding: 0 20px;
+    /* Reset GSAP x offset on mobile to keep cards in natural scroll flow */
+    transform: none !important;
   }
+
   .stripCard {
-    width: clamp(220px, 60vw, 280px);
+    width: clamp(220px, 72vw, 300px);
     gap: 12px;
   }
+
   .stripCard:nth-child(odd),
   .stripCard:nth-child(even) {
     transform: none;
   }
+
   .stripCard:hover {
     transform: scale(1.02);
   }
+
   .cardImageContainer {
-    height: clamp(260px, 40vw, 340px);
+    height: clamp(260px, 55vw, 360px);
+  }
+
+  .progressBar {
+    width: clamp(100px, 50vw, 200px);
+  }
+}
+
+@media (max-width: 600px) {
+  .dragHint span {
+    display: none;
+  }
+  .arrowBtn {
+    width: 34px;
+    height: 34px;
   }
 }

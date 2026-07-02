@@ -1,7 +1,8 @@
 /* ── 2. ABOUT STRIP ── */
 .aboutStrip {
-  background: var(--dark);
+  background: var(--cream);
   padding: var(--space-3xl) 0;
+  border-bottom: 1px solid rgba(44, 26, 20, 0.05);
 }
 .aboutInner {
   display: grid;
@@ -9,12 +10,12 @@
   gap: var(--space-3xl);
   align-items: center;
 }
-.aboutLeft { color: var(--muted-light); }
+.aboutLeft { color: var(--muted); }
 .aboutHeadline {
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 3.2vw, 2.6rem);
   font-weight: 400;
-  color: var(--cream);
+  color: var(--dark);
   line-height: 1.25;
   letter-spacing: -0.02em;
   margin-bottom: var(--space-xl);
@@ -62,25 +63,12 @@
   line-height: 1.15;
 }
 
-.giantScript {
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  font-family: var(--font-script);
+.destTitle em {
   font-style: italic;
-  font-weight: 300;
-  font-size: clamp(80px, 14vw, 180px);
+  font-weight: 400;
   color: var(--hot-pink);
-  opacity: 0.12;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-  line-height: 1;
-  letter-spacing: -0.01em;
-  margin: 0;
 }
+
 
 .beeRow {
   display: flex;
@@ -280,25 +268,6 @@
   color: var(--hot-pink);
 }
 
-.servScript {
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  font-family: var(--font-script);
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(80px, 14vw, 180px);
-  color: var(--hot-pink);
-  opacity: 0.12;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-  line-height: 1;
-  letter-spacing: -0.01em;
-  margin: 0;
-}
 
 .servGrid {
   display: grid;
@@ -412,10 +381,11 @@
 
 /* ── 5. TRAVEL DIARIES ── */
 .diarySection {
-  background: var(--dark);
+  background: var(--blush);
   padding: var(--space-3xl) 0;
   overflow: hidden;
   position: relative;
+  border-bottom: 1px solid rgba(44, 26, 20, 0.05);
 }
 .diaryHeader {
   text-align: center;
@@ -423,28 +393,12 @@
   margin-bottom: var(--space-2xl);
   overflow: hidden;
 }
-.diaryGiantScript {
-  font-family: var(--font-script);
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(70px, 13vw, 155px);
-  color: var(--hot-pink);
-  white-space: nowrap;
-  line-height: 0.85;
-  pointer-events: none;
-  user-select: none;
-  letter-spacing: -0.02em;
-  opacity: 0.25;
-  margin-top: -20px;
-  margin-left: -30px;
-}
 .diaryTitle {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4.5vw, 3.8rem);
   font-weight: 700;
-  color: var(--cream);
+  color: var(--dark);
   letter-spacing: -0.03em;
-  margin-top: -60px;
   position: relative;
   z-index: 2;
 }
@@ -456,8 +410,9 @@
   gap: var(--space-xl);
 }
 .diaryCard {
-  background: rgba(250,243,238,0.05);
-  border: 1px solid rgba(250,243,238,0.1);
+  background: var(--cream);
+  border: 1.5px solid var(--blush-dark);
+  box-shadow: 0 12px 32px rgba(44, 26, 20, 0.04);
   border-radius: var(--radius-lg);
   padding: var(--space-xl) var(--space-2xl);
   max-width: 680px;
@@ -481,20 +436,20 @@
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.14em;
-  color: var(--muted-light);
+  color: var(--muted);
 }
 .diaryCardTitle {
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-weight: 700;
-  color: var(--cream);
+  color: var(--dark);
   letter-spacing: -0.02em;
   margin-bottom: var(--space-md);
   line-height: 1.2;
 }
 .diaryCardExcerpt {
   font-size: 0.95rem;
-  color: rgba(250,243,238,0.65);
+  color: var(--dark-light);
   line-height: 1.8;
   margin-bottom: var(--space-lg);
 }
@@ -505,10 +460,10 @@
   font-family: var(--font-body);
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--cream);
+  color: var(--dark);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(250,243,238,0.3);
+  border-bottom: 1px solid rgba(44, 26, 20, 0.3);
   padding-bottom: 2px;
   transition: all var(--t-fast);
 }
@@ -552,8 +507,9 @@
 
 /* ── 7. TESTIMONIALS ── */
 .testSection {
-  background: var(--blush);
+  background: var(--cream);
   padding: var(--space-3xl) 0;
+  border-bottom: 1px solid rgba(44, 26, 20, 0.05);
 }
 .testHeader {
   text-align: center;
@@ -566,6 +522,11 @@
   color: var(--dark);
   letter-spacing: -0.03em;
 }
+.testTitle em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--hot-pink);
+}
 .testGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -574,9 +535,10 @@
 .testCard {
   background: var(--cream);
   border-radius: var(--radius-lg);
+  border: 1.5px solid var(--blush-dark);
   padding: var(--space-xl);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.9s var(--ease-out);
+  box-shadow: 0 10px 30px rgba(44, 26, 20, 0.03);
+  transition: all 0.6s var(--ease-out);
 }
 .testCard:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .stars { color: var(--hot-pink); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: var(--space-md); }
@@ -610,7 +572,7 @@
 
 /* ── 8. CTA ── */
 .ctaSection {
-  background: var(--dark);
+  background: var(--blush);
   padding: var(--space-4xl) 0;
   overflow: hidden;
   position: relative;
@@ -619,7 +581,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, rgba(214,62,140,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.45) 0%, transparent 70%);
   pointer-events: none;
 }
 .ctaInner {
@@ -631,7 +593,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 5vw, 4.2rem);
   font-weight: 400;
-  color: var(--cream);
+  color: var(--dark);
   letter-spacing: -0.03em;
   line-height: 1.15;
   margin: var(--space-md) 0 var(--space-2xl);
@@ -648,20 +610,5 @@
 @media (max-width: 768px) {
   .diaryTitle {
     margin-top: -15px !important;
-  }
-  .giantScript {
-    font-size: clamp(45px, 10vw, 75px) !important;
-    top: 40% !important;
-    opacity: 0.05 !important;
-  }
-  .servScript {
-    font-size: clamp(45px, 10vw, 75px) !important;
-    opacity: 0.05 !important;
-  }
-  .diaryGiantScript {
-    font-size: clamp(45px, 10vw, 70px) !important;
-    opacity: 0.08 !important;
-    margin-top: -10px !important;
-    margin-left: 0 !important;
   }
 }

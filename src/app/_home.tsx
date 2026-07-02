@@ -48,7 +48,7 @@ const SERVICES = [
   { num: '03', title: 'Group & Family',      desc: 'Coordinated logistics for family reunions, school trips, and corporate outings.', img: '/dest-alula.jpg' },
   { num: '04', title: 'Corporate Travel',    desc: 'Streamlined business travel for GCC companies — executive retreats, business class, priority booking.', img: '/dest-dubai.jpg' },
   { num: '05', title: 'Visa Assistance',     desc: 'We handle the paperwork. Tourist, business, and multi-country visas, prepared and fast-tracked.', img: '/dest-paris.jpg' },
-  { num: '06', title: 'Umrah Services',      desc: 'Meticulously designed pilgrimage travel, featuring luxury hotels close to the Haram, smooth VIP airport transfers, and visa processing.', img: '/dest-muscat.jpg' },
+  { num: '06', title: 'Umrah Services',      desc: 'Meticulously designed pilgrimage travel, featuring luxury hotels close to the Haram, smooth VIP airport transfers, and visa processing.', img: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981?w=800&q=80' },
 ];
 
 const TESTIMONIALS = [
@@ -96,7 +96,7 @@ export default function HomeClient() {
         <section className={styles.aboutStrip}>
           <div className={`container ${styles.aboutInner}`}>
             <div className={`reveal ${styles.aboutLeft}`}>
-              <span className={`eyebrow eyebrow-light`}>Who We Are</span>
+              <span className="eyebrow">Who We Are</span>
             </div>
             <div className={`reveal reveal-delay-2 ${styles.aboutRight}`}>
               <h2 className={styles.aboutHeadline}>
@@ -104,7 +104,7 @@ export default function HomeClient() {
                 <em>passionate travel designers</em>{' '}
                 born out of a desire to create meaningful journeys
               </h2>
-              <Link href="/about" className={`btn btn-outline-white ${styles.aboutBtn}`}>
+              <Link href="/about" className={`btn btn-secondary ${styles.aboutBtn}`}>
                 Our Story
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="14" height="14">
                   <path d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" strokeLinecap="round" strokeLinejoin="round"/>
@@ -119,19 +119,15 @@ export default function HomeClient() {
 
         {/* ── 3. DESTINATIONS (= HoH "Spaces with Story") ── */}
         <section className={styles.destSection}>
-          {/* Section header with giant script behind */}
+          {/* Section header */}
           <div className={styles.destHeader}>
             <div className={styles.destHeaderInner}>
               <span className="eyebrow reveal">Where to Go</span>
-              <h2 className={`reveal reveal-delay-1 ${styles.destTitle}`}>Destinations with Story</h2>
+              <h2 className={`reveal reveal-delay-1 ${styles.destTitle}`}>Destinations <em>with Story</em></h2>
               {/* Bee divider — exactly as on HoH */}
               <div className={`reveal reveal-delay-2 ${styles.beeRow}`}>
                 <span className={styles.bee}>🐝</span>
               </div>
-            </div>
-            {/* Giant pink script overflow — the signature HoH effect */}
-            <div className={styles.giantScript} aria-hidden="true">
-              journeys with soul
             </div>
           </div>
 
@@ -179,10 +175,6 @@ export default function HomeClient() {
             <div className={`reveal reveal-delay-2 ${styles.beeRow}`}>
               <span className={styles.bee}>🐝</span>
             </div>
-            {/* Giant script behind */}
-            <div className={styles.servScript} aria-hidden="true">
-              services
-            </div>
           </div>
 
           <div className={`container ${styles.servGrid}`}>
@@ -217,11 +209,7 @@ export default function HomeClient() {
         {/* ── 5. TRAVEL DIARIES (= HoH "Dear Honey") ── */}
         <section className={styles.diarySection}>
           <div className={styles.diaryHeader}>
-            <span className={`eyebrow eyebrow-light reveal`}>A Travel Column, Unfiltered</span>
-            {/* Giant script — dark bg version */}
-            <div className={styles.diaryGiantScript} aria-hidden="true">
-              Travel Diaries
-            </div>
+            <span className="eyebrow reveal">A Travel Column, Unfiltered</span>
             <h2 className={`reveal reveal-delay-1 ${styles.diaryTitle}`}>
               Travel <em>Diaries</em>
             </h2>
@@ -246,7 +234,7 @@ export default function HomeClient() {
               </Link>
             </div>
             <div className={styles.diaryCta}>
-              <Link href="/blog" className="btn btn-outline-white">
+              <Link href="/blog" className="btn btn-secondary">
                 Read More
               </Link>
             </div>
@@ -276,7 +264,7 @@ export default function HomeClient() {
             <div className={styles.testHeader}>
               <span className="eyebrow reveal">Reviews</span>
               <h2 className={`reveal reveal-delay-1 ${styles.testTitle}`}>
-                What Our Travelers Say
+                What Our <em>Travelers Say</em>
               </h2>
               {/* Bee */}
               <div className={`reveal reveal-delay-2 ${styles.beeRow}`}>
@@ -306,12 +294,12 @@ export default function HomeClient() {
         {/* ── 8. CTA SECTION (= HoH "It would be a privilege to hear from you") ── */}
         <section className={styles.ctaSection}>
           <div className={`container ${styles.ctaInner}`}>
-            <span className={`eyebrow eyebrow-light reveal`}>Ready to Travel?</span>
+            <span className="eyebrow reveal">Ready to Travel?</span>
             <h2 className={`reveal reveal-delay-1 ${styles.ctaTitle}`}>
               It would be a privilege<br /><em>to take you somewhere.</em>
             </h2>
             <div className={`reveal reveal-delay-2 ${styles.ctaActions}`}>
-              <Link href="/contact" className="btn btn-outline-white btn-lg">
+              <Link href="/contact" className="btn btn-secondary btn-lg">
                 Plan My Trip
               </Link>
               <a

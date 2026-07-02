@@ -161,37 +161,35 @@ export default function PhotoStrip() {
         <div className={styles.dividerLine} />
       </div>
 
-      {/* Controls: drag hint + arrow nav (wrapped in container to match site grid alignment) */}
-      <div className="container">
-        <div className={styles.controlsRow}>
-          <span className={styles.dragHint}>
-            {/* Horizontal scroll icon */}
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="14" height="14" aria-hidden="true">
-              <path d="M4 12h16M16 8l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            Drag or swipe to explore
-          </span>
+      {/* Controls: drag hint + arrow nav */}
+      <div className={styles.controlsRow}>
+        <span className={styles.dragHint}>
+          {/* Horizontal scroll icon */}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="14" height="14" aria-hidden="true">
+            <path d="M4 12h16M16 8l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          Drag or swipe to explore
+        </span>
 
-          <div className={styles.navArrows} role="group" aria-label="Scroll gallery">
-            <button
-              className={styles.arrowBtn}
-              onClick={() => scrollBy('left')}
-              aria-label="Scroll gallery left"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16" aria-hidden="true">
-                <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <button
-              className={styles.arrowBtn}
-              onClick={() => scrollBy('right')}
-              aria-label="Scroll gallery right"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16" aria-hidden="true">
-                <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
+        <div className={styles.navArrows} role="group" aria-label="Scroll gallery">
+          <button
+            className={styles.arrowBtn}
+            onClick={() => scrollBy('left')}
+            aria-label="Scroll gallery left"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16" aria-hidden="true">
+              <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <button
+            className={styles.arrowBtn}
+            onClick={() => scrollBy('right')}
+            aria-label="Scroll gallery right"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16" aria-hidden="true">
+              <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
       </div>
 

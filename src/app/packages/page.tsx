@@ -1,18 +1,22 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { Sparkles, MessageCircle, Phone } from 'lucide-react';
+import Link from 'next/link';
+import { Sparkles, MessageCircle, Phone, ArrowRight, CheckCircle2, Compass } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
-import { Reveal, StaggerReveal } from '@/components/ui/Reveal';
+import { SectionHeading } from '@/components/ui/SectionHeading';
+import { StaggerReveal, Reveal } from '@/components/ui/Reveal';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import { PackageCard } from '@/components/packages/PackageCard';
-import { packages } from '@/data/packages';
+import { PackageModal } from '@/components/packages/PackageModal';
+import { packages, TravelPackage } from '@/data/packages';
 import { siteConfig } from '@/data/site';
 
 type PackageFilter = 'all' | 'saudi' | 'luxury' | 'adventure' | 'corporate' | 'spiritual';
 
 export default function PackagesPage() {
   const [filter, setFilter] = useState<PackageFilter>('all');
+  const [selectedPackage, setSelectedPackage] = useState<TravelPackage | null>(null);
 
   const filtered = useMemo(() => {
     if (filter === 'all') return packages;
@@ -32,17 +36,27 @@ export default function PackagesPage() {
 
   return (
     <main className="bg-[#F4EFE6] text-[#0F2E23] overflow-hidden">
+      {/* ── CINEMATIC HERO BANNER ── */}
       <PageHero
         title="Packages"
-        subtitle="Curated journeys for every traveler, every dream."
+        subtitle="Handcrafted luxury itineraries across Saudi Arabia and iconic global horizons."
         image="/images/header-packages.jpg"
         alt="Signature Travel Packages"
         positionClass="object-center"
       />
 
+      {/* ── PACKAGES SHOWCASE SECTION ── */}
       <section className="section-pad bg-[#F4EFE6]">
         <div className="container-wide">
-          {/* Category Filter Pills */}
+          
+          {/* Standard Left-Aligned Section Heading */}
+          <SectionHeading
+            badge="01 • CURATED ITINERARIES"
+            title="Journeys Designed Without Compromise."
+            description="From royal desert sanctuaries in AlUla to private Mediterranean coastlines and spiritual retreats — each package is engineered for effortless elegance."
+          />
+
+          {/* Clean Controls / Category Filter Pills */}
           <div className="flex items-center gap-2 flex-wrap mb-12 pb-8 border-b border-[#0F2E23]/10">
             {[
               { id: 'all', label: 'All Packages', count: counts.all },
@@ -55,16 +69,16 @@ export default function PackagesPage() {
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id as PackageFilter)}
-                className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+                className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
                   filter === tab.id
-                    ? 'bg-[#0F2E23] text-[#F4EFE6] shadow-md scale-102'
-                    : 'bg-white text-[#0F2E23]/70 hover:bg-white hover:text-[#0F2E23] border border-[#0F2E23]/8'
+                    ? 'bg-[#0F2E23] text-[#F4EFE6] shadow-md scale-102 ring-2 ring-[#0F2E23]/20'
+                    : 'bg-white text-[#0F2E23]/70 hover:bg-white hover:text-[#0F2E23] border border-[#0F2E23]/10 hover:border-[#2E6B57]/30 shadow-xs'
                 }`}
               >
                 <span>{tab.label}</span>
                 <span
-                  className={`px-1.5 py-0.5 rounded-full text-[10px] ${
-                    filter === tab.id ? 'bg-[#2E6B57] text-white font-bold' : 'bg-[#0F2E23]/6 text-[#0F2E23]/60'
+                  className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-medium transition-colors ${
+                    filter === tab.id ? 'bg-[#2E6B57] text-white' : 'bg-[#0F2E23]/6 text-[#0F2E23]/60'
                   }`}
                 >
                   {tab.count}
@@ -73,14 +87,75 @@ export default function PackagesPage() {
             ))}
           </div>
 
-          {/* ── High-Fidelity 3D Card Flipping Grid ── */}
-          <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10" stagger={0.08}>
+          {/* ── High-Impact Card Grid ── */}
+          <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" stagger={0.07}>
             {filtered.map((pkg, idx) => (
-              <PackageCard key={pkg.slug} pkg={pkg} index={idx} />
+              <PackageCard
+                key={pkg.slug}
+                pkg={pkg}
+                index={idx}
+                onSelect={(selected) => setSelectedPackage(selected)}
+              />
             ))}
           </StaggerReveal>
+
+          {/* ── BESPOKE ITINERARY ARCHITECT BANNER ── */}
+          <div className="mt-16 sm:mt-20 p-8 sm:p-12 rounded-3xl bg-[#0F2E23] text-white border border-[#2E6B57]/40 relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#39C27D]/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8 space-y-4">
+                <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#39C27D] font-semibold block">
+                  Bespoke Itinerary Studio
+                </span>
+                <h3 className="text-display text-2xl sm:text-3xl lg:text-4xl text-[#F4EFE6] font-light leading-tight">
+                  Need a fully customized itinerary for your dates?
+                </h3>
+                <p className="text-[#F4EFE6]/75 text-xs sm:text-sm leading-relaxed font-light font-sans max-w-2xl">
+                  Every package can be tailored to your exact pace, group size, and preferred accommodations — from private aviation connections to VIP palace dinners.
+                </p>
+                <div className="flex items-center gap-4 text-xs font-mono text-[#39C27D] pt-1">
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5" /> Flexible Dates
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5" /> 24/7 Concierge
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5" /> Private Transfers
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3.5 justify-end">
+                <MagneticButton
+                  href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
+                    'Hello Yalla Voyage, I would like to design a custom bespoke package with your senior travel curator.'
+                  )}`}
+                  target="_blank"
+                  variant="primary"
+                  className="w-full text-center"
+                >
+                  <MessageCircle className="w-4 h-4 text-[#25D366]" /> Chat With Senior Designer
+                </MagneticButton>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-white/20 text-[#F4EFE6] hover:bg-white/10 text-xs font-semibold uppercase tracking-wider transition-all duration-300 font-sans text-center"
+                >
+                  Inquire Online <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
+
+      {/* ── INTERACTIVE PACKAGE MODAL ── */}
+      <PackageModal
+        pkg={selectedPackage}
+        onClose={() => setSelectedPackage(null)}
+      />
     </main>
   );
 }

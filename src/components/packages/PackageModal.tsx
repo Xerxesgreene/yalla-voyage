@@ -113,9 +113,9 @@ export function PackageModal({ pkg, onClose }: PackageModalProps) {
 
           {/* Modal Body */}
           <div className="p-6 sm:p-8 space-y-6 max-h-[60vh] overflow-y-auto">
-            {/* Description */}
-            <p className="text-sm sm:text-[15px] text-[#0F2E23]/80 leading-relaxed font-sans font-light">
-              {pkg.description}
+            {/* Tagline Narrative */}
+            <p className="text-sm sm:text-[16px] text-[#0F2E23]/80 leading-relaxed font-serif italic">
+              &ldquo;{pkg.tagline}&rdquo;
             </p>
 
             {/* Price & Duration Quick Banner */}

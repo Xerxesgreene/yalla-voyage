@@ -118,14 +118,14 @@ export function PackageModal({ pkg, onClose }: PackageModalProps) {
               &ldquo;{pkg.tagline}&rdquo;
             </p>
 
-            {/* Price & Duration Quick Banner */}
+            {/* Duration & Pacing Quick Banner */}
             <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-[#F4EFE6] border border-[#0F2E23]/8">
               <div className="flex items-center gap-2 text-xs font-mono text-[#0F2E23]">
                 <Calendar className="w-4 h-4 text-[#2E6B57]" />
                 <span>Pacing: <strong className="font-semibold">{pkg.duration}</strong></span>
               </div>
               <div className="text-xs font-mono text-[#2E6B57] font-semibold">
-                {pkg.price}
+                100% Bespoke Schedule
               </div>
             </div>
 

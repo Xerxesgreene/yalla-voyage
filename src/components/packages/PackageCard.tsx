@@ -57,13 +57,13 @@ export function PackageCard({ pkg, index, onSelect }: PackageCardProps) {
             </span>
           </div>
 
-          {/* Bottom Floating Price Tag */}
+          {/* Bottom Floating Protocol Badge */}
           <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between">
-            <span className="px-3.5 py-1.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 text-[#F4EFE6] text-xs font-mono font-semibold shadow-sm">
-              {pkg.price}
+            <span className="px-3.5 py-1.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 text-[#F4EFE6] text-[11px] font-mono font-medium shadow-sm flex items-center gap-1.5">
+              <Compass className="w-3.5 h-3.5 text-[#39C27D]" /> Bespoke Journey
             </span>
-            <span className="text-[11px] font-mono text-[#F4EFE6]/90 flex items-center gap-1">
-              <Compass className="w-3 h-3 text-[#39C27D]" /> Bespoke Journey
+            <span className="text-[11px] font-mono text-[#F4EFE6]/80">
+              Private Concierge
             </span>
           </div>
         </div>

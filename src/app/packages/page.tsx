@@ -2,10 +2,10 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { Sparkles, MessageCircle, Phone, ArrowRight, CheckCircle2, Compass } from 'lucide-react';
+import { Sparkles, MessageCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { StaggerReveal, Reveal } from '@/components/ui/Reveal';
+import { Reveal } from '@/components/ui/Reveal';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import { PackageCard } from '@/components/packages/PackageCard';
 import { PackageModal } from '@/components/packages/PackageModal';
@@ -53,7 +53,7 @@ export default function PackagesPage() {
           <SectionHeading
             badge="01 • CURATED ITINERARIES"
             title="Journeys Designed Without Compromise."
-            description="From royal desert sanctuaries in AlUla to private Mediterranean coastlines and spiritual retreats — each package is engineered for effortless elegance."
+            description="From royal desert sanctuaries in AlUla to private Mediterranean coastlines and spiritual retreats — explore our hand-tailored expedition itineraries."
           />
 
           {/* Clean Controls / Category Filter Pills */}
@@ -87,17 +87,18 @@ export default function PackagesPage() {
             ))}
           </div>
 
-          {/* ── High-Impact Card Grid ── */}
-          <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" stagger={0.07}>
+          {/* ── Large Horizontal Editorial Itinerary Cards List ── */}
+          <div className="space-y-8 sm:space-y-10">
             {filtered.map((pkg, idx) => (
-              <PackageCard
-                key={pkg.slug}
-                pkg={pkg}
-                index={idx}
-                onSelect={(selected) => setSelectedPackage(selected)}
-              />
+              <Reveal key={pkg.slug} delay={idx * 0.05}>
+                <PackageCard
+                  pkg={pkg}
+                  index={idx}
+                  onSelect={(selected) => setSelectedPackage(selected)}
+                />
+              </Reveal>
             ))}
-          </StaggerReveal>
+          </div>
 
           {/* ── BESPOKE ITINERARY ARCHITECT BANNER ── */}
           <div className="mt-16 sm:mt-20 p-8 sm:p-12 rounded-3xl bg-[#0F2E23] text-white border border-[#2E6B57]/40 relative overflow-hidden shadow-2xl">

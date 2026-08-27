@@ -1,0 +1,378 @@
+/* ── PhotoStrip Section ─────────────────────────────────────────────────── */
+.stripSection {
+  background: var(--cream);
+  padding: clamp(80px, 10vw, 150px) 0 clamp(50px, 6vw, 80px);
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid rgba(44, 26, 20, 0.05);
+  border-bottom: 1px solid rgba(44, 26, 20, 0.05);
+}
+
+/* Background Sunset Ambient Glow */
+.ambientGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 100% 0%, rgba(240, 217, 208, 0.45) 0%, transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Editorial Grid Lines */
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gridLineV {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(44, 26, 20, 0.03);
+}
+
+/* ── Section Header ─────────────────────────────────────────────────────── */
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: clamp(40px, 5vw, 70px);
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3.8rem);
+  font-weight: 800;
+  color: var(--dark);
+  margin-top: 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.sectionTitle em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--hot-pink);
+}
+
+.dividerLine {
+  width: 50px;
+  height: 1px;
+  background: var(--dark);
+  opacity: 0.15;
+  margin-top: 20px;
+}
+
+/* ── Controls row: drag hint + nav arrows ──────────────────────── */
+.controlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15%;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+.dragHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.navArrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrowBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(44, 26, 20, 0.15) !important;
+  background: var(--cream) !important;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer !important;
+  transition: background 0.25s var(--ease-out), border-color 0.25s var(--ease-out), transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+  flex-shrink: 0;
+}
+
+.arrowBtn:hover {
+  background: var(--dark) !important;
+  border-color: var(--dark) !important;
+  color: var(--cream);
+  transform: scale(1.08);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Scrollable Outer ───────────────────────────────────────────────────── */
+.stripOuter {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  padding: 40px 0;
+  /* Allow horizontal scroll for drag/touch — scrollbar hidden via CSS */
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  cursor: grab;
+}
+
+.stripOuter:active {
+  cursor: grabbing;
+}
+
+/* Hide scrollbar across browsers */
+.stripOuter::-webkit-scrollbar { display: none; }
+.stripOuter { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* ── GSAP Track ─────────────────────────────────────────────────────────── */
+.strip {
+  display: flex;
+  gap: clamp(30px, 4vw, 55px);
+  padding: 0 8vw;
+  width: max-content;
+  will-change: transform;
+}
+
+/* ── Staggered Floating Cards ───────────────────────────────────────────── */
+.stripCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: clamp(260px, 25vw, 360px);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stripCard:nth-child(odd) {
+  transform: translateY(-24px);
+}
+
+.stripCard:nth-child(even) {
+  transform: translateY(24px);
+}
+
+.stripCard:hover {
+  transform: translateY(0) scale(1.02);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(44, 26, 20, 0.12);
+  padding-bottom: 8px;
+}
+
+.cardNum {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.cardCoords {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.cardImageContainer {
+  position: relative;
+  width: 100%;
+  height: clamp(330px, 30vw, 460px);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(44, 26, 20, 0.08);
+  box-shadow: 0 16px 48px rgba(44, 26, 20, 0.06);
+  background: var(--cream-dark);
+}
+
+.cardImg {
+  /* next/image fill mode requires position:absolute, inset:0 — override base */
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  /* prevent drag of image interfering with pointer drag */
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.cardImageContainer:hover .cardImg {
+  transform: scale(1.05);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44, 26, 20, 0.22) 0%, transparent 50%);
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Destination label that appears inside the image on hover */
+.cardLabelOverlay {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(250, 243, 238, 0.0);
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  transition: color 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(6px);
+  text-shadow: 0 2px 12px rgba(44, 26, 20, 0.4);
+}
+
+.cardImageContainer:hover .cardLabelOverlay {
+  color: rgba(250, 243, 238, 0.92);
+  transform: translateY(0);
+}
+
+.cardMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 4px;
+}
+
+.cardLabel {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 1.8vw, 1.9rem);
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -0.01em;
+}
+
+.cardDesc {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ── Progress Bar ───────────────────────────────────────────────────────── */
+.progressBar {
+  position: relative;
+  z-index: 3;
+  width: clamp(120px, 30vw, 280px);
+  height: 2px;
+  background: rgba(44, 26, 20, 0.08);
+  border-radius: 99px;
+  margin: 12px auto 0;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--hot-pink);
+  border-radius: 99px;
+  transition: width 0.2s ease;
+  min-width: 8%;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .sectionHeader {
+    margin-bottom: clamp(24px, 4vw, 40px);
+  }
+
+  .controlsRow {
+    /* On mobile: keep row but reduce margins; wrap prevented for clean single line */
+    padding: 0 15%;
+    margin-bottom: 14px;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .dragHint {
+    font-size: 0.6rem;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .navArrows {
+    flex-shrink: 0;
+  }
+
+  .arrowBtn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .stripOuter {
+    padding: 24px 0;
+    overflow-x: auto;
+  }
+
+  /* Do NOT override GSAP transform on mobile anymore — auto-scroll works on all sizes */
+  .strip {
+    gap: clamp(16px, 3vw, 24px);
+    padding: 0 16px;
+  }
+
+  .stripCard {
+    width: clamp(220px, 72vw, 300px);
+    gap: 12px;
+  }
+
+  .stripCard:nth-child(odd),
+  .stripCard:nth-child(even) {
+    transform: none;
+  }
+
+  .stripCard:hover {
+    transform: scale(1.02);
+  }
+
+  .cardImageContainer {
+    height: clamp(260px, 55vw, 360px);
+  }
+
+  .progressBar {
+    width: clamp(100px, 50vw, 200px);
+  }
+}
+
+@media (max-width: 600px) {
+  .dragHint span {
+    display: none;
+  }
+  .arrowBtn {
+    width: 34px;
+    height: 34px;
+  }
+}

@@ -1,0 +1,146 @@
+/* Footer — House of Honey dark maroon style */
+.footer {
+  background: var(--dark);
+  color: var(--cream);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: var(--space-2xl);
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+  border-bottom: 1px solid rgba(250, 243, 238, 0.08);
+}
+
+/* Brand column */
+.brand {}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-lg);
+}
+
+.logo em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--hot-pink);
+}
+
+.tagline {
+  font-size: 0.86rem;
+  color: rgba(250, 243, 238, 0.5);
+  line-height: 1.75;
+  margin-bottom: var(--space-xl);
+  max-width: 300px;
+}
+
+.socials {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(250, 243, 238, 0.15);
+  color: rgba(250, 243, 238, 0.5);
+  transition: all var(--t-fast);
+}
+
+.social:hover {
+  background: var(--hot-pink);
+  border-color: var(--hot-pink);
+  color: var(--white);
+}
+
+/* Nav columns */
+.col {}
+
+.colTitle {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250, 243, 238, 0.4);
+  margin-bottom: var(--space-lg);
+}
+
+.colLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.colLinks a,
+.colLinks li {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: rgba(250, 243, 238, 0.65);
+  transition: color var(--t-fast);
+  line-height: 1.4;
+}
+
+.colLinks a:hover { color: var(--cream); }
+
+.contactList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: rgba(250, 243, 238, 0.65);
+}
+
+.contactList svg { flex-shrink: 0; margin-top: 3px; opacity: 0.5; }
+
+/* Bottom bar */
+.bottom {
+  padding: var(--space-lg) 0;
+}
+
+.bottomInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.bottomInner p {
+  font-size: 0.78rem;
+  color: rgba(250, 243, 238, 0.35);
+}
+
+.bottomLinks {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.bottomLinks a {
+  font-size: 0.78rem;
+  color: rgba(250, 243, 238, 0.35);
+  transition: color var(--t-fast);
+}
+
+.bottomLinks a:hover { color: var(--cream); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .top { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+}
+
+@media (max-width: 600px) {
+  .top { grid-template-columns: 1fr; }
+  .bottomInner { flex-direction: column; text-align: center; }
+}

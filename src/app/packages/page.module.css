@@ -1,0 +1,116 @@
+.pageHero {
+  position: relative;
+  height: 50vh;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 60px;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.pageHeroBg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(44, 26, 7, 0.6), rgba(44, 26, 7, 0.7)),
+    url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80') center/cover no-repeat;
+  animation: heroZoomIn 8s ease-out forwards;
+}
+
+@keyframes heroZoomIn {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+
+.pageHeroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  color: var(--white);
+  margin: 10px 0 16px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  line-height: 1.1;
+}
+
+.pageSubtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.78);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.countLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Custom CTA */
+.customCta {
+  padding: 80px 0 100px;
+  background: var(--color-beige-lightest);
+}
+
+.customCtaCard {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 60px 48px;
+  border: 1.5px solid var(--color-beige-mid);
+  transition: box-shadow 0.4s ease;
+}
+
+.customCtaCard:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.customCtaIconWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-beige-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  color: var(--color-primary);
+}
+
+.customCtaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 400;
+  color: var(--color-text-dark);
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.customCtaText {
+  color: var(--color-text-light);
+  line-height: 1.75;
+  margin-bottom: 32px;
+  font-size: 0.95rem;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {
+  .customCtaCard {
+    padding: 40px 20px;
+  }
+}
+

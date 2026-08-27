@@ -1,0 +1,75 @@
+.pageHero {
+  position: relative;
+  height: 50vh;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 60px;
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.pageHeroBg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(44, 26, 7, 0.6), rgba(44, 26, 7, 0.7)),
+    url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1400&q=80') center/cover no-repeat;
+  animation: heroZoomIn 8s ease-out forwards;
+}
+
+@keyframes heroZoomIn {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+
+.pageHeroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  color: var(--color-white);
+  margin: 10px 0 16px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.pageSubtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.78);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filterBtn {
+  padding: 10px 24px;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-md);
+  background: var(--color-white);
+  color: var(--color-text-mid);
+  border: 1.5px solid var(--color-beige-mid);
+  font-family: var(--font-body);
+}
+
+.filterBtn:hover,
+.filterBtn.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}

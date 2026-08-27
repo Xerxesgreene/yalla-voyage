@@ -1,0 +1,567 @@
+/* ============================================
+   HERO — Luxury Editorial Wordmark & Portal
+   ============================================ */
+.hero {
+  position: relative;
+  background: var(--blush);
+  overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 80px; /* ensure room for scroll indicator */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Sunset Glow & Grain */
+.ambientGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 35%, rgba(250, 243, 238, 0.95) 0%, rgba(240, 217, 208, 0.75) 45%, var(--blush) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(44, 26, 20, 0.02) 1px, transparent 0);
+  background-size: 24px 24px;
+  opacity: 0.85;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Editorial Alignment Grid Lines */
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gridLineV {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(44, 26, 20, 0.035);
+}
+
+.gridLineH {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(44, 26, 20, 0.035);
+}
+
+/* Grid Layout */
+.composition {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  align-items: center;
+  padding: clamp(20px, 4vw, 50px) clamp(20px, 4vw, 60px) clamp(10px, 2vw, 30px);
+  gap: var(--space-xl);
+  flex: 1;
+}
+
+/* Side Columns */
+.wordmarkLeft,
+.wordmarkRight {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-body);
+  color: var(--dark);
+  z-index: 10;
+  position: relative;
+}
+
+.wordmarkLeft {
+  align-items: flex-start;
+}
+
+.wordmarkRight {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.eyebrowMini {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+}
+
+.taglineLine {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.4vw, 1.4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--dark);
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.wordmarkLeftArabic {
+  font-family: var(--font-arabic);
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.estLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+
+/* Center Stack */
+.compositionCenter {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Typography styles */
+.heroLogoWrap {
+  display: block;
+  user-select: none;
+  white-space: nowrap;
+  position: relative;
+}
+
+.wordmarkLeft .heroLogoWrap {
+  margin-bottom: clamp(12px, 2vw, 24px);
+}
+
+.wordmarkRight .heroLogoWrap {
+  margin-top: clamp(12px, 2vw, 24px);
+}
+
+.logoYallaWrap {
+  width: clamp(180px, 15vw, 260px);
+  aspect-ratio: 365 / 90;
+  overflow: hidden;
+}
+
+.logoVoyageWrap {
+  width: clamp(180px, 15vw, 260px);
+  aspect-ratio: 365 / 122;
+  overflow: hidden;
+}
+
+.heroLogo {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+  opacity: 0.92;
+}
+
+.logoYalla {
+  top: 0;
+  left: 0;
+}
+
+.logoVoyage {
+  bottom: 0;
+  left: 0;
+}
+
+.logoMobileWrap {
+  display: none;
+}
+
+/* Door Container and Frames */
+.doorContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Horizontal connectors reaching to side columns */
+.connectorLeft {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  width: 15vw;
+  height: 1px;
+  border-bottom: 1px dashed rgba(44, 26, 20, 0.15);
+  pointer-events: none;
+}
+
+.connectorLeft::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.connectorRight {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  width: 15vw;
+  height: 1px;
+  border-bottom: 1px dashed rgba(44, 26, 20, 0.15);
+  pointer-events: none;
+}
+
+.connectorRight::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+/* Decorative architectural Star Keystone */
+.doorKeystone {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+  background: var(--cream);
+  color: var(--muted);
+  padding: 4px;
+  border-radius: 50%;
+  border: 1px solid rgba(44, 26, 20, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Double-lined Door Frame */
+.doorFrameOuter {
+  padding: 6px;
+  border: 1px solid rgba(44, 26, 20, 0.12);
+  border-bottom: none;
+  border-radius: 170px 170px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.doorFrameInner {
+  padding: 4px;
+  border: 1px solid rgba(44, 26, 20, 0.06);
+  border-bottom: none;
+  border-radius: 162px 162px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Arched Portal Window */
+.portal {
+  position: relative;
+  width: clamp(210px, 19vw, 300px);
+  height: clamp(290px, 27vw, 420px);
+  border-radius: 150px 150px 0 0;
+  overflow: hidden;
+  background: var(--cream-dark);
+}
+
+.portalInner {
+  position: relative;
+  width: 100%;
+  height: 115%;
+  top: -7.5%;
+}
+
+.portalImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.4s cubic-bezier(0.65, 0, 0.35, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portalImgActive {
+  opacity: 1;
+  transform: scale(1.0);
+}
+
+.portalOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44, 26, 20, 0.28) 0%, transparent 35%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Door Step Base Line */
+.doorStep {
+  width: calc(100% + 40px);
+  height: 2px;
+  background: var(--dark);
+  opacity: 0.7;
+  margin-top: 0;
+  z-index: 10;
+}
+
+/* Arched French Door Glass Panes Overlay */
+.doorPanes {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.paneLineV {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgba(250, 243, 238, 0.22);
+  box-shadow: 0 0 1px rgba(44, 26, 20, 0.15);
+}
+
+.paneLineH {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(250, 243, 238, 0.22);
+  box-shadow: 0 0 1px rgba(44, 26, 20, 0.15);
+}
+
+.doorHandle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
+
+.doorHandleKnob {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blush-light);
+  border: 1px solid var(--dark);
+  box-shadow: 0 1px 3px rgba(44, 26, 20, 0.25);
+}
+
+/* Floating Badges (Museum Style) */
+.floatingBadge {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: rgba(250, 243, 238, 0.94);
+  border: 1px solid rgba(44, 26, 20, 0.1);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 20px rgba(44, 26, 20, 0.05);
+  z-index: 10;
+  min-width: 130px;
+  pointer-events: none;
+}
+
+.badgeLeft {
+  left: -150px;
+  top: 25%;
+}
+
+/* Line leaders linking tags to the door */
+.badgeLeft::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  width: 20px;
+  height: 1px;
+  background: rgba(44, 26, 20, 0.15);
+}
+
+.badgeRight {
+  right: -150px;
+  bottom: 25%;
+}
+
+.badgeRight::after {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  width: 20px;
+  height: 1px;
+  background: rgba(44, 26, 20, 0.15);
+}
+
+.badgeLabel {
+  font-size: 0.54rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.badgeValue {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--dark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  animation: badgeFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes badgeFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 50;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.scrollText {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.scrollLine {
+  width: 1px;
+  height: 36px;
+  background: rgba(44, 26, 20, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollDot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--hot-pink);
+  transform: translateX(-50%);
+  animation: scrollScroll 2.2s infinite var(--ease-inout);
+}
+
+@keyframes scrollScroll {
+  0%   { top: 0; opacity: 0; }
+  30%  { opacity: 1; }
+  80%  { top: 100%; opacity: 0; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .badgeLeft {
+    left: -120px;
+  }
+  .badgeRight {
+    right: -120px;
+  }
+}
+
+@media (max-width: 900px) {
+  .composition {
+    grid-template-columns: 1fr;
+    padding-top: 90px;
+    padding-bottom: 60px;
+    min-height: auto;
+    gap: var(--space-xl);
+  }
+  .wordmarkLeft,
+  .wordmarkRight {
+    align-items: center;
+    text-align: center;
+    gap: 16px !important;
+  }
+  .wordmarkRight {
+    order: 3;
+  }
+  .compositionCenter {
+    order: 2;
+  }
+  .connectorLeft,
+  .connectorRight {
+    display: none;
+  }
+  .badgeLeft,
+  .badgeRight {
+    display: none;
+  }
+  .logoMobileWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(200px, 58vw, 300px);
+    margin: 0 auto clamp(16px, 4vw, 24px);
+  }
+  .logoMobile {
+    width: 100%;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
+    opacity: 0.92;
+  }
+  .logoYallaWrap,
+  .logoVoyageWrap {
+    display: none !important;
+  }
+  .scrollIndicator {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .badgeLeft,
+  .badgeRight {
+    display: none;
+  }
+}

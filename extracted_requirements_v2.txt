@@ -1,0 +1,370 @@
+00
+1016000-1085025YALLA VOYAGE
+01427309WEBSITE FUNCTIONAL REQUIREMENTS& Client Presentation DocumentWEBSITE FUNCTIONAL REQUIREMENTS& Client Presentation DocumentTransforming Wanderlust into Extra-ordinary Experiences
+WEBSITE FUNCTIONAL REQUIREMENTS
+& Client Presentation Document
+WEBSITE FUNCTIONAL REQUIREMENTS
+& Client Presentation Document
+-2540-153007CLIENT:Yalla Voyage · Jeddah, KSA PROJECT:Luxury Travel Agency Website DELIVERY:10-8 Week Phased Build
+SCOPE:Public Website + Admin Panel + Blog System
+5080001075220101Executive Summary — Dear Yalla Voyage Team
+01
+01
+50800082119
+This document has been prepared exclusively for Yalla Voyage as a complete Functional Requirements Specification and visual presentation of your new website. It clearly defines every feature, every page, and the delivery timeline — so both parties know exactly what is being built, why, and when.
+Your website is your most powerful business development tool — the first impression a client has of Yalla Voyage before they ever pick up the phone. Every decision in this document has been made with one goal in mind: to build trust, inspire confidence, and move visitors to make an inquiry. This is a relationship-first luxury brand site — not a self-service booking engine — because your service is personal, curated, and premium.
+What We're Building
+A premium luxury travel agency website — relationship-first, inquiry-driven
+Who It Serves
+Families · Couples · Solo Travelers · Corporate Groups · Umrah Seekers
+Primary Goal
+Build trust  capture inquiry  begin a lifelong client relationship
+Not Building
+A self-service booking engine — this keeps the experience premium & personal
+Timeline
+10–8 Weeks · 5 Delivery Phases
+584200200660"We don't just book trips — we curate legacies." — Yalla Voyage"We don't just book trips — we curate legacies." — Yalla Voyage
+"We don't just book trips — we curate legacies." — Yalla Voyage
+"We don't just book trips — we curate legacies." — Yalla Voyage
+Website Pages — What Visitors Will See
+50800044846
+Your website will consist of 8 pages, all connected seamlessly. Below is each page, what it contains, and how it serves your clients.
+Homepage
+Full-screen cinematic hero, 'Who We Are' intro, featured destinations carousel, services grid, 4-step
+process, client testimonials, and CTA banner.
+✈Destinations
+Saudi Arabia featured prominently (AlUla, Riyadh, Jeddah, NEOM), then GCC, then global. Each
+destination: hero image, highlights, popular experiences, inquiry CTA.
+Services
+All 16 services displayed as premium cards — Private Jets, Umrah + Experiences, Luxury
+Wellness, Visa Services, Chauffeur Services, Cruises, and more.
+Featured Packages
+Curated seasonal packages: destination, duration, highlights, from-price. Showcase only — visitors
+are directed to the inquiry form to discuss their trip.
+Blog / Travel Stories
+Weekly articles on destinations, travel tips, and Saudi discoveries. Builds authority and keeps
+visitors coming back. Managed from your private admin panel.
+About Us
+Your 20-year story, team, brand values, and global partner network. This is the trust page — luxury
+clients research before they reach out.
+Inquiry / Contact
+A premium inquiry form capturing name, email, phone, travel dates, destination, group size, budget,
+and message. WhatsApp button included. Instant notification to your team.
+Admin Panel (Private)
+Your private dashboard — write and publish blog posts, view all customer inquiries, manage
+content, upload images. Accessible only by your authorised team.
+Destinations — Visual Showcase
+50800044846
+Each destination page features a full-width hero image, curated highlights, popular experiences, and a path to inquiry. Saudi Arabia is featured as the centrepiece of your destinations section.
+★ Saudi Arabia — Featured Prominently
+660400209998
+AL ULAJEDDAHAncient Nabatean tombs, Hegra ruins, desert landscapes,Historic Al-Balad, Corniche promenade, luxury dining and hot air balloons. UNESCO World Heritage — one of theshopping. Your home city — presented with insider world's most spectacular destinations.knowledge no other agency can match.AL ULAJEDDAHAncient Nabatean tombs, Hegra ruins, desert landscapes,Historic Al-Balad, Corniche promenade, luxury dining and hot air balloons. UNESCO World Heritage — one of theshopping. Your home city — presented with insider world's most spectacular destinations.knowledge no other agency can match.
+AL ULAJEDDAH
+Ancient Nabatean tombs, Hegra ruins, desert landscapes,Historic Al-Balad, Corniche promenade, luxury dining and hot air balloons. UNESCO World Heritage — one of theshopping. Your home city — presented with insider world's most spectacular destinations.knowledge no other agency can match.
+AL ULAJEDDAH
+Ancient Nabatean tombs, Hegra ruins, desert landscapes,Historic Al-Balad, Corniche promenade, luxury dining and hot air balloons. UNESCO World Heritage — one of theshopping. Your home city — presented with insider world's most spectacular destinations.knowledge no other agency can match.
+635000-1562279RIYADH
+Kingdom Tower, Diriyah Heritage, vibrant dining, desert safaris. The dynamic capital in its most exciting transformation.
+NEOM
+The Line, Sindalah Island, futuristic architecture. Vision 2030's boldest project — a destination unlike anywhere on Earth.
+★ Global Destinations
+660400209789
+635000-62520JAPAN
+Cherry blossoms, temples, ryokan stays, Tokyo's energy. A Japanese journey unlike anything online booking can offer.
+MALDIVES
+Overwater villas, crystal lagoons, private beach dinners, whale shark encounters. Pure Indian Ocean paradise.
+TURKEYEUROPECappadocia balloons, Bosphorus cruises, ancient ruins, luxuryParis, Rome, Santorini, Amsterdam — multi-city itineraries hammams. East meets West in extraordinary style.with private guides, exclusive access, and luxury transfers.TURKEYEUROPECappadocia balloons, Bosphorus cruises, ancient ruins, luxuryParis, Rome, Santorini, Amsterdam — multi-city itineraries hammams. East meets West in extraordinary style.with private guides, exclusive access, and luxury transfers.
+TURKEYEUROPE
+Cappadocia balloons, Bosphorus cruises, ancient ruins, luxuryParis, Rome, Santorini, Amsterdam — multi-city itineraries hammams. East meets West in extraordinary style.with private guides, exclusive access, and luxury transfers.
+TURKEYEUROPE
+Cappadocia balloons, Bosphorus cruises, ancient ruins, luxuryParis, Rome, Santorini, Amsterdam — multi-city itineraries hammams. East meets West in extraordinary style.with private guides, exclusive access, and luxury transfers.
+Functional Requirements
+50800044846
+The following specifications define exactly what the website must do — for your customers visiting the public site, and for your team managing it day to day.
+FR-01 · Inquiry & Lead Capture Form
+The single most important feature. Every page leads here. No booking engine — you receive the inquiry and craft a personalised response.
+568325139954Full name, email, phone, travel dates, destination interest, group size, budget range, and message.HighForm FieldsFull name, email, phone, travel dates, destination interest, group size, budget range, and message.HighForm Fields568325952754On submit: data saved to your admin dashboard AND email notification sent to your team.HighSubmissionOn submit: data saved to your admin dashboard AND email notification sent to your team.HighSubmission5683251765554Invisible captcha prevents bot submissions from reaching your inbox.HighSpam ProtectionInvisible captcha prevents bot submissions from reaching your inbox.HighSpam Protection5683252578354A warm confirmation message shown to the customer after submission.HighConfirmationA warm confirmation message shown to the customer after submission.HighConfirmation5683253391155Floating WhatsApp icon links to your WhatsApp Business — the primary channel in Saudi Arabia.HighWhatsApp ButtonFloating WhatsApp icon links to your WhatsApp Business — the primary channel in Saudi Arabia.HighWhatsApp Button5683254203955Form is fully touch-friendly and tested on iPhone and Android.HighMobile OptimisedForm is fully touch-friendly and tested on iPhone and Android.HighMobile Optimised
+Full name, email, phone, travel dates, destination interest, group size, budget range, and message.
+High
+Form Fields
+Full name, email, phone, travel dates, destination interest, group size, budget range, and message.
+High
+Form Fields
+On submit: data saved to your admin dashboard AND email notification sent to your team.
+High
+Submission
+On submit: data saved to your admin dashboard AND email notification sent to your team.
+High
+Submission
+Invisible captcha prevents bot submissions from reaching your inbox.
+High
+Spam Protection
+Invisible captcha prevents bot submissions from reaching your inbox.
+High
+Spam Protection
+A warm confirmation message shown to the customer after submission.
+High
+Confirmation
+A warm confirmation message shown to the customer after submission.
+High
+Confirmation
+Floating WhatsApp icon links to your WhatsApp Business — the primary channel in Saudi Arabia.
+High
+WhatsApp Button
+Floating WhatsApp icon links to your WhatsApp Business — the primary channel in Saudi Arabia.
+High
+WhatsApp Button
+Form is fully touch-friendly and tested on iPhone and Android.
+High
+Mobile Optimised
+Form is fully touch-friendly and tested on iPhone and Android.
+High
+Mobile Optimised
+FR-02 · Blog & Content Management
+Publish weekly travel stories as easily as writing in Word — no technical knowledge required.
+568325190487Write posts with headings, images, and links using a Word-like editor. No code needed.HighRich Text EditorWrite posts with headings, images, and links using a Word-like editor. No code needed.HighRich Text Editor
+Write posts with headings, images, and links using a Word-like editor. No code needed.
+High
+Rich Text Editor
+Write posts with headings, images, and links using a Word-like editor. No code needed.
+High
+Rich Text Editor
+568325168606Upload a cover photo per post directly from the admin panel.HighCover ImagesUpload a cover photo per post directly from the admin panel.HighCover Images568325981406Organise posts by region (Saudi, GCC, Europe, etc.) for easy browsing.MediumCategories & TagsOrganise posts by region (Saudi, GCC, Europe, etc.) for easy browsing.MediumCategories & Tags5683251794206Save as draft, preview, then publish when ready. Unpublish at any time.HighDraft / PublishSave as draft, preview, then publish when ready. Unpublish at any time.HighDraft / Publish5683252607006Each post has its own title, meta description, and social sharing preview image.HighSEO Per PostEach post has its own title, meta description, and social sharing preview image.HighSEO Per Post
+Upload a cover photo per post directly from the admin panel.
+High
+Cover Images
+Upload a cover photo per post directly from the admin panel.
+High
+Cover Images
+Organise posts by region (Saudi, GCC, Europe, etc.) for easy browsing.
+Medium
+Categories & Tags
+Organise posts by region (Saudi, GCC, Europe, etc.) for easy browsing.
+Medium
+Categories & Tags
+Save as draft, preview, then publish when ready. Unpublish at any time.
+High
+Draft / Publish
+Save as draft, preview, then publish when ready. Unpublish at any time.
+High
+Draft / Publish
+Each post has its own title, meta description, and social sharing preview image.
+High
+SEO Per Post
+Each post has its own title, meta description, and social sharing preview image.
+High
+SEO Per Post
+FR-03 · Destinations Management
+568325182284Saudi destinations appear first and are featured on the homepage carousel.HighSaudi Arabia PrioritySaudi destinations appear first and are featured on the homepage carousel.HighSaudi Arabia Priority568325995084Each destination: hero image, highlights, popular experiences, inquiry CTA.HighDestination PagesEach destination: hero image, highlights, popular experiences, inquiry CTA.HighDestination Pages5683251807884Saudi Arabia · GCC · Global — adding new destinations requires no code changes.HighRegion GroupingSaudi Arabia · GCC · Global — adding new destinations requires no code changes.HighRegion Grouping5683252620684Mark any destination as 'featured' to display on the homepage carousel.MediumFeatured FlagMark any destination as 'featured' to display on the homepage carousel.MediumFeatured Flag
+Saudi destinations appear first and are featured on the homepage carousel.
+High
+Saudi Arabia Priority
+Saudi destinations appear first and are featured on the homepage carousel.
+High
+Saudi Arabia Priority
+Each destination: hero image, highlights, popular experiences, inquiry CTA.
+High
+Destination Pages
+Each destination: hero image, highlights, popular experiences, inquiry CTA.
+High
+Destination Pages
+Saudi Arabia · GCC · Global — adding new destinations requires no code changes.
+High
+Region Grouping
+Saudi Arabia · GCC · Global — adding new destinations requires no code changes.
+High
+Region Grouping
+Mark any destination as 'featured' to display on the homepage carousel.
+Medium
+Featured Flag
+Mark any destination as 'featured' to display on the homepage carousel.
+Medium
+Featured Flag
+FR-04 · Services Showcase
+568325182604Every service displayed as a premium card with icon, description, and inquiry CTA: Customised Travel Packages · Visa Services · Adventure & Luxury Travel · Cruises · International Driving License · Chauffeur Services · Destination Management · Luxury Wellness Retreats · Flight & Accommodation · Private Jets · Luxury Transportation · Group Tours & Corporate Travel · Travel Insurance · Exhibition & Conferences · Umrah + Experiences · Island-hopping Adventures.HighAll 16 ServicesEvery service displayed as a premium card with icon, description, and inquiry CTA: Customised Travel Packages · Visa Services · Adventure & Luxury Travel · Cruises · International Driving License · Chauffeur Services · Destination Management · Luxury Wellness Retreats · Flight & Accommodation · Private Jets · Luxury Transportation · Group Tours & Corporate Travel · Travel Insurance · Exhibition & Conferences · Umrah + Experiences · Island-hopping Adventures.HighAll 16 Services
+Every service displayed as a premium card with icon, description, and inquiry CTA: Customised Travel Packages · Visa Services · Adventure & Luxury Travel · Cruises · International Driving License · Chauffeur Services · Destination Management · Luxury Wellness Retreats · Flight & Accommodation · Private Jets · Luxury Transportation · Group Tours & Corporate Travel · Travel Insurance · Exhibition & Conferences · Umrah + Experiences · Island-hopping Adventures.
+High
+All 16 Services
+Every service displayed as a premium card with icon, description, and inquiry CTA: Customised Travel Packages · Visa Services · Adventure & Luxury Travel · Cruises · International Driving License · Chauffeur Services · Destination Management · Luxury Wellness Retreats · Flight & Accommodation · Private Jets · Luxury Transportation · Group Tours & Corporate Travel · Travel Insurance · Exhibition & Conferences · Umrah + Experiences · Island-hopping Adventures.
+High
+All 16 Services
+FR-05 · Admin Panel — Your Private Dashboard
+Accessible only by the Yalla Voyage team. Manage your website day to day.
+568325190870Email + password. Only authorised team members can access the admin panel.HighSecure LoginEmail + password. Only authorised team members can access the admin panel.HighSecure Login5683251003670All customer submissions in a clean table. Filter by date, destination, status.HighInquiries DashboardAll customer submissions in a clean table. Filter by date, destination, status.HighInquiries Dashboard5683251816470Mark inquiries as 'contacted' or 'resolved'. Export all inquiries to CSV.MediumStatus TrackingMark inquiries as 'contacted' or 'resolved'. Export all inquiries to CSV.MediumStatus Tracking5683252629270Create, edit, publish, and delete blog posts with live preview.HighBlog Post EditorCreate, edit, publish, and delete blog posts with live preview.HighBlog Post Editor5683253442070Upload and organise images by folder. Select from your library when writing posts.MediumImage ManagerUpload and organise images by folder. Select from your library when writing posts.MediumImage Manager5683254254870Home screen shows total inquiry count, published posts, and recent activity.MediumDashboard StatsHome screen shows total inquiry count, published posts, and recent activity.MediumDashboard Stats
+Email + password. Only authorised team members can access the admin panel.
+High
+Secure Login
+Email + password. Only authorised team members can access the admin panel.
+High
+Secure Login
+All customer submissions in a clean table. Filter by date, destination, status.
+High
+Inquiries Dashboard
+All customer submissions in a clean table. Filter by date, destination, status.
+High
+Inquiries Dashboard
+Mark inquiries as 'contacted' or 'resolved'. Export all inquiries to CSV.
+Medium
+Status Tracking
+Mark inquiries as 'contacted' or 'resolved'. Export all inquiries to CSV.
+Medium
+Status Tracking
+Create, edit, publish, and delete blog posts with live preview.
+High
+Blog Post Editor
+Create, edit, publish, and delete blog posts with live preview.
+High
+Blog Post Editor
+Upload and organise images by folder. Select from your library when writing posts.
+Medium
+Image Manager
+Upload and organise images by folder. Select from your library when writing posts.
+Medium
+Image Manager
+Home screen shows total inquiry count, published posts, and recent activity.
+Medium
+Dashboard Stats
+Home screen shows total inquiry count, published posts, and recent activity.
+Medium
+Dashboard Stats
+FR-06 · SEO & Performance
+568325182285Every page has a unique title and description to help Google rank your content.HighPer-Page SEOEvery page has a unique title and description to help Google rank your content.HighPer-Page SEO
+Every page has a unique title and description to help Google rank your content.
+High
+Per-Page SEO
+Every page has a unique title and description to help Google rank your content.
+High
+Per-Page SEO
+568325168606Links shared on WhatsApp and social media show a beautiful preview image.HighSocial SharingLinks shared on WhatsApp and social media show a beautiful preview image.HighSocial Sharing568325981406Auto-generated sitemap tells Google about all your pages and blog posts.HighSitemapAuto-generated sitemap tells Google about all your pages and blog posts.HighSitemap5683251794206All images are compressed and lazy-loaded for fast page speeds.HighImage OptimisationAll images are compressed and lazy-loaded for fast page speeds.HighImage Optimisation5683252607006HTTPS enforced on all pages. Customer data is protected at the database level.HighSSL SecurityHTTPS enforced on all pages. Customer data is protected at the database level.HighSSL Security
+Links shared on WhatsApp and social media show a beautiful preview image.
+High
+Social Sharing
+Links shared on WhatsApp and social media show a beautiful preview image.
+High
+Social Sharing
+Auto-generated sitemap tells Google about all your pages and blog posts.
+High
+Sitemap
+Auto-generated sitemap tells Google about all your pages and blog posts.
+High
+Sitemap
+All images are compressed and lazy-loaded for fast page speeds.
+High
+Image Optimisation
+All images are compressed and lazy-loaded for fast page speeds.
+High
+Image Optimisation
+HTTPS enforced on all pages. Customer data is protected at the database level.
+High
+SSL Security
+HTTPS enforced on all pages. Customer data is protected at the database level.
+High
+SSL Security
+07 Delivery Roadmap
+50800044846
+The project is delivered in five structured phases over 10–8 weeks. You will receive progress updates and can review work at the end of each phase.
+Phase IProject Setup & FoundationWEEK 1–2
+ Initial project setup and configuration
+ Database tables created: Inquiries, Posts, Destinations, Packages, Services
+ Security policies configured — customer data protected from day one
+ Brand design tokens applied: brown, gold, beige palette
+ GitHub repository connected to automatic deployment pipeline
+Phase IICore Public PagesWEEKS
+3–5
+ Shared navigation header and footer
+ Homepage: hero, Who We Are, destinations, services, process steps, testimonials, CTA
+ About Us page
+ Services page — all 16 services as premium cards
+ Destinations pages: Saudi Arabia, GCC, and global
+ Featured Packages listing page
+ Contact / Inquiry page with working form and email notification
+ Blog listing page
+ Database seeded with initial destinations, services, and sample packages
+PhaseAdmin Panel & Blog SystemWEEK 6–7
+III
+ Secure admin login — email and password
+ Admin dashboard home with inquiry and post counts
+ Blog post editor: create, edit, publish, delete with image upload
+ Inquiries table with filtering, status updates, and CSV export
+ Individual blog post pages with dynamic routing
+PhaseSEO, Performance & PolishWEEK 8
+IV
+ SEO titles, descriptions, and social sharing images on every page
+ Auto-generated sitemap and search engine configuration
+ Image optimisation for fast load times
+ Performance audit and fixes
+ Accessibility review and mobile responsiveness final pass
+Phase VTesting, Handoff & LaunchWEEK
+9–10
+ Cross-browser and mobile device testing
+ End-to-end inquiry form test — form to dashboard to email
+ Admin user guide created for your team
+ Custom domain configured (yallavoyage.com)
+ Post-launch monitoring set up
+09 Phase 2 Expansion — Future Features
+50800044846
+The Phase 1 website is a complete, polished, fully functional luxury brand site. The features below are proposed as a paid Phase 2 engagement after a successful launch.
+WhatsApp Business API
+Full WhatsApp Business API integration —
+automated responses and inquiry routing.
+Testimonials Management
+Admin interface to publish client reviews that
+appear on the homepage.
+Newsletter Subscription
+Visitors subscribe to your travel inspiration
+emails — building a loyal audience.
+Instagram Feed Embed
+Show your latest Instagram posts directly on the
+website — always fresh.
+Client Portal
+Private login area where clients view their
+personalised itinerary documents.
+Analytics Dashboard
+Admin view showing inquiry trends, most-viewed
+destinations, and blog performance.
+Hotel & Experience Partners
+Dedicated landing pages for key hotel and
+experience partnerships.
+Multi-language Support
+Expand to additional languages beyond English
+for wider reach.
+10 Website UI Mockups — Designed Pages
+50800044846
+The following mockups illustrate the visual design and layout of each page in your website, using the Yalla Voyage brand theme — brown, gold, and beige. These represent the actual structure and feel of the finished product.
+Homepage — Hero, Who We Are, Destinations, Process Steps
+50800084810
+ Brand-themed UI layout — brown · gold · beige
+Destinations — Saudi Arabia Featured, Global Grid
+508000171781
+ Brand-themed UI layout — brown · gold · beige
+Services — All 16 Services as Premium Cards
+50800084766
+ Brand-themed UI layout — brown · gold · beige
+Inquiry / Contact Page — Lead Capture Form
+50800084660
+ Brand-themed UI layout — brown · gold · beige
+Blog — Weekly Travel Stories & Articles
+508000171781
+ Brand-themed UI layout — brown · gold · beige
+About Us — Story, Team & Brand Values
+50800084766
+ Brand-themed UI layout — brown · gold · beige
+Admin Panel — Dashboard, Inquiries & Blog Management
+50800084660
+ Brand-themed UI layout — brown · gold · beige
+584200279744READY TO BUILD YOUR DIGITAL LEGACY?READY TO BUILD YOUR DIGITAL LEGACY?
+READY TO BUILD YOUR DIGITAL LEGACY?
+READY TO BUILD YOUR DIGITAL LEGACY?
+This document represents a complete vision for the Yalla Voyage digital presence — crafted with the same care and attention to detail that your agency brings to every travel experience. Every requirement has been planned in service of one goal: a website worthy of the Yalla Voyage name.
+The delivery plan is realistic, the requirements leave no ambiguity, and the UI mockups give you a clear visual of the finished product. We are ready to begin the moment you give the green light.
+584200301765
+CLIENT
+Yalla Voyage · Al-Madinah Al-Munawarah Road, Al-Ruwais, Jeddah 23214
+WEBSITE
+www.yallavoyage.com
+PHONE
++966 567 357 250
+DOCUMENT
+Functional Requirements & Website Blueprint — Phase 1
+STATUS
+Confidential — Prepared exclusively for Yalla Voyage and its authorised team

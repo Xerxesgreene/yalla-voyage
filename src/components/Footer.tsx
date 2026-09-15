@@ -3,11 +3,32 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, Phone } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { ArrowUpRight, Phone, Mail } from 'lucide-react';
 import { YallaLogo } from '@/components/ui/YallaLogo';
 import { siteConfig } from '@/data/site';
 
+function InstagramIcon({ className = 'w-3.5 h-3.5' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
+
 export function Footer() {
+  const pathname = usePathname();
+
   return (
     <footer className="relative bg-[#06150E] text-[#F4EFE6] overflow-hidden pt-12 sm:pt-16 pb-8 rounded-t-[36px] sm:rounded-t-[52px] lg:rounded-t-[64px] border-t border-[#2E6B57]/30 shadow-[0_-25px_60px_rgba(6,21,14,0.3)]">
       {/* Ambient background glow */}
@@ -112,57 +133,40 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/travel-journal" className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-block transition-all duration-200">
-                    Journal &amp; Dispatches
+                  <Link
+                    href="/travel-journal"
+                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-block transition-all duration-200"
+                  >
+                    Travel Journal
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Column 2: SOCIALS & DIRECT PHONE */}
+            {/* Column 2: CONNECT & SOCIAL */}
             <div className="space-y-4">
               <h4 className="text-xs font-mono font-semibold tracking-widest uppercase text-[#39C27D]">
-                SOCIALS
+                CONNECT
               </h4>
               <ul className="space-y-2.5 text-xs sm:text-[13px] font-sans font-light">
                 <li>
                   <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-block transition-all duration-200"
+                    href="mailto:info@yallavoyage.com"
+                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-flex items-center gap-2 transition-all duration-200"
                   >
-                    Facebook
+                    <Mail className="w-3.5 h-3.5 text-[#39C27D]" />
+                    <span>info@yallavoyage.com</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.instagram.com/yalla__voyage?stkn=dmZnOXkwd3RzMGFm"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-block transition-all duration-200"
+                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-flex items-center gap-2 transition-all duration-200"
                   >
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-block transition-all duration-200"
-                  >
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-block transition-all duration-200"
-                  >
-                    Twitter
+                    <InstagramIcon className="w-3.5 h-3.5 text-[#39C27D]" />
+                    <span>@yalla__voyage</span>
                   </a>
                 </li>
               </ul>

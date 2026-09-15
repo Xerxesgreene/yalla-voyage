@@ -2,21 +2,19 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { Sparkles, MessageCircle, ArrowRight, CheckCircle2, Compass } from 'lucide-react';
+import { MessageCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import { PackageCard } from '@/components/packages/PackageCard';
-import { PackageModal } from '@/components/packages/PackageModal';
 import { packages, TravelPackage } from '@/data/packages';
 import { siteConfig } from '@/data/site';
 
-type PackageFilter = 'all' | 'saudi' | 'luxury' | 'adventure';
+type PackageFilter = 'all' | 'top' | 'saudi' | 'special';
 
 export default function PackagesPage() {
   const [filter, setFilter] = useState<PackageFilter>('all');
-  const [selectedPackage, setSelectedPackage] = useState<TravelPackage | null>(null);
 
   const filtered = useMemo(() => {
     if (filter === 'all') return packages;
@@ -26,9 +24,9 @@ export default function PackagesPage() {
   const counts = useMemo(() => {
     return {
       all: packages.length,
+      top: packages.filter((p) => p.category === 'top').length,
       saudi: packages.filter((p) => p.category === 'saudi').length,
-      luxury: packages.filter((p) => p.category === 'luxury').length,
-      adventure: packages.filter((p) => p.category === 'adventure').length,
+      special: packages.filter((p) => p.category === 'special').length,
     };
   }, []);
 
@@ -36,31 +34,31 @@ export default function PackagesPage() {
     <main className="bg-[#F4EFE6] text-[#0F2E23] overflow-hidden">
       {/* ── CINEMATIC HERO BANNER ── */}
       <PageHero
-        title="Packages"
-        subtitle="Handcrafted luxury story itineraries across Saudi Arabia and iconic global horizons."
-        image="/images/header-packages.jpg"
-        alt="Signature Travel Packages"
+        title="Our Packages"
+        subtitle="Bespoke luxury itineraries handcrafted across top destinations and timeless horizons."
+        image="/images/header-real-packages.jpg"
+        alt="Mount Fuji and Chureito Pagoda, Japan"
         positionClass="object-center"
       />
 
-      {/* ── STORYLINE PACKAGES SECTION ── */}
+      {/* ── PACKAGES SHOWCASE SECTION ── */}
       <section className="section-pad bg-[#F4EFE6]">
         <div className="container-wide">
           
           {/* Section Heading */}
           <SectionHeading
-            badge="01 • CURATED STORYLINES"
-            title="Chapters of Timeless Wonder."
-            description="Each package is written as a chapter — combining private access, seamless pacing, and royal hospitality."
+            badge="TOP DESTINATIONS"
+            title="Our Packages"
+            description="Handcrafted journeys blending private access, refined pacing, and personalized concierge care."
           />
 
           {/* Clean Controls / Category Filter Pills */}
           <div className="flex items-center gap-2 flex-wrap mb-12 pb-8 border-b border-[#0F2E23]/10">
             {[
-              { id: 'all', label: 'All Storylines', count: counts.all },
-              { id: 'saudi', label: 'Saudi Signature', count: counts.saudi },
-              { id: 'luxury', label: 'Luxury & Islands', count: counts.luxury },
-              { id: 'adventure', label: 'Expedition & Safari', count: counts.adventure },
+              { id: 'all', label: 'All Packages', count: counts.all },
+              { id: 'top', label: 'Top Destinations', count: counts.top },
+              { id: 'saudi', label: 'Saudi Sanctuaries', count: counts.saudi },
+              { id: 'special', label: 'Specialty & Retreats', count: counts.special },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -83,15 +81,11 @@ export default function PackagesPage() {
             ))}
           </div>
 
-          {/* ── Storyline Chapter Cards Stream ── */}
-          <div className="space-y-10 sm:space-y-12">
+          {/* ── Package Cards Stream (Matching Services Cards Layout) ── */}
+          <div className="space-y-10">
             {filtered.map((pkg, idx) => (
               <Reveal key={pkg.slug} delay={idx * 0.05}>
-                <PackageCard
-                  pkg={pkg}
-                  index={idx}
-                  onSelect={(selected) => setSelectedPackage(selected)}
-                />
+                <PackageCard pkg={pkg} index={idx} />
               </Reveal>
             ))}
           </div>
@@ -106,20 +100,20 @@ export default function PackagesPage() {
                   Bespoke Studio
                 </span>
                 <h3 className="text-display text-2xl sm:text-3xl lg:text-4xl text-[#F4EFE6] font-light leading-tight">
-                  Seeking a custom story crafted for your dates?
+                  Seeking a custom package crafted for your dates?
                 </h3>
                 <p className="text-[#F4EFE6]/75 text-xs sm:text-sm leading-relaxed font-light font-sans max-w-2xl">
-                  Every chapter can be modified or created from a blank canvas to fit your private schedule, helicopter transfers, and personal protocol.
+                  Every package can be customized from a blank canvas to fit your private schedule, helicopter transfers, and personal preferences.
                 </p>
                 <div className="flex items-center gap-4 text-xs font-mono text-[#39C27D] pt-1">
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Custom Chapters
+                    <CheckCircle2 className="w-3.5 h-3.5" /> Custom Itineraries
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5" /> 24/7 Concierge
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Private Jet Access
+                    <CheckCircle2 className="w-3.5 h-3.5" /> Private Aviation
                   </div>
                 </div>
               </div>
@@ -127,13 +121,13 @@ export default function PackagesPage() {
               <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3.5 justify-end">
                 <MagneticButton
                   href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
-                    'Hello Yalla Voyage, I would like to design a bespoke private package storyline.'
+                    'Hello Yalla Voyage, I would like to design a bespoke private travel package.'
                   )}`}
                   target="_blank"
                   variant="primary"
                   className="w-full text-center"
                 >
-                  <MessageCircle className="w-4 h-4 text-[#25D366]" /> Chat With Senior Designer
+                  <MessageCircle className="w-4 h-4 text-[#25D366]" /> Chat With Senior Curator
                 </MagneticButton>
                 <Link
                   href="/contact"
@@ -147,12 +141,6 @@ export default function PackagesPage() {
 
         </div>
       </section>
-
-      {/* ── INTERACTIVE PACKAGE MODAL ── */}
-      <PackageModal
-        pkg={selectedPackage}
-        onClose={() => setSelectedPackage(null)}
-      />
     </main>
   );
 }

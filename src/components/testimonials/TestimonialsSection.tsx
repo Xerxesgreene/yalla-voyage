@@ -1,19 +1,19 @@
 'use client';
 
 import React from 'react';
-import { Star, MessageCircle, ShieldCheck } from 'lucide-react';
+import { Star, MessageCircle, CheckCircle2, MapPin } from 'lucide-react';
 import { BlurReveal } from '@/components/ui/BlurReveal';
 import { testimonials, clientTrustMetrics } from '@/data/testimonials';
 import { siteConfig } from '@/data/site';
 
 export function TestimonialsSection() {
-  // Duplicated set for truly seamless 0% -> -50% CSS infinite loop
+  // Duplicated set for seamless CSS marquee scroll
   const marqueeItems = [...testimonials, ...testimonials];
 
   return (
     <section
       className="section-pad bg-[#0A1A14] text-[#F4EFE6] border-t border-[#2E6B57]/30 relative overflow-hidden"
-      aria-label="Client Stories & Testimonials"
+      aria-label="Traveler Stories & Reviews"
     >
       {/* Ambient Lighting Glow Orbs */}
       <div className="pointer-events-none absolute -top-32 right-1/4 w-[500px] h-[500px] rounded-full bg-[#39C27D]/10 blur-[130px] z-0" />
@@ -24,27 +24,29 @@ export function TestimonialsSection() {
         <BlurReveal delay={0.05}>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#13382B] text-[#F4EFE6] text-[11px] font-mono font-bold tracking-widest uppercase mb-4 border border-[#39C27D]/30 shadow-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#39C27D] animate-pulse inline-block" />
-                <span>10 YEARS EXPERIENCE • CLIENT STORIES</span>
+              <span className="inline-flex items-center gap-3 sm:gap-3.5 px-6 py-3 sm:px-8 sm:py-3.5 md:px-9 md:py-4 rounded-full bg-[#13382B] text-[#F4EFE6] text-sm sm:text-base md:text-lg font-mono font-bold tracking-widest uppercase mb-6 border border-[#39C27D]/40 shadow-lg">
+                <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#39C27D] animate-pulse inline-block shadow-[0_0_14px_#39C27D]" />
+                <span>20+ YEARS EXPERIENCE • TRAVELER STORIES</span>
               </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-medium tracking-tight leading-[1.08] text-[#F4EFE6]">
-                Trusted by discerning travelers{' '}
-                <span className="text-[#DAD6CD]/50 block sm:inline">across the globe.</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-medium tracking-tight leading-[1.08] text-[#F4EFE6]">
+                Real Journeys. <span className="text-[#DAD6CD]/60 block sm:inline">Heartfelt Memories.</span>
               </h2>
+              <p className="mt-3 text-base sm:text-lg text-[#DAD6CD]/80 font-light leading-relaxed font-sans max-w-2xl">
+                Genuine stories and reviews from families, couples, and travelers whose dream holidays were brought to life by Yalla Voyage.
+              </p>
             </div>
 
             <div className="flex items-center gap-3">
               <a
                 href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
-                  'Hello Yalla Voyage, I would like to consult with a senior travel curator regarding a bespoke itinerary.'
+                  'Hello Yalla Voyage, I would like to consult with a travel specialist regarding planning our upcoming trip.'
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#13382B] border border-[#2E6B57]/50 text-xs font-mono font-semibold uppercase tracking-wider text-[#F4EFE6] hover:border-[#39C27D] hover:bg-[#2E6B57] transition-all self-start md:self-auto flex-shrink-0 font-sans shadow-md"
+                className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#13382B] border border-[#2E6B57]/50 text-xs font-mono font-semibold uppercase tracking-wider text-[#F4EFE6] hover:border-[#39C27D] hover:bg-[#2E6B57] transition-all self-start md:self-auto flex-shrink-0 font-sans shadow-md cursor-pointer"
               >
                 <MessageCircle className="w-3.5 h-3.5 text-[#39C27D]" />
-                <span>Talk to Concierge</span>
+                <span>Talk to a Specialist</span>
               </a>
             </div>
           </div>
@@ -62,53 +64,56 @@ export function TestimonialsSection() {
           {marqueeItems.map((t, idx) => (
             <div
               key={`${t.id}-${idx}`}
-              className="flex-shrink-0 w-[280px] sm:w-[360px] lg:w-[400px] mx-2.5 sm:mx-3.5 flex flex-col justify-between p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-[#0F2E23]/75 backdrop-blur-xl border border-[#2E6B57]/40 hover:border-[#39C27D]/80 hover:bg-[#0F2E23] transition-all duration-300 shadow-xl group cursor-pointer"
+              className="flex-shrink-0 w-[300px] sm:w-[380px] lg:w-[420px] mx-2.5 sm:mx-3.5 flex flex-col justify-between p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-[#0F2E23]/80 backdrop-blur-xl border border-[#2E6B57]/40 hover:border-[#39C27D]/80 hover:bg-[#0F2E23] transition-all duration-300 shadow-xl group cursor-pointer"
             >
-              {/* Top: Stars & Category Badge */}
-              <div className="space-y-3 sm:space-y-4">
-                <div className="flex items-center justify-between">
+              {/* Top: Stars, Category & Destination */}
+              <div className="space-y-3.5">
+                <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-1">
                     {[...Array(t.rating)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-current text-[#39C27D]" />
                     ))}
                   </div>
-                  <span className="text-[10px] sm:text-[10.5px] font-mono uppercase tracking-wider text-[#39C27D] bg-[#13382B] px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full border border-[#39C27D]/30">
+                  <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-[#39C27D] bg-[#13382B] px-3 py-1 rounded-full border border-[#39C27D]/30">
                     {t.category}
                   </span>
                 </div>
 
-                {/* Minimal Elegant Quote */}
-                <p className="text-[13.5px] sm:text-[15.5px] font-sans font-light leading-relaxed text-[#F4EFE6] text-balance">
-                  &ldquo;{t.quote}&rdquo;
+                {/* Review Text */}
+                <p className="text-[13.5px] sm:text-[14.5px] font-sans font-light leading-relaxed text-[#F4EFE6]/90">
+                  &ldquo;{t.review}&rdquo;
                 </p>
               </div>
 
-              {/* Bottom: Luxury Verified Client Dispatch */}
-              <div className="pt-4 sm:pt-5 mt-4 sm:mt-6 border-t border-[#2E6B57]/30 flex items-center justify-between gap-3 text-xs">
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#13382B] border border-[#39C27D]/40 flex items-center justify-center flex-shrink-0">
-                    <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#39C27D]" />
-                  </span>
+              {/* Bottom: Real Traveler Details */}
+              <div className="pt-4 mt-5 border-t border-[#2E6B57]/30 flex items-center justify-between gap-3 text-xs">
+                <div className="flex items-center gap-3 min-w-0">
+                  {/* Initials Avatar */}
+                  <div className="w-8 h-8 rounded-full bg-[#13382B] border border-[#39C27D]/40 flex items-center justify-center font-mono font-bold text-[11px] text-[#39C27D] flex-shrink-0">
+                    {t.initials}
+                  </div>
                   <div className="min-w-0">
-                    <p className="font-mono text-[10.5px] sm:text-[11px] font-semibold text-[#F4EFE6] truncate">
-                      {t.clientType}
+                    <p className="font-heading text-sm font-medium text-white truncate">
+                      {t.author}
                     </p>
-                    <p className="font-sans text-[10px] sm:text-[10.5px] text-[#DAD6CD]/60 truncate font-light">
-                      {t.highlightTag}
+                    <p className="font-sans text-[11px] text-[#39C27D] truncate flex items-center gap-1">
+                      <MapPin className="w-3 h-3 text-[#39C27D] flex-shrink-0" />
+                      <span>{t.destination}</span>
                     </p>
                   </div>
                 </div>
 
-                <span className="text-[9.5px] sm:text-[10px] font-mono uppercase tracking-widest text-[#39C27D] bg-[#0A1A14]/70 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-[#2E6B57]/40 flex-shrink-0">
-                  {t.year}
-                </span>
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#0A1A14]/70 border border-[#2E6B57]/40 text-[10px] font-mono text-[#39C27D] flex-shrink-0">
+                  <CheckCircle2 className="w-3 h-3 text-[#39C27D]" />
+                  <span>{t.verifiedText}</span>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* ── 10 Years Experience & Trust Metrics ── */}
+      {/* ── 20+ Years Experience & Trust Metrics ── */}
       <div className="container-wide relative z-10 mt-10">
         <BlurReveal delay={0.25}>
           <div className="pt-8 border-t border-[#2E6B57]/30 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -130,4 +135,3 @@ export function TestimonialsSection() {
 }
 
 export default TestimonialsSection;
-

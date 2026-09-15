@@ -8,29 +8,42 @@ import { siteConfig } from '@/data/site';
 
 const saudiDestinations = [
   'AlUla',
+  'Diriyah',
   'Jeddah',
   'Riyadh',
   'Madinah',
-  'The Red Sea Project',
+  'King Abdullah Economic City',
+  'Yanbu',
+  'Al Baha',
+  'Amaala',
+  'Al Ahsa',
+  'Abha & Asir',
+  'Taif',
   'Wadi Al Disah',
+  'The Red Sea Project',
 ];
 
 const internationalDestinations = [
+  'Cairo & The Nile, Egypt',
+  'Amalfi Coast & Rome, Italy',
+  'Swiss Alps, Switzerland',
+  'Mauritius Island Sanctuary',
   'Dubai & Abu Dhabi, UAE',
   'Paris & Côte d’Azur, France',
   'Santorini & Cyclades, Greece',
-  'Amalfi Coast & Capri, Italy',
-  'Swiss Alps, Switzerland',
   'Tokyo & Kyoto, Japan',
   'Maldives Sanctuary',
   'Bali & Komodo, Indonesia',
+  'Istanbul & Cappadocia, Turkey',
   'Custom / Multi-Destination',
 ];
 
 const serviceOptions = [
   'Bespoke Luxury Holidays',
+  'Wellness & Retreat',
+  'Educational Tours',
+  'Ladies Trips',
   'Corporate Travel & MICE',
-  'Umrah & Spiritual Journeys',
   'Private Jet & VIP Transfers',
   'Curated Saudi Expeditions',
 ];
@@ -84,10 +97,10 @@ export default function ContactPage() {
   return (
     <main className="bg-[#F4EFE6] text-[#0F2E23] overflow-hidden">
       <PageHero
-        title="Contact Us"
-        subtitle="Get in touch with our team to plan your next journey."
-        image="/images/header-contact.jpg"
-        alt="Connect With Yalla Voyage"
+        title="Begin Your Journey"
+        subtitle="Direct concierge access for bespoke itineraries, private aviation, and luxury escapes."
+        image="/images/header-real-contact.jpg"
+        alt="Bora Bora Turquoise Lagoon, French Polynesia"
         positionClass="object-center"
       />
 
@@ -99,13 +112,13 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-6">
               <Reveal>
                 <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#2E6B57] font-semibold block mb-2">
-                  Get in Touch
+                  Direct Stewardship
                 </span>
-                <h2 className="text-display text-3xl sm:text-4xl text-[#0F2E23] mb-3 leading-tight font-light">
-                  Let&apos;s plan your journey.
+                <h2 className="text-display text-3xl sm:text-4xl lg:text-5xl text-[#0F2E23] mb-3 leading-tight font-light">
+                  Let&apos;s architect your next journey.
                 </h2>
-                <p className="text-[#0F2E23]/70 text-sm sm:text-base leading-relaxed font-light font-sans">
-                  Have a question or ready to build a custom itinerary? Connect directly with us via WhatsApp, phone, or email.
+                <p className="text-[#0F2E23]/75 text-base sm:text-lg leading-relaxed font-light font-sans">
+                  Whether it&apos;s a private jet across continents, an AlUla desert buyout, or a multi-destination itinerary, our senior curators are at your disposal.
                 </p>
               </Reveal>
 
@@ -147,7 +160,7 @@ export default function ContactPage() {
 
                 <Reveal delay={0.2}>
                   <a
-                    href="mailto:info@arabiaguidetravel.com"
+                    href="mailto:info@yallavoyage.com"
                     className="flex items-center gap-4 p-4.5 rounded-2xl bg-white border border-[#0F2E23]/10 hover:border-[#2E6B57] hover:shadow-md transition-all duration-300 group"
                   >
                     <div className="w-11 h-11 rounded-xl bg-[#0F2E23]/8 flex items-center justify-center flex-shrink-0 text-[#2E6B57]">
@@ -155,7 +168,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-sm text-[#0F2E23]">Email</p>
-                      <p className="text-[#0F2E23]/60 text-xs mt-0.5 font-sans">info@arabiaguidetravel.com</p>
+                      <p className="text-[#0F2E23]/60 text-xs mt-0.5 font-sans">info@yallavoyage.com</p>
                     </div>
                     <ArrowRight className="w-4 h-4 text-[#2E6B57] group-hover:translate-x-1 transition-transform" />
                   </a>

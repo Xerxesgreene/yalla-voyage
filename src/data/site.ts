@@ -1,12 +1,13 @@
 export const siteConfig = {
   name: 'Yalla Voyage',
-  tagline: 'Where journeys become stories.',
+  tagline: 'Crafting exceptional travel experiences.',
   description:
-    'Yalla Voyage crafts extraordinary travel — corporate, luxury, cruise, and beyond — with precision, passion, and a team that never settles for ordinary.',
+    'Yalla Voyage crafts exceptional travel experiences — bespoke itineraries, private aviation, luxury retreats, and curated legacies with over 20 years of experience.',
   url: 'https://www.yallavoyage.com',
+  email: 'info@yallavoyage.com',
   phone: '+966 56 735 7250',
   whatsapp: 'https://wa.me/966567357250',
-  whatsappMessage: 'Hello Yalla Voyage, I\'d like to plan a trip.',
+  whatsappMessage: 'Hello Yalla Voyage, I\'d like to plan an exceptional trip.',
   address: {
     street: 'Al-Madinah Al-Munawarah road',
     area: 'Al-Ruwais',
@@ -60,22 +61,22 @@ export const whyUsItems = [
 
 export const processSteps = [
   {
-    number: '01',
+    number: '',
     title: 'Consultation',
     description: 'Share your dream destination, travel style, and preferences. We listen, understand, and begin crafting your story.',
   },
   {
-    number: '02',
+    number: '',
     title: 'Custom Planning',
     description: 'Our experts design a bespoke itinerary tailored to your interests, pace, and priorities — no templates, ever.',
   },
   {
-    number: '03',
+    number: '',
     title: 'Booking & Support',
     description: 'We handle every detail — flights, hotels, visas, transfers — with multilingual, around-the-clock assistance.',
   },
   {
-    number: '04',
+    number: '',
     title: 'Post-Trip Follow-Up',
     description: 'Your journey doesn\'t end at the airport. We follow up to ensure every memory was worth making, and plan the next one.',
   },
@@ -85,6 +86,7 @@ export const trustBadges = [
   { label: 'Hassle-free Booking', sub: 'Quick, easy & secure', icon: 'ShieldCheck' },
   { label: 'Custom Travel Plans', sub: 'Tailored just for you', icon: 'Map' },
   { label: '24/7 Support', sub: 'We\'re always here', icon: 'Clock' },
-  { label: 'Umrah & Hajj Services', sub: 'Spiritual journeys made easy', icon: 'Star' },
-  { label: 'Corporate Travel', sub: 'Business trips, simplified', icon: 'Briefcase' },
+  { label: 'Wellness & Retreats', sub: 'Holistic luxury escapes', icon: 'Sparkles' },
+  { label: '20+ Years Experience', sub: 'Luxury travel mastery', icon: 'Award' },
 ];
+

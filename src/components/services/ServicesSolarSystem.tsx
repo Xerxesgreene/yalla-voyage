@@ -85,7 +85,7 @@ const CATEGORIES: CategoryConfig[] = [
     accentColor: '#6D8377',
   },
   {
-    id: 'spiritual',
+    id: 'wellness',
     number: '05',
     title: 'Spiritual & Wellness',
     subtitle: 'Umrah VIP & Holistic Sanctuaries',
@@ -488,7 +488,9 @@ export function ServicesSolarSystem() {
       aviation: [],
       corporate: [],
       concierge: [],
-      spiritual: [],
+      wellness: [],
+      educational: [],
+      ladies: [],
     };
     services.forEach((s) => {
       if (map[s.category]) map[s.category].push(s);

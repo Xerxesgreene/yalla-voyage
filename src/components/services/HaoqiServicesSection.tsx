@@ -1,15 +1,14 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Sparkles, ArrowUpRight, CheckCircle2 } from 'lucide-react';
-import { homepageServices, HomepageService } from '@/data/services';
+import { useRouter } from 'next/navigation';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { homepageServices } from '@/data/services';
 import { CardSwap, Card } from '@/components/ui/CardSwap';
-import { HaoqiServiceModal } from './HaoqiServiceModal';
 
 export function HaoqiServicesSection() {
-  const [selectedService, setSelectedService] = useState<HomepageService | null>(null);
+  const router = useRouter();
 
   return (
     <section
@@ -22,22 +21,12 @@ export function HaoqiServicesSection() {
 
       <div className="container max-w-7xl mx-auto px-5 sm:px-10 relative z-10">
         
-        {/* ── 1. Top Section Badge & Scope ── */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-10 sm:mb-14 border-b border-[#0F2E23]/8">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0F2E23] text-[#F4EFE6] text-[11px] font-mono font-bold tracking-widest uppercase shadow-2xs w-fit">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#39C27D] animate-pulse inline-block" />
-            <span>05 • SERVICES &amp; CAPABILITIES</span>
+        {/* ── 1. Top Section Badge ── */}
+        <div className="pb-6 mb-10 sm:mb-14 border-b border-[#0F2E23]/8 flex items-center justify-between">
+          <span className="inline-flex items-center gap-3 sm:gap-3.5 px-6 py-3 sm:px-8 sm:py-3.5 md:px-9 md:py-4 rounded-full bg-[#0F2E23] text-[#F4EFE6] text-sm sm:text-base md:text-lg font-mono font-bold tracking-widest uppercase shadow-lg border border-[#2E6B57]/60 w-fit">
+            <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#39C27D] animate-pulse inline-block shadow-[0_0_14px_#39C27D]" />
+            <span>SERVICES &amp; CAPABILITIES</span>
           </span>
-
-          <div className="flex items-center gap-3 font-mono text-[11px] text-[#2E6B57] uppercase tracking-widest font-semibold">
-            <span>JEDDAH</span>
-            <span>•</span>
-            <span>RIYADH</span>
-            <span>•</span>
-            <span>ALULA</span>
-            <span>•</span>
-            <span>GLOBAL</span>
-          </div>
         </div>
 
         {/* ── 2. Split 2-Column Showcase (Mobile: Stacked Cards Above Text | Desktop: Side-by-Side) ── */}
@@ -45,32 +34,30 @@ export function HaoqiServicesSection() {
           
           {/* Service Text & Highlights (order-2 on mobile, order-1 on desktop) */}
           <div className="order-2 lg:order-1 lg:col-span-5 space-y-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-medium text-[#0F2E23] leading-[1.08] tracking-tight">
-              Architected services for <span className="text-[#2E6B57]">uncompromising travel.</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-heading font-medium text-[#0F2E23] leading-[1.08] tracking-tight">
+              Architected Without Limits. <span className="text-[#2E6B57]">Crafted for Uncompromising Travel.</span>
             </h2>
 
-            <p className="text-sm sm:text-base text-[#0F2E23]/75 font-light leading-relaxed font-sans">
-              From private aviation and overwater villas to executive summits and diplomatic fast-track logistics — Yalla Voyage turns complex travel into seamless artistry.
+            <p className="text-base sm:text-lg text-[#0F2E23]/75 font-light leading-relaxed font-sans">
+              From private aviation and secluded island sanctuaries to executive summits and VIP concierge logistics — engineered with flawless precision.
             </p>
 
-            {/* Service Pillars List */}
+            {/* Service Pillars List -> Links directly to service page */}
             <div className="pt-2 space-y-3">
               {homepageServices.map((svc) => (
-                <div
-                  key={svc.index}
-                  onClick={() => setSelectedService(svc)}
+                <Link
+                  key={svc.title}
+                  href={svc.href || '/services'}
                   className="group flex items-center justify-between p-3.5 rounded-2xl bg-white/80 hover:bg-white border border-[#0F2E23]/8 hover:border-[#2E6B57]/40 transition-all duration-200 cursor-pointer shadow-2xs hover:shadow-md"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono font-bold text-[#2E6B57] bg-[#2E6B57]/10 px-2.5 py-1 rounded-lg">
-                      {svc.index}
-                    </span>
+                    <span className="w-2 h-2 rounded-full bg-[#39C27D] group-hover:scale-125 transition-transform" />
                     <span className="text-sm font-sans font-medium text-[#0F2E23] group-hover:text-[#2E6B57] transition-colors">
                       {svc.title}
                     </span>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-[#0F2E23]/40 group-hover:text-[#2E6B57] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -80,7 +67,7 @@ export function HaoqiServicesSection() {
                 href="/services"
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#0F2E23] hover:bg-[#2E6B57] text-[#F4EFE6] text-xs font-semibold uppercase tracking-wider transition-all shadow-md group font-sans"
               >
-                <span>Explore All 06 Service Divisions</span>
+                <span>Explore All Service Divisions</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#39C27D]" />
               </Link>
             </div>
@@ -101,12 +88,12 @@ export function HaoqiServicesSection() {
                 easing="smooth"
                 onCardClick={(idx) => {
                   if (homepageServices[idx]) {
-                    setSelectedService(homepageServices[idx]);
+                    router.push(homepageServices[idx].href || '/services');
                   }
                 }}
               >
                 {homepageServices.map((service) => (
-                  <Card key={service.index} className="group/card relative w-full h-full select-none">
+                  <Card key={service.title} className="group/card relative w-full h-full select-none cursor-pointer">
                     {/* Background Full-Bleed Image */}
                     <div className="absolute inset-0 z-0">
                       <Image
@@ -121,37 +108,31 @@ export function HaoqiServicesSection() {
                       <div className="absolute inset-0 bg-[#0F2E23]/25 mix-blend-multiply" />
                     </div>
 
-                    {/* Top Header Floating Badges */}
-                    <div className="relative z-10 p-6 flex items-center justify-between">
-                      <span className="px-3.5 py-1.5 rounded-full text-[10.5px] font-mono font-bold tracking-widest uppercase bg-[#06150E]/80 backdrop-blur-md text-[#39C27D] border border-white/15 shadow-sm">
-                        {service.badge}
-                      </span>
-                      <span className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md text-[#F4EFE6] font-mono text-xs font-bold flex items-center justify-center border border-white/25">
-                        {service.index}
-                      </span>
-                    </div>
-
                     {/* Bottom Card Content Info */}
-                    <div className="absolute bottom-0 inset-x-0 z-10 p-6 sm:p-7 space-y-3">
-                      <h3 className="text-2xl sm:text-[26px] font-display font-light text-[#F4EFE6] leading-tight">
-                        {service.title}
-                      </h3>
+                    <div className="absolute bottom-0 inset-x-0 z-10 p-6 sm:p-8 space-y-4">
+                      <div>
+                        <h3 className="text-2xl sm:text-[28px] font-display font-light text-[#F4EFE6] leading-tight mb-2">
+                          {service.title}
+                        </h3>
 
-                      <p className="text-xs sm:text-[13px] text-[#DAD6CD]/90 font-light leading-relaxed font-sans line-clamp-2">
-                        {service.tagline}
-                      </p>
+                        <p className="text-xs sm:text-[13px] text-[#DAD6CD]/90 font-light leading-relaxed font-sans line-clamp-2">
+                          {service.tagline}
+                        </p>
+                      </div>
 
-                      {/* Response Speed & Action Button */}
-                      <div className="pt-2 flex items-center justify-between border-t border-white/15">
-                        <span className="text-[11px] font-mono text-[#39C27D] font-semibold flex items-center gap-1.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#39C27D]" />
-                          <span>{service.responseSpeed}</span>
+                      {/* Properly Placed Discover Button */}
+                      <div className="pt-3 border-t border-white/15 flex items-center justify-between">
+                        <span className="text-xs font-mono font-medium text-[#39C27D] uppercase tracking-wider">
+                          Explore Service
                         </span>
-
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-[#0F2E23] text-[11px] font-sans font-semibold uppercase tracking-wider group-hover/card:bg-[#39C27D] group-hover/card:text-[#06150E] transition-colors shadow-sm">
+                        <Link
+                          href={service.href || '/services'}
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white hover:bg-[#39C27D] text-[#0F2E23] hover:text-[#06150E] text-xs font-sans font-semibold uppercase tracking-wider transition-all duration-300 shadow-md group-hover/card:bg-[#39C27D] group-hover/card:text-[#06150E]"
+                        >
                           <span>Discover</span>
-                          <ArrowRight className="w-3 h-3" />
-                        </span>
+                          <ArrowRight className="w-3.5 h-3.5 group-hover/card:translate-x-1 transition-transform" />
+                        </Link>
                       </div>
                     </div>
                   </Card>
@@ -164,16 +145,9 @@ export function HaoqiServicesSection() {
         </div>
 
       </div>
-
-      {/* Interactive Detail Modal */}
-      {selectedService && (
-        <HaoqiServiceModal
-          service={selectedService}
-          onClose={() => setSelectedService(null)}
-        />
-      )}
     </section>
   );
 }
 
 export default HaoqiServicesSection;
+

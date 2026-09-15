@@ -196,18 +196,24 @@ export function FluidDistortionCanvas({ imageSrc }: FluidDistortionCanvasProps) 
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
 
     const img = new Image();
-    img.src = imageSrc;
     let imageLoaded = false;
     let imgWidth = 1920;
     let imgHeight = 1080;
 
-    img.onload = () => {
+    const loadTexture = () => {
+      if (imageLoaded) return;
       imgWidth = img.naturalWidth || 1920;
       imgHeight = img.naturalHeight || 1080;
       gl.bindTexture(gl.TEXTURE_2D, texture);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
       imageLoaded = true;
     };
+
+    img.onload = loadTexture;
+    img.src = imageSrc;
+    if (img.complete && img.naturalWidth > 0) {
+      loadTexture();
+    }
 
     const drops: Array<{ x: number; y: number; age: number }> = [];
     for (let i = 0; i < 10; i++) {

@@ -3,23 +3,22 @@
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, Globe, MessageCircle, Compass, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Globe, Compass, Sparkles, Award, ShieldCheck, Star, BookOpen } from 'lucide-react';
 import { HeroScene } from '@/components/hero/HeroScene';
 import { Reveal, StaggerReveal } from '@/components/ui/Reveal';
 import { BlurReveal } from '@/components/ui/BlurReveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { MagneticButton } from '@/components/ui/MagneticButton';
-import { siteConfig, processSteps } from '@/data/site';
+import { siteConfig } from '@/data/site';
 import { journalArticles } from '@/data/journal';
 import { HaoqiServicesSection } from '@/components/services/HaoqiServicesSection';
 import { DriftWallDestinations } from '@/components/destinations/DriftWallDestinations';
-// import { StackedDestinations } from '@/components/destinations/StackedDestinations';
 import { TestimonialsSection } from '@/components/testimonials/TestimonialsSection';
 import { AccordionGallery } from '@/components/ui/AccordionGallery';
 import { TraveloProcessSection } from '@/components/home/TraveloProcessSection';
+import { CylinderGallery } from '@/components/home/CylinderGallery';
 
 const whyUsPillars = [
-
   {
     icon: <Globe className="w-5 h-5" />,
     title: 'Global Expertise, Personal Touch',
@@ -37,29 +36,43 @@ const whyUsPillars = [
   },
 ];
 
-/* ── 01 • Brand Story (Warm Ivory #F4EFE6) ── */
-function BrandStory() {
+/* ── Section: Who We Are (Warm Ivory #F4EFE6) ── */
+function WhoWeAre() {
   return (
-    <section className="section-pad bg-[#F4EFE6] text-[#0F2E23] border-t border-[#0F2E23]/10 relative overflow-hidden">
+    <section className="bg-[#F4EFE6] text-[#0F2E23] border-t border-[#0F2E23]/10 relative py-20">
       <div className="container-wide relative z-10">
-        <SectionHeading
-          badge="01 • OUR STORY"
-          title="Every journey begins with a story worth telling."
-        />
+        {/* Heading badge matching other sections */}
+        <Reveal y={15}>
+          <div className="pb-5 mb-8 border-b border-[#0F2E23]/10 flex items-center justify-between">
+            <span className="inline-flex items-center gap-3 sm:gap-3.5 px-6 py-3 sm:px-8 sm:py-3.5 md:px-9 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-mono font-bold tracking-widest uppercase transition-all shadow-lg bg-[#0F2E23] text-[#F4EFE6] border border-[#2E6B57]/60">
+              <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#39C27D] animate-pulse inline-block shadow-[0_0_14px_#39C27D]" />
+              <span>WHO WE ARE</span>
+            </span>
+          </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          {/* Left: heading + body text */}
           <div className="lg:col-span-6 space-y-6">
-            <Reveal delay={0.1}>
-              <p className="text-2xl sm:text-3xl text-[#0F2E23] font-heading font-medium tracking-tight leading-snug">
-                At Yalla Voyage, we don&apos;t just book trips — we design moments you&apos;ll replay for years.
+            <Reveal delay={0.05}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#0F2E23] font-heading font-medium tracking-tight leading-tight">
+                Who We Are: Crafting Exceptional Travel Experiences.
+              </h2>
+            </Reveal>
+
+            <Reveal delay={0.12}>
+              <p className="text-[#0F2E23]/85 text-base sm:text-lg leading-relaxed font-normal font-sans">
+                We understand your need for quality and trust when it comes to providing memorable holiday experiences. That’s why, when you choose <strong className="font-semibold text-[#0F2E23]">YALLA VOYAGE</strong>, you can be confident that our team of highly experienced, multilingual professionals—with their in-depth knowledge and meticulous planning—will ensure your holiday is one you cherish forever.
               </p>
             </Reveal>
-            <Reveal delay={0.2}>
-              <p className="text-[#0F2E23]/70 text-sm sm:text-base leading-relaxed font-light font-sans">
-                From corporate travel that runs like clockwork to bespoke luxury escapes that feel effortless, we turn logistics into artistry. Deep destination expertise fused with a human touch that never gets lost in translation.
+
+            <Reveal delay={0.18}>
+              <p className="text-[#0F2E23]/80 text-base sm:text-lg leading-relaxed font-light font-sans">
+                We go far beyond a simple travel agency; from private jets to bespoke services— we have it all. Our unwavering commitment to customer satisfaction fosters a mutually beneficial, lifelong relationship with our clients. We constantly raise the bar to showcase our passion through the delivery of exceptional travel services.
               </p>
             </Reveal>
-            <Reveal delay={0.3}>
+
+            <Reveal delay={0.25}>
               <div className="pt-2 flex items-center gap-4">
                 <MagneticButton href="/about" variant="primary">
                   Our Philosophy <ArrowRight className="w-4 h-4" />
@@ -68,18 +81,9 @@ function BrandStory() {
             </Reveal>
           </div>
 
-          <div className="lg:col-span-6">
-            <Reveal delay={0.2}>
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-[#0F2E23]/10 group bg-white">
-                <Image
-                  src="/images/alula-luxury-sanctuary.jpg"
-                  alt="AlUla Luxury Sanctuary"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </Reveal>
+          {/* Right: drum — no Reveal wrapper so no translateY offset */}
+          <div className="lg:col-span-6 flex items-start justify-center overflow-hidden">
+            <CylinderGallery />
           </div>
         </div>
       </div>
@@ -87,17 +91,108 @@ function BrandStory() {
   );
 }
 
-/* ── 02 • Why Us (Crisp Light / Green Cards) ── */
-function WhyUs() {
+/* ── Section: What Sets Us Apart (With Profile Text & 20+ Years Experience) ── */
+function WhatSetsUsApart() {
   return (
     <section className="section-pad bg-white text-[#0F2E23] border-t border-[#0F2E23]/10 relative">
       <div className="container-wide">
         <SectionHeading
-          badge="02 • WHY US"
-          title="What sets us apart."
-          description="Effortless excellence from first consultation to your safe return."
+          badge="WHAT SETS US APART"
+          title="What Sets Us Apart"
+          description="The personal touch, seamless execution, and exclusive off-market access that define true luxury."
         />
 
+        {/* Narrative Split: Brand Profile Narrative + Feature Highlight Box */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch mb-14">
+          {/* Left Text Column: Official Profile Narrative */}
+          <div className="lg:col-span-7 space-y-6 flex flex-col justify-center">
+            <Reveal delay={0.1}>
+              <div className="inline-flex items-center gap-3 sm:gap-3.5 px-6 py-3 sm:px-8 sm:py-3.5 md:px-9 md:py-4 rounded-full bg-[#0F2E23] text-[#F4EFE6] text-sm sm:text-base md:text-lg font-mono font-bold tracking-widest uppercase shadow-lg border border-[#2E6B57]/60 w-fit">
+                <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#39C27D] animate-pulse inline-block shadow-[0_0_14px_#39C27D]" />
+                <span>20+ Years of Luxury Travel Experience</span>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <p className="text-lg sm:text-xl md:text-2xl text-[#0F2E23] font-heading font-medium leading-relaxed">
+                What sets us apart is the personal touch that we bring to every itinerary. With over 20 years of experience in the Luxury Travel Sector, we understand that true luxury isn’t just about the destination—it’s about the seamless execution of your specific desires.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.2}>
+              <p className="text-[#0F2E23]/75 text-sm sm:text-base leading-relaxed font-light font-sans">
+                Whether it’s a private jet experience across continents, a romantic honeymoon on a hidden island, or a secluded villa staffed with a private chef, we handle the complexities so you can focus on the moment.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.25}>
+              <p className="text-[#0F2E23]/75 text-sm sm:text-base leading-relaxed font-light font-sans">
+                At <strong className="font-semibold text-[#0F2E23]">YALLA VOYAGE</strong>, we don’t just book trips; we curate legacies. Our global network of exclusive partners ensures that our clients receive priority access, room upgrades, and &ldquo;off-market&rdquo; experiences that cannot be found online.
+              </p>
+            </Reveal>
+          </div>
+
+          {/* Right Highlight Box: Luxury Legacy Card */}
+          <div className="lg:col-span-5 flex">
+            <Reveal delay={0.2} className="w-full">
+              <div className="h-full bg-[#0F2E23] text-[#F4EFE6] rounded-3xl p-8 sm:p-10 border border-[#2E6B57]/50 shadow-xl flex flex-col justify-between relative overflow-hidden">
+                {/* Atmospheric ambient glow */}
+                <div className="pointer-events-none absolute -top-20 -right-20 w-56 h-56 rounded-full bg-[#39C27D]/15 blur-3xl" />
+
+                <div className="space-y-6 relative z-10">
+                  <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#39C27D] font-semibold block">
+                    The Yalla Voyage Standard
+                  </span>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-xl bg-[#13382B] border border-[#2E6B57]/60 flex items-center justify-center text-[#39C27D] flex-shrink-0 mt-0.5">
+                        <Award className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h4 className="font-heading text-lg font-medium text-[#F4EFE6]">20+ Years Sector Mastery</h4>
+                        <p className="text-xs text-[#DAD6CD]/75 font-sans font-light mt-0.5">Two decades of fine-tuning logistics for elite global travelers.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-xl bg-[#13382B] border border-[#2E6B57]/60 flex items-center justify-center text-[#39C27D] flex-shrink-0 mt-0.5">
+                        <Star className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h4 className="font-heading text-lg font-medium text-[#F4EFE6]">Exclusive Off-Market Access</h4>
+                        <p className="text-xs text-[#DAD6CD]/75 font-sans font-light mt-0.5">Priority upgrades, private villa buyouts, and unlisted experiences.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-xl bg-[#13382B] border border-[#2E6B57]/60 flex items-center justify-center text-[#39C27D] flex-shrink-0 mt-0.5">
+                        <ShieldCheck className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h4 className="font-heading text-lg font-medium text-[#F4EFE6]">Curating Legacies</h4>
+                        <p className="text-xs text-[#DAD6CD]/75 font-sans font-light mt-0.5">Every journey is engineered to create lifelong cherished memories.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-[#2E6B57]/40 flex items-center justify-between relative z-10">
+                  <span className="text-xs font-mono text-[#DAD6CD]/60">Bespoke Concierge Network</span>
+                  <Link
+                    href="/contact"
+                    className="text-xs font-mono font-semibold uppercase tracking-wider text-[#39C27D] hover:text-white transition-colors flex items-center gap-1.5"
+                  >
+                    <span>Inquire Now</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+
+        {/* 3 Value Pillars */}
         <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-6" stagger={0.08}>
           {whyUsPillars.map((item) => (
             <div
@@ -123,46 +218,41 @@ function WhyUs() {
   );
 }
 
-/* ── Saudi Accordion Gallery Destinations ── */
+/* ── Saudi Accordion Gallery Destinations (No Index Numbers) ── */
 const saudiAccordionDestinations = [
   {
     image: '/images/saudi-alula-proper.png',
     label: 'AlUla & Hegra',
     sublabel: 'Ancient Wonders • UNESCO Heritage',
-    index: '01',
     link: '/explore-saudi',
   },
   {
     image: '/images/saudi-jeddah-proper.png',
     label: 'Jeddah Al-Balad',
     sublabel: 'Red Sea Coral Architecture',
-    index: '02',
     link: '/explore-saudi',
   },
   {
     image: '/images/saudi-diriyah.png',
     label: 'Riyadh & Diriyah',
     sublabel: 'Capital Pulse • Royal Palaces',
-    index: '03',
     link: '/explore-saudi',
   },
   {
     image: '/images/saudi-madinah-proper.png',
     label: 'Madinah',
     sublabel: 'Sacred Peace • Heritage',
-    index: '04',
     link: '/explore-saudi',
   },
   {
     image: '/images/saudi-disah.png',
     label: 'Wadi Al Disah',
     sublabel: 'Sandstone Oasis Canyon',
-    index: '05',
     link: '/explore-saudi',
   },
 ];
 
-/* ── 03 • Explore Saudi Preview Section (🌿 INTERACTIVE ACCORDION) ── */
+/* ── Explore Saudi: Discover Saudi Like Never Before, From Ancient Wonders to Modern Marvels ── */
 function ExploreSaudi() {
   return (
     <section className="section-pad bg-[#081812] text-[#F4EFE6] border-t border-[#2E6B57]/30 relative overflow-hidden">
@@ -174,20 +264,23 @@ function ExploreSaudi() {
         <BlurReveal delay={0.05}>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2E6B57]/50 text-[#F4EFE6] text-[11px] font-mono font-bold tracking-widest uppercase mb-4 border border-[#39C27D]/30 shadow-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#39C27D] animate-pulse inline-block" />
-                <span>03 • EXPLORE SAUDI ARABIA</span>
+              <span className="inline-flex items-center gap-3 sm:gap-3.5 px-6 py-3 sm:px-8 sm:py-3.5 md:px-9 md:py-4 rounded-full bg-[#13382B] text-[#F4EFE6] text-sm sm:text-base md:text-lg font-mono font-bold tracking-widest uppercase mb-6 border border-[#39C27D]/40 shadow-lg">
+                <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#39C27D] animate-pulse inline-block shadow-[0_0_14px_#39C27D]" />
+                <span>EXPLORE SAUDI ARABIA</span>
               </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-medium tracking-tight leading-[1.08] text-[#F4EFE6]">
-                Ancient wonders. <span className="text-[#DAD6CD]/50 block sm:inline">Sacred peace and desert sanctuaries.</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-medium tracking-tight leading-[1.08] text-[#F4EFE6]">
+                Discover Saudi Like Never Before
               </h2>
+              <p className="mt-3 text-base sm:text-lg lg:text-xl text-[#DAD6CD]/80 font-light leading-relaxed font-sans max-w-2xl">
+                From Ancient Wonders to Modern Marvels
+              </p>
             </div>
 
             <Link
               href="/explore-saudi"
               className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#13382B] border border-[#2E6B57]/50 text-xs font-mono font-semibold uppercase tracking-wider text-[#F4EFE6] hover:border-[#39C27D] hover:bg-[#2E6B57] transition-all self-start md:self-auto flex-shrink-0 font-sans shadow-md"
             >
-              <span>See all (06)</span>
+              <span>See all destinations</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-[#39C27D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </div>
@@ -229,15 +322,37 @@ function ExploreSaudi() {
   );
 }
 
-/* ── 08 • Travel Journal (Crisp Light) ── */
+/* ── Section: Travel Journal ── */
 function TravelJournal() {
+  const featuredArticle =
+    journalArticles.find((a) => a.slug === 'guide-to-alula') || journalArticles[0];
+
   return (
     <section className="section-pad bg-white text-[#0F2E23] border-t border-[#0F2E23]/10">
       <div className="container-wide">
-        <SectionHeading
-          badge="08 • JOURNAL"
-          title="Stories from the road."
-        />
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span className="inline-flex items-center gap-3 sm:gap-3.5 px-6 py-3 sm:px-8 sm:py-3.5 md:px-9 md:py-4 rounded-full bg-[#0F2E23] text-[#F4EFE6] text-sm sm:text-base md:text-lg font-mono font-bold tracking-widest uppercase shadow-lg border border-[#2E6B57]/60 w-fit mb-4">
+              <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#39C27D] animate-pulse inline-block shadow-[0_0_14px_#39C27D]" />
+              <span>TRAVEL JOURNAL &amp; DISPATCHES</span>
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-medium tracking-tight text-[#0F2E23] leading-tight">
+              Dispatches From the Edges of Luxury &amp; Culture.
+            </h2>
+            <p className="mt-3 text-base sm:text-lg text-[#0F2E23]/70 font-light max-w-2xl font-sans">
+              Reflections, insider intelligence, and travel narratives curated by our worldwide specialists across Saudi Arabia and global horizons.
+            </p>
+          </div>
+
+          <Link
+            href="/travel-journal"
+            className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#13382B] border border-[#2E6B57]/50 text-xs font-mono font-semibold uppercase tracking-wider text-[#F4EFE6] hover:border-[#39C27D] hover:bg-[#2E6B57] transition-all self-start md:self-auto flex-shrink-0 font-sans shadow-md"
+          >
+            <BookOpen className="w-3.5 h-3.5 text-[#39C27D]" />
+            <span>Explore Our Journal</span>
+            <ArrowRight className="w-3.5 h-3.5 text-[#39C27D] group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
 
         {/* Featured Journal Dispatch in Horizontal Split Layout */}
         <Reveal>
@@ -246,8 +361,8 @@ function TravelJournal() {
               {/* Left Image Column */}
               <div className="lg:col-span-7 relative min-h-[280px] sm:min-h-[340px] lg:min-h-[400px] overflow-hidden bg-[#0F2E23]/5">
                 <Image
-                  src={journalArticles[0].image}
-                  alt={journalArticles[0].title}
+                  src={featuredArticle.image}
+                  alt={featuredArticle.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 60vw"
@@ -255,7 +370,7 @@ function TravelJournal() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-70" />
                 <div className="absolute top-4 left-4 z-10">
                   <span className="px-3.5 py-1.5 rounded-full text-[10.5px] font-mono font-semibold uppercase tracking-widest bg-black/60 text-white backdrop-blur-md border border-white/20 shadow-xs">
-                    Featured Dispatch
+                    Featured Story
                   </span>
                 </div>
               </div>
@@ -264,30 +379,34 @@ function TravelJournal() {
               <div className="lg:col-span-5 p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-3 mb-4 text-xs font-mono text-[#2E6B57] font-semibold">
-                    <span className="uppercase tracking-wider">{journalArticles[0].category}</span>
+                    <span className="uppercase tracking-wider">{featuredArticle.category}</span>
                     <span>•</span>
                     <span className="flex items-center gap-1 text-[#0F2E23]/50">
-                      {journalArticles[0].readTime}
+                      {featuredArticle.readTime}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-heading font-medium text-[#0F2E23] mb-4 leading-tight group-hover:text-[#2E6B57] transition-colors tracking-tight">
-                    {journalArticles[0].title}
-                  </h3>
+                  <Link href={`/travel-journal/${featuredArticle.slug}`}>
+                    <h3 className="text-2xl sm:text-3xl font-heading font-medium text-[#0F2E23] mb-4 leading-tight hover:text-[#2E6B57] transition-colors tracking-tight cursor-pointer">
+                      {featuredArticle.title}
+                    </h3>
+                  </Link>
 
                   <p className="text-[#0F2E23]/70 text-sm sm:text-base leading-relaxed mb-6 font-light font-sans">
-                    {journalArticles[0].excerpt}
+                    {featuredArticle.excerpt}
                   </p>
                 </div>
 
                 <div className="pt-6 border-t border-[#0F2E23]/8 flex items-center justify-between">
-                  <span className="text-xs font-mono text-[#0F2E23]/50">Yalla Voyage Editorial</span>
+                  <span className="text-xs font-mono text-[#0F2E23]/50">
+                    Yalla Voyage Editorial
+                  </span>
                   <Link
-                    href="/travel-journal"
-                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#2E6B57] hover:text-[#0F2E23] transition-colors font-sans"
+                    href={`/travel-journal/${featuredArticle.slug}`}
+                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#2E6B57] hover:text-[#0F2E23] transition-colors font-sans group"
                   >
-                    <span>Read Dispatch</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <span>Read More</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -299,10 +418,11 @@ function TravelJournal() {
           <div className="text-center mt-8">
             <Link
               href="/travel-journal"
-              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#0F2E23] text-[#F4EFE6] hover:bg-[#2E6B57] hover:text-white font-medium text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] font-sans"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#0F2E23] text-[#F4EFE6] hover:bg-[#2E6B57] hover:text-white font-medium text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl hover:scale-[1.02] font-sans group"
             >
-              <span>Read All Stories</span>
-              <ArrowRight className="w-4 h-4 text-[#39C27D]" />
+              <BookOpen className="w-4 h-4 text-[#39C27D]" />
+              <span>Explore Our Journal</span>
+              <ArrowRight className="w-4 h-4 text-[#39C27D] group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </Reveal>
@@ -312,21 +432,19 @@ function TravelJournal() {
 }
 
 /* ── Main Home Page Component ── */
+/* Services section goes ABOVE Saudi section in homepage */
 export default function HomePage() {
   return (
     <main className="w-full relative overflow-visible bg-[#F4EFE6]">
       <HeroScene />
-      <BrandStory />
-      <WhyUs />
+      <WhoWeAre />
+      <WhatSetsUsApart />
+      <HaoqiServicesSection />
       <ExploreSaudi />
       <DriftWallDestinations />
-      <HaoqiServicesSection />
       <TestimonialsSection />
       <TraveloProcessSection />
       <TravelJournal />
     </main>
   );
 }
-
-
-

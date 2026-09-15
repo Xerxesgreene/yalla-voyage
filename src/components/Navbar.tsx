@@ -3,7 +3,19 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import {
+  Menu,
+  X,
+  ArrowUpRight,
+  Home,
+  Palmtree,
+  Globe,
+  Luggage,
+  Sparkles,
+  BookOpen,
+  Users,
+  MessageCircle,
+} from 'lucide-react';
 import { YallaLogo } from '@/components/ui/YallaLogo';
 
 export function Navbar() {
@@ -56,28 +68,31 @@ export function Navbar() {
     };
   }, [menuOpen]);
 
+  // Hide corporate agency navbar on travel-journal pages so dedicated JournalNav is used
+  if (pathname?.startsWith('/travel-journal')) {
+    return null;
+  }
+
   // Navbar turns green ONLY after scrolling down past the header across all pages
   const isScrolledDark = !isAtTop;
 
   const desktopNavLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Explore Saudi', href: '/explore-saudi', badge: 'Kingdom' },
-    { label: 'Destinations', href: '/destinations' },
-    { label: 'Packages', href: '/packages' },
-    { label: 'Services', href: '/services' },
-    { label: 'Journal', href: '/travel-journal' },
-    { label: 'About', href: '/about' },
+    { label: 'Home', href: '/', icon: Home },
+    { label: 'Explore Saudi', href: '/explore-saudi', icon: Palmtree, badge: 'Kingdom' },
+    { label: 'Destinations', href: '/destinations', icon: Globe },
+    { label: 'Packages', href: '/packages', icon: Luggage },
+    { label: 'Services', href: '/services', icon: Sparkles },
+    { label: 'About', href: '/about', icon: Users },
   ];
 
   const mobileNavLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Explore Saudi', href: '/explore-saudi', badge: 'Kingdom' },
-    { label: 'Destinations', href: '/destinations' },
-    { label: 'Packages', href: '/packages' },
-    { label: 'Services', href: '/services' },
-    { label: 'Journal', href: '/travel-journal' },
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Home', href: '/', icon: Home },
+    { label: 'Explore Saudi', href: '/explore-saudi', icon: Palmtree, badge: 'Kingdom' },
+    { label: 'Destinations', href: '/destinations', icon: Globe },
+    { label: 'Packages', href: '/packages', icon: Luggage },
+    { label: 'Services', href: '/services', icon: Sparkles },
+    { label: 'About', href: '/about', icon: Users },
+    { label: 'Contact', href: '/contact', icon: MessageCircle },
   ];
 
   return (
@@ -95,6 +110,7 @@ export function Navbar() {
           
           {/* ── Left: Brand Logo ── */}
           <Link
+            id="navbar-brand-logo"
             href="/"
             className="flex items-center group transition-transform duration-300 hover:scale-[1.02] shrink-0"
             aria-label="Yalla Voyage Home"
@@ -102,19 +118,20 @@ export function Navbar() {
             <YallaLogo
               variant="horizontal"
               theme={isScrolledDark ? 'dark' : 'light'}
-              size="md"
+              size={isScrolledDark ? 'sm' : 'md'}
             />
           </Link>
 
           {/* ── Center: Desktop Nav Links ── */}
-          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5" aria-label="Main navigation">
             {desktopNavLinks.map((item) => {
               const isActive = pathname === item.href;
+              const Icon = item.icon;
               return (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`text-[13.5px] font-sans font-medium px-3.5 py-1.5 rounded-full transition-all duration-200 relative flex items-center gap-2 group ${
+                  className={`text-[13px] xl:text-[13.5px] font-sans font-medium px-3 xl:px-3.5 py-1.5 rounded-full transition-all duration-200 relative flex items-center gap-1.5 xl:gap-2 group ${
                     isScrolledDark
                       ? isActive
                         ? 'bg-[#2E6B57]/60 text-white font-semibold shadow-xs'
@@ -124,13 +141,18 @@ export function Navbar() {
                       : 'text-[#0F2E23]/80 hover:text-[#0F2E23] hover:bg-[#0F2E23]/8'
                   }`}
                 >
-                  {item.badge ? (
-                    <span className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#39C27D] animate-pulse inline-block" />
-                      <span>{item.label}</span>
-                    </span>
-                  ) : (
-                    <span>{item.label}</span>
+                  <Icon
+                    className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 group-hover:scale-110 ${
+                      isActive
+                        ? 'text-[#39C27D]'
+                        : isScrolledDark
+                        ? 'text-[#39C27D]/80 group-hover:text-[#39C27D]'
+                        : 'text-[#2E6B57] group-hover:text-[#0F2E23]'
+                    }`}
+                  />
+                  <span>{item.label}</span>
+                  {item.badge && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#39C27D] animate-pulse inline-block" />
                   )}
                 </Link>
               );
@@ -197,31 +219,37 @@ export function Navbar() {
 
           {/* Mobile Links */}
           <nav className="flex flex-col gap-1.5 my-auto py-6" aria-label="Mobile navigation">
-            {mobileNavLinks.map((item, i) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className={`text-lg sm:text-xl font-sans font-medium flex items-center justify-between py-3 px-3.5 rounded-xl transition-all duration-200 ${
-                  pathname === item.href
-                    ? 'bg-[#2E6B57]/40 text-[#39C27D]'
-                    : 'text-[#F4EFE6]/85 hover:text-white hover:bg-white/5'
-                }`}
-                style={{ transitionDelay: menuOpen ? `${i * 20}ms` : '0ms' }}
-              >
-                <div className="flex items-center gap-2.5">
+            {mobileNavLinks.map((item, i) => {
+              const Icon = item.icon;
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`text-lg sm:text-xl font-sans font-medium flex items-center justify-between py-3 px-4 rounded-xl transition-all duration-200 ${
+                    isActive
+                      ? 'bg-[#2E6B57]/40 text-[#39C27D]'
+                      : 'text-[#F4EFE6]/85 hover:text-white hover:bg-white/5'
+                  }`}
+                  style={{ transitionDelay: menuOpen ? `${i * 20}ms` : '0ms' }}
+                >
+                  <div className="flex items-center gap-3.5">
+                    <Icon
+                      className={`w-5 h-5 shrink-0 ${
+                        isActive ? 'text-[#39C27D]' : 'text-[#39C27D]/70'
+                      }`}
+                    />
+                    <span>{item.label}</span>
+                  </div>
                   {item.badge && (
-                    <span className="w-2 h-2 rounded-full bg-[#39C27D] animate-pulse" />
+                    <span className="text-[10px] font-mono font-semibold uppercase px-2 py-0.5 rounded-full bg-[#39C27D]/20 text-[#39C27D] border border-[#39C27D]/30">
+                      {item.badge}
+                    </span>
                   )}
-                  <span>{item.label}</span>
-                </div>
-                {item.badge && (
-                  <span className="text-[10px] font-mono font-semibold uppercase px-2 py-0.5 rounded-full bg-[#39C27D]/20 text-[#39C27D] border border-[#39C27D]/30">
-                    {item.badge}
-                  </span>
-                )}
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       </div>

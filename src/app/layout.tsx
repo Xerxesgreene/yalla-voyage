@@ -6,6 +6,7 @@ import { SmoothScroll } from '@/components/ui/SmoothScroll';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { CompassCursor } from '@/components/ui/CompassCursor';
+import { SplashScreen } from '@/components/ui/SplashScreen';
 
 export const metadata: Metadata = {
   title: {
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="antialiased" suppressHydrationWarning>
+        <SplashScreen />
         <CompassCursor />
         <SmoothScroll>
           <ScrollProgress />

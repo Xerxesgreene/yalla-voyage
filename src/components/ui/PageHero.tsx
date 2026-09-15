@@ -15,14 +15,14 @@ export interface PageHeroProps {
 export function PageHero({
   title,
   subtitle,
-  image = '/images/header-explore-saudi.jpg',
+  image = '/images/header-real-saudi.jpg',
   alt = 'Yalla Voyage Sanctuary',
   heightClass = 'min-h-[380px] sm:min-h-[440px] md:min-h-[480px] lg:min-h-[520px]',
   positionClass = 'object-center',
   className = '',
 }: PageHeroProps) {
   return (
-    <section className={`relative w-full ${heightClass} overflow-hidden bg-[#0A2018] select-none flex flex-col justify-end ${className}`}>
+    <section className={`relative w-full ${heightClass} overflow-hidden bg-neutral-950 select-none flex flex-col justify-end ${className}`}>
       {/* Background Image */}
       <Image
         src={image}
@@ -33,12 +33,11 @@ export function PageHero({
         sizes="100vw"
       />
 
-      {/* Emerald Green Tint & Bottom Contrast Gradient (Like Travelo Reference) */}
-      <div className="pointer-events-none absolute inset-0 bg-[#0F2E23]/25 mix-blend-multiply z-5" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#061B14] via-[#0A261D]/75 via-45% to-transparent z-5" />
+      {/* Pure Neutral Cinematic Dark Contrast Gradient (True Destination Colors, NO GREEN TINT) */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 via-45% to-transparent z-5" />
 
-      {/* Top Navbar Contrast Fade */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#061B14]/80 via-[#061B14]/25 to-transparent z-10" />
+      {/* Top Navbar Neutral Contrast Fade */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/70 via-black/20 to-transparent z-10" />
 
       {/* Editorial Content: Title on Left, Writings on Right (All in Crisp Pure White) */}
       {title && (

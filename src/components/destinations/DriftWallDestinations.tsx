@@ -8,20 +8,23 @@ import { DriftWall, DriftWallItem } from '@/components/ui/DriftWall';
 
 const destinationsData: DriftWallItem[] = [
   { image: '/images/saudi-hegra.png', title: 'AlUla Hegra • Saudi', href: '/explore-saudi' },
-  { image: '/images/dest-paris.png', title: 'Paris Sanctuary • France', href: '/destinations' },
+  { image: '/images/dest-paris.png', title: 'Paris, France', href: '/destinations' },
+  { image: '/images/dest-mauritius.jpg', title: 'Mauritius • Indian Ocean', href: '/destinations' },
+  { image: '/images/pkg-egypt.jpg', title: 'Giza & Nile • Egypt', href: '/destinations' },
+  { image: '/images/dest-italy.jpg', title: 'Amalfi Coast • Italy', href: '/destinations' },
+  { image: '/images/dest-switzerland.jpg', title: 'Swiss Alps • Switzerland', href: '/destinations' },
+  { image: '/images/dest-uae.jpg', title: 'Dubai & Abu Dhabi • UAE', href: '/destinations' },
   { image: '/images/dest-maldives.jpg', title: 'Maldives Overwater Lagoon', href: '/destinations' },
   { image: '/images/dest-japan.jpg', title: 'Kyoto & Tokyo • Japan', href: '/destinations' },
-  { image: '/images/saudi-disah.png', title: 'Wadi Al Disah • Tabuk', href: '/explore-saudi' },
+  { image: '/images/saudi-disah.png', title: 'Wadi Al Disah • Desert Oasis', href: '/explore-saudi' },
   { image: '/images/saudi-diriyah.png', title: 'Diriyah & Turaif • Riyadh', href: '/explore-saudi' },
-  { image: '/images/saudi-jeddah.jpg', title: 'Historic Al-Balad • Jeddah', href: '/explore-saudi' },
+  { image: '/images/saudi-albalad.png', title: 'Historic Al-Balad • Jeddah', href: '/explore-saudi' },
   { image: '/images/dest-turkey.jpg', title: 'Cappadocia • Turkey', href: '/destinations' },
-  { image: '/images/dest-uae.jpg', title: 'Dubai Dunes & Skyline', href: '/destinations' },
-  { image: '/images/dest-europe.jpg', title: 'Amalfi & Swiss Alps', href: '/destinations' },
-  { image: '/images/dest-asia.jpg', title: 'Bali Sanctuaries', href: '/destinations' },
+  { image: '/images/dest-asia.jpg', title: 'Bali & Komodo • Indonesia', href: '/destinations' },
   { image: '/images/saudi-redsea.jpg', title: 'Red Sea Archipelago', href: '/explore-saudi' },
-  { image: '/images/alula-luxury-sanctuary.jpg', title: 'AlUla Desert Oasis Resort', href: '/explore-saudi' },
-  { image: '/images/saudi-madinah.jpg', title: 'Madinah Heritage', href: '/explore-saudi' },
-  { image: '/images/red-sea-archipelago.jpg', title: 'Red Sea Yachting Expeditions', href: '/explore-saudi' },
+  { image: '/images/real-kaec.jpg', title: 'King Abdullah Economic City', href: '/explore-saudi' },
+  { image: '/images/real-yanbu.jpg', title: 'Historic Yanbu & Marina', href: '/explore-saudi' },
+  { image: '/images/place-prophetsmosque.jpg', title: 'Madinah Heritage', href: '/explore-saudi' },
 ];
 
 export function DriftWallDestinations() {
@@ -33,24 +36,23 @@ export function DriftWallDestinations() {
           <div className="max-w-2xl space-y-3">
             {/* Badge */}
             <Reveal>
-              <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest uppercase text-[#2E6B57]">
-                <span className="text-[#2E6B57]">&mdash;</span>
-                <span>04 • CURATED EXPEDITIONS</span>
-                <span className="text-[#2E6B57]">&mdash;</span>
-              </div>
+              <span className="inline-flex items-center gap-3 sm:gap-3.5 px-6 py-3 sm:px-8 sm:py-3.5 md:px-9 md:py-4 rounded-full bg-[#0F2E23] text-[#F4EFE6] text-sm sm:text-base md:text-lg font-mono font-bold tracking-widest uppercase shadow-lg border border-[#2E6B57]/60 w-fit mb-3">
+                <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#39C27D] animate-pulse inline-block shadow-[0_0_14px_#39C27D]" />
+                <span>TOP DESTINATIONS</span>
+              </span>
             </Reveal>
 
             {/* Title */}
             <Reveal delay={0.06}>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#0F2E23] leading-[1.12]">
-                Where Sanctuaries Meet the Horizon
+              <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-[#0F2E23] leading-[1.08]">
+                Iconic Sanctuaries Across the World&apos;s Horizons.
               </h2>
             </Reveal>
 
             {/* Subtitle */}
             <Reveal delay={0.12}>
-              <p className="text-xs sm:text-sm lg:text-base text-[#0F2E23]/70 font-light max-w-xl leading-relaxed font-sans">
-                Explore our signature portfolio of bespoke journeys across Saudi Arabia and the world&apos;s most breathtaking destinations.
+              <p className="text-base sm:text-lg lg:text-xl text-[#0F2E23]/75 font-light max-w-xl leading-relaxed font-sans">
+                Where timeless heritage meets rare seclusion — hand-curated private retreats across Saudi Arabia and legendary global destinations.
               </p>
             </Reveal>
           </div>

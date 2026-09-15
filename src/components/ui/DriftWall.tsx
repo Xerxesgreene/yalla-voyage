@@ -45,20 +45,23 @@ export interface DriftWallProps {
 
 const DEFAULT_ITEMS: DriftWallItem[] = [
   { image: '/images/saudi-hegra.png', title: 'AlUla Hegra • Saudi', href: '/explore-saudi' },
-  { image: '/images/dest-paris.png', title: 'Paris Sanctuary • France', href: '/destinations' },
+  { image: '/images/dest-paris.png', title: 'Paris, France', href: '/destinations' },
+  { image: '/images/dest-mauritius.jpg', title: 'Mauritius • Indian Ocean', href: '/destinations' },
+  { image: '/images/pkg-egypt.jpg', title: 'Giza & Nile • Egypt', href: '/destinations' },
+  { image: '/images/dest-italy.jpg', title: 'Amalfi Coast • Italy', href: '/destinations' },
+  { image: '/images/dest-switzerland.jpg', title: 'Swiss Alps • Switzerland', href: '/destinations' },
+  { image: '/images/dest-uae.jpg', title: 'Dubai & Abu Dhabi • UAE', href: '/destinations' },
   { image: '/images/dest-maldives.jpg', title: 'Maldives Overwater Lagoon', href: '/destinations' },
   { image: '/images/dest-japan.jpg', title: 'Kyoto & Tokyo • Japan', href: '/destinations' },
-  { image: '/images/saudi-disah.png', title: 'Wadi Al Disah • Tabuk', href: '/explore-saudi' },
+  { image: '/images/saudi-disah.png', title: 'Wadi Al Disah • Desert Oasis', href: '/explore-saudi' },
   { image: '/images/saudi-diriyah.png', title: 'Diriyah & Turaif • Riyadh', href: '/explore-saudi' },
-  { image: '/images/saudi-jeddah.jpg', title: 'Historic Al-Balad • Jeddah', href: '/explore-saudi' },
+  { image: '/images/saudi-albalad.png', title: 'Historic Al-Balad • Jeddah', href: '/explore-saudi' },
   { image: '/images/dest-turkey.jpg', title: 'Cappadocia • Turkey', href: '/destinations' },
-  { image: '/images/dest-uae.jpg', title: 'Dubai Dunes & Skyline', href: '/destinations' },
-  { image: '/images/dest-europe.jpg', title: 'Amalfi & Swiss Alps', href: '/destinations' },
-  { image: '/images/dest-asia.jpg', title: 'Bali Sanctuaries', href: '/destinations' },
+  { image: '/images/dest-asia.jpg', title: 'Bali & Komodo • Indonesia', href: '/destinations' },
   { image: '/images/saudi-redsea.jpg', title: 'Red Sea Archipelago', href: '/explore-saudi' },
-  { image: '/images/alula-luxury-sanctuary.jpg', title: 'AlUla Desert Oasis Resort', href: '/explore-saudi' },
-  { image: '/images/saudi-madinah.jpg', title: 'Madinah Heritage', href: '/explore-saudi' },
-  { image: '/images/red-sea-archipelago.jpg', title: 'Red Sea Yachting Expeditions', href: '/explore-saudi' },
+  { image: '/images/real-kaec.jpg', title: 'King Abdullah Economic City', href: '/explore-saudi' },
+  { image: '/images/real-yanbu.jpg', title: 'Historic Yanbu & Marina', href: '/explore-saudi' },
+  { image: '/images/place-prophetsmosque.jpg', title: 'Madinah Heritage', href: '/explore-saudi' },
 ];
 
 const prefersReducedMotion = () =>

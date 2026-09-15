@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Link from 'next/link';
-import { ArrowRight, Compass } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { FluidDistortionCanvas } from './FluidDistortionCanvas';
 
 export function HeroScene() {
@@ -49,25 +49,23 @@ export function HeroScene() {
 
       {/* ── Main Hero Content Stack (Placed in open sky on top-left) ── */}
       <div className="relative z-20 w-full max-w-[1440px] mx-auto px-5 sm:px-12 lg:px-16 xl:px-20 pt-32 sm:pt-38 md:pt-44 pb-8 sm:pb-16 pointer-events-none">
-        
         {/* Left-Aligned Typographic Group in Open Sky */}
         <div
           ref={contentRef}
-          className="max-w-[210px] sm:max-w-md lg:max-w-lg mr-auto text-left pointer-events-auto space-y-2.5 sm:space-y-5"
+          className="max-w-[260px] sm:max-w-md lg:max-w-lg mr-auto text-left pointer-events-auto space-y-2.5 sm:space-y-5"
         >
-          
           {/* Main Headline */}
           <h1 className="hero-anim text-[24px] sm:text-4xl md:text-5xl lg:text-[60px] font-heading font-medium text-[#0F2E23] tracking-tight leading-[1.1]">
-            Where journeys <br className="sm:hidden" />
-            become <span className="italic font-serif text-[#2E6B57]">stories.</span>
+            Crafting exceptional <br className="sm:hidden" />
+            travel <span className="italic font-serif text-[#2E6B57]">experiences.</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="hero-anim text-[11px] sm:text-sm md:text-base text-[#0F2E23]/90 font-light leading-relaxed font-sans max-w-[195px] sm:max-w-md">
+          <p className="hero-anim text-[11px] sm:text-sm md:text-base text-[#0F2E23]/90 font-light leading-relaxed font-sans max-w-[240px] sm:max-w-md">
             Yalla Voyage crafts extraordinary travel with precision, passion, and devotion.
           </p>
 
-          {/* Action Buttons */}
+          {/* Action Button: Single Begin Your Voyage button (No Explore Saudi button as requested) */}
           <div className="hero-anim pt-1 flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3.5">
             <Link
               href="/contact"
@@ -76,17 +74,8 @@ export function HeroScene() {
               <span>Begin Your Voyage</span>
               <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             </Link>
-
-            <Link
-              href="/explore-saudi"
-              className="inline-flex items-center justify-center gap-1.5 px-3 py-1 sm:px-5 sm:py-3 rounded-full bg-white/90 hover:bg-white backdrop-blur-md text-[#0F2E23] text-[10.5px] sm:text-sm font-sans font-medium uppercase tracking-wider transition-all border border-white/90 shadow-xs"
-            >
-              <Compass className="w-3 h-3 sm:w-4 sm:h-4 text-[#2E6B57]" />
-              <span>Explore Saudi</span>
-            </Link>
           </div>
         </div>
-
       </div>
     </section>
   );

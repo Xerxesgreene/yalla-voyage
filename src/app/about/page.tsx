@@ -12,10 +12,10 @@ export default function AboutPage() {
   return (
     <main className="bg-[#F4EFE6] text-[#0F2E23] overflow-hidden">
       <PageHero
-        title="About Us"
-        subtitle="Our passion is Saudi Arabia. Our purpose is you."
-        image="/images/header-about.jpg"
-        alt="About Yalla Voyage"
+        title="Our Heritage & Vision"
+        subtitle="Two decades of devotion, discretion, and extraordinary journeys across Saudi Arabia and beyond."
+        image="/images/header-real-about.jpg"
+        alt="Oia Santorini Cliffside Caldera, Greece"
         positionClass="object-center"
       />
 
@@ -41,7 +41,7 @@ export default function AboutPage() {
 
               <Reveal delay={0.2}>
                 <p className="text-[#0F2E23]/70 text-sm sm:text-base leading-relaxed font-light font-sans">
-                  From corporate travel that runs like clockwork to bespoke luxury escapes that feel effortless, we turn logistics into artistry. We fuse deep destination expertise with cutting-edge technology and a human touch that never gets lost in translation.
+                  With over 20 years of experience in the Luxury Travel Sector, from corporate travel that runs like clockwork to bespoke luxury escapes that feel effortless, we turn logistics into artistry. We fuse deep destination expertise with exclusive off-market access and a human touch that never gets lost in translation.
                 </p>
               </Reveal>
 
@@ -72,7 +72,7 @@ export default function AboutPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F2E23]/70 via-transparent to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6 text-white backdrop-blur-md bg-[#0F2E23]/80 p-5 rounded-2xl border border-white/10">
-                    <p className="text-xs font-mono uppercase tracking-widest text-[#39C27D] mb-1">Our Standard</p>
+                    <p className="text-xs font-mono uppercase tracking-widest text-[#39C27D] mb-1">Our Standard • 20+ Years Mastery</p>
                     <p className="text-sm font-light font-sans text-[#F4EFE6]">
                       &ldquo;Every voyage is a bespoke masterpiece — crafted with reverence for local culture and uncompromising elegance.&rdquo;
                     </p>
@@ -88,9 +88,9 @@ export default function AboutPage() {
       <section className="section-pad bg-white border-t border-b border-[#0F2E23]/10">
         <div className="container-wide">
           <SectionHeading
-            badge="02 • PILLARS"
-            title="The Values That Guide Us."
-            description="Our compass is set by authenticity, privacy, and impeccable service."
+            badge="OUR PILLARS"
+            title="The Principles That Define Every Itinerary."
+            description="Our compass is set by authenticity, uncompromising privacy, and generational access."
           />
 
           <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" stagger={0.08}>

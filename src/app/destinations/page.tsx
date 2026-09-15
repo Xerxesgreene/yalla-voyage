@@ -6,93 +6,34 @@ import Link from 'next/link';
 import {
   ArrowRight,
   ArrowUpRight,
-  Sparkles,
-  Calendar,
   Search,
   MessageCircle,
-  Phone,
   Compass,
-  MapPin,
-  Globe2,
   CheckCircle2,
 } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
-import { Reveal, StaggerReveal } from '@/components/ui/Reveal';
+import { StaggerReveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import { destinations } from '@/data/destinations';
-import { saudiDestinations } from '@/data/saudi';
 import { siteConfig } from '@/data/site';
 
-type RegionFilter = 'all' | 'saudi' | 'middle-east' | 'europe' | 'asia-islands';
+type RegionFilter = 'all' | 'europe' | 'middle-east' | 'asia-islands';
 
 export default function DestinationsPage() {
   const [filter, setFilter] = useState<RegionFilter>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Merge and structure all destinations with rich luxury presentation
-  const allDestinations = useMemo(() => {
-    const saudiMapped = saudiDestinations.map((d) => {
-      let saudiTags = ['UNESCO Heritage', 'Desert Oasis'];
-      if (d.slug === 'alula') saudiTags = ['UNESCO Nabataean', 'Desert Oasis', 'Stargazing'];
-      else if (d.slug === 'jeddah') saudiTags = ['Historic Al-Balad', 'Red Sea Waterfront', 'Art Scene'];
-      else if (d.slug === 'riyadh') saudiTags = ['Kingdom Tower', 'Palace Dining', 'High-Octane Luxury'];
-      else if (d.slug === 'diriyah') saudiTags = ['At-Turaif UNESCO', 'Najdi Heritage', 'Bujairi Terrace'];
-      else if (d.slug === 'redsea') saudiTags = ['St. Regis Atoll', 'Pristine Coral Reefs', 'Yacht Charters'];
-      else if (d.slug === 'disah') saudiTags = ['Canyon Springs', 'Palm Groves', '4x4 Expedition'];
-
-      return {
-        slug: d.slug,
-        name: d.name,
-        arabicName: d.arabicName,
-        country: 'Saudi Arabia',
-        tagline: d.tagline,
-        description: d.description,
-        image: d.image,
-        href: `/explore-saudi#${d.slug}`,
-        region: 'saudi' as const,
-        bestSeason: 'Oct – Apr',
-        tags: saudiTags,
-      };
-    });
-
-    const intlMapped = destinations.map((d) => {
-      let regionKey: 'middle-east' | 'europe' | 'asia-islands' = 'europe';
-      if (d.slug.includes('uae') || d.slug.includes('qatar') || d.slug.includes('oman') || d.slug.includes('turkey')) {
-        regionKey = 'middle-east';
-      } else if (d.slug.includes('maldives') || d.slug.includes('japan') || d.slug.includes('asia') || d.slug.includes('bali')) {
-        regionKey = 'asia-islands';
-      }
-      return {
-        slug: d.slug,
-        name: d.name,
-        arabicName: '',
-        country: d.country || (regionKey === 'middle-east' ? 'Middle East' : regionKey === 'asia-islands' ? 'Asia' : 'Europe'),
-        tagline: d.tagline,
-        description: d.description,
-        image: d.image,
-        href: d.href || `/contact`,
-        region: regionKey,
-        bestSeason: d.bestSeason || 'Year-Round',
-        tags: d.tags || ['Private Sanctuary', 'Luxury Escapes'],
-      };
-    });
-
-    return [...saudiMapped, ...intlMapped];
-  }, []);
-
   const filtered = useMemo(() => {
-    return allDestinations.filter((d) => {
+    return destinations.filter((d) => {
       const matchesFilter =
         filter === 'all'
           ? true
-          : filter === 'saudi'
-          ? d.region === 'saudi'
-          : filter === 'middle-east'
-          ? d.region === 'middle-east'
           : filter === 'europe'
           ? d.region === 'europe'
-          : d.region === 'asia-islands';
+          : filter === 'middle-east'
+          ? d.region === 'middle-east'
+          : d.region === 'asia-islands' || d.region === 'africa-islands';
 
       const query = searchQuery.toLowerCase().trim();
       const matchesSearch =
@@ -100,43 +41,42 @@ export default function DestinationsPage() {
         d.name.toLowerCase().includes(query) ||
         d.country.toLowerCase().includes(query) ||
         d.tagline.toLowerCase().includes(query) ||
-        (d.arabicName && d.arabicName.includes(query)) ||
-        d.tags.some((t) => t.toLowerCase().includes(query));
+        (d.tags && d.tags.some((t) => t.toLowerCase().includes(query)));
 
       return matchesFilter && matchesSearch;
     });
-  }, [allDestinations, filter, searchQuery]);
+  }, [filter, searchQuery]);
 
   const counts = useMemo(() => {
     return {
-      all: allDestinations.length,
-      saudi: allDestinations.filter((d) => d.region === 'saudi').length,
-      'middle-east': allDestinations.filter((d) => d.region === 'middle-east').length,
-      europe: allDestinations.filter((d) => d.region === 'europe').length,
-      'asia-islands': allDestinations.filter((d) => d.region === 'asia-islands').length,
+      all: destinations.length,
+      europe: destinations.filter((d) => d.region === 'europe').length,
+      'middle-east': destinations.filter((d) => d.region === 'middle-east').length,
+      'asia-islands': destinations.filter(
+        (d) => d.region === 'asia-islands' || d.region === 'africa-islands'
+      ).length,
     };
-  }, [allDestinations]);
+  }, []);
 
   return (
     <main className="bg-[#F4EFE6] text-[#0F2E23] overflow-hidden">
       {/* ── CINEMATIC PAGE HERO BANNER ── */}
       <PageHero
-        title="Destinations"
-        subtitle="Explore our breathtaking destinations carefully selected for unforgettable adventures."
-        image="/images/header-destinations.jpg"
-        alt="Extraordinary Global Destinations"
+        title="Top Destinations"
+        subtitle="Explore breathtaking global destinations handpicked for rare wonder and unhurried luxury."
+        image="/images/header-real-destinations.jpg"
+        alt="Positano, Amalfi Coast, Italy"
         positionClass="object-center"
       />
 
       {/* ── DESTINATION EXPLORER SECTION ── */}
       <section className="section-pad bg-[#F4EFE6]">
         <div className="container-wide">
-          
           {/* Section Introduction Heading */}
           <SectionHeading
-            badge="01 • WORLD SANCTUARIES & EXPEDITIONS"
-            title="Extraordinary Global Horizons."
-            description="From the ancient sandstone sanctuaries of Saudi Arabia to remote Mediterranean coastlines and Zen temples, discover hand-tailored destinations designed for the discerning traveler."
+            badge="EXPLORE THE WORLD"
+            title="Extraordinary Global Horizons, Curated Without Compromise."
+            description="From the ancient pyramids of Egypt and the cliffside villas of Italy to alpine Switzerland and the turquoise lagoons of Mauritius, discover hand-tailored global destinations designed for discerning travelers."
           />
 
           {/* Controls Bar: Filter Pills & Search */}
@@ -145,10 +85,9 @@ export default function DestinationsPage() {
             <div className="flex items-center gap-2 flex-wrap">
               {[
                 { id: 'all', label: 'All Destinations', count: counts.all },
-                { id: 'saudi', label: 'Saudi Arabia', count: counts.saudi },
-                { id: 'middle-east', label: 'Middle East & Gulf', count: counts['middle-east'] },
                 { id: 'europe', label: 'Europe & Med', count: counts.europe },
-                { id: 'asia-islands', label: 'Islands & Asia', count: counts['asia-islands'] },
+                { id: 'middle-east', label: 'Middle East & North Africa', count: counts['middle-east'] },
+                { id: 'asia-islands', label: 'Asia & Islands', count: counts['asia-islands'] },
               ].map((tab) => (
                 <button
                   key={tab.id}
@@ -162,7 +101,9 @@ export default function DestinationsPage() {
                   <span>{tab.label}</span>
                   <span
                     className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-medium transition-colors ${
-                      filter === tab.id ? 'bg-[#2E6B57] text-white' : 'bg-[#0F2E23]/6 text-[#0F2E23]/60'
+                      filter === tab.id
+                        ? 'bg-[#2E6B57] text-white'
+                        : 'bg-[#0F2E23]/6 text-[#0F2E23]/60'
                     }`}
                   >
                     {tab.count}
@@ -190,7 +131,9 @@ export default function DestinationsPage() {
               <div className="w-12 h-12 rounded-full bg-[#0F2E23]/5 text-[#2E6B57] flex items-center justify-center mx-auto mb-4">
                 <Compass className="w-6 h-6" />
               </div>
-              <p className="text-xl font-display text-[#0F2E23] font-normal mb-2">No destinations found</p>
+              <p className="text-xl font-display text-[#0F2E23] font-normal mb-2">
+                No destinations found
+              </p>
               <p className="text-xs text-[#0F2E23]/60 font-sans font-light mb-6">
                 We couldn&apos;t find any destination matching &ldquo;{searchQuery}&rdquo;. Try another search term or reset filters.
               </p>
@@ -232,7 +175,7 @@ export default function DestinationsPage() {
                     </div>
                   </div>
 
-                  {/* Bottom Text Overlay (Accoutrement Tours Style: Date/Season on top, Big White Serif Title, Subtitle) */}
+                  {/* Bottom Text Overlay */}
                   <div className="absolute bottom-0 inset-x-0 z-20 p-6 sm:p-8">
                     {/* Line 1: Best Season / Country in Uppercase Mono */}
                     <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] !text-white/90 font-semibold block mb-1 drop-shadow-sm">
@@ -266,7 +209,7 @@ export default function DestinationsPage() {
           {/* ── BESPOKE DESTINATION CONSULTATION BANNER ── */}
           <div className="mt-16 sm:mt-20 p-8 sm:p-12 rounded-3xl bg-[#0F2E23] text-white border border-[#2E6B57]/40 relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#39C27D]/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-            
+
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-4">
                 <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#39C27D] font-semibold block">
@@ -311,11 +254,8 @@ export default function DestinationsPage() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
     </main>
   );
 }
-
-

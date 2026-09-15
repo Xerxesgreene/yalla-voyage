@@ -27,7 +27,7 @@ export function WaterRippleHeroCanvas({ imageSrc }: WaterRippleHeroCanvasProps) 
 
     let buffer1 = new Float32Array(size);
     let buffer2 = new Float32Array(size);
-    let damping = 0.965; // Water surface damping
+    const damping = 0.965; // Water surface damping
 
     // Offscreen Canvas for Original & Displaced Background Image
     const imgCanvas = document.createElement('canvas');
@@ -39,8 +39,8 @@ export function WaterRippleHeroCanvas({ imageSrc }: WaterRippleHeroCanvasProps) 
 
     const img = new Image();
     img.crossOrigin = 'anonymous';
-    img.src = imageSrc;
 
+    // Setup image buffers — draws the image onto offscreen canvas in "cover" mode
     const setupImageBuffers = () => {
       if (!imgCtx || !canvas) return;
       const rect = container.getBoundingClientRect();
@@ -74,10 +74,22 @@ export function WaterRippleHeroCanvas({ imageSrc }: WaterRippleHeroCanvasProps) 
       outData = ctx.createImageData(w, h);
     };
 
+    // Register onload BEFORE setting src — critical for cached images.
+    // When the browser has the image cached, onload fires synchronously
+    // during the src assignment. If onload isn't registered yet,
+    // imageLoaded never becomes true and the canvas renders blank.
     img.onload = () => {
       setupImageBuffers();
       imageLoaded = true;
     };
+
+    img.src = imageSrc;
+
+    // Fallback: if image was already complete from cache, trigger manually
+    if (img.complete && img.naturalWidth > 0 && !imageLoaded) {
+      setupImageBuffers();
+      imageLoaded = true;
+    }
 
     const handleResize = () => {
       if (imageLoaded) {

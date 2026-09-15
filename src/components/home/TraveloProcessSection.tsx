@@ -96,24 +96,23 @@ export function TraveloProcessSection() {
           <div className="max-w-2xl space-y-4">
             {/* Badge */}
             <Reveal>
-              <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest uppercase text-[#2E6B57]">
-                <span className="text-[#2E6B57]">&mdash;</span>
+              <span className="inline-flex items-center gap-3 sm:gap-3.5 px-6 py-3 sm:px-8 sm:py-3.5 md:px-9 md:py-4 rounded-full bg-[#0F2E23] text-[#F4EFE6] text-sm sm:text-base md:text-lg font-mono font-bold tracking-widest uppercase shadow-lg border border-[#2E6B57]/60 w-fit mb-3">
+                <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#39C27D] animate-pulse inline-block shadow-[0_0_14px_#39C27D]" />
                 <span>HOW WE WORK</span>
-                <span className="text-[#2E6B57]">&mdash;</span>
-              </div>
+              </span>
             </Reveal>
 
             {/* Main Title */}
             <Reveal delay={0.06}>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#0F2E23] leading-[1.12]">
-                Plan, Book &amp; Explore With Confidence
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-medium tracking-tight text-[#0F2E23] leading-[1.08]">
+                The Art of Seamless Travel, From Vision to Touchdown.
               </h2>
             </Reveal>
 
             {/* Subtitle */}
             <Reveal delay={0.12}>
-              <p className="text-sm sm:text-base text-[#0F2E23]/70 font-light max-w-xl leading-relaxed font-sans">
-                From your first inquiry to your safe return, we ensure every step is carefully planned with expert guidance throughout.
+              <p className="text-base sm:text-lg text-[#0F2E23]/75 font-light max-w-xl leading-relaxed font-sans">
+                A dedicated concierge methodology engineered to remove friction, protect your time, and elevate every moment.
               </p>
             </Reveal>
           </div>

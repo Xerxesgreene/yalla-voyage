@@ -1,80 +1,93 @@
 export interface Testimonial {
   id: string;
-  quote: string;
-  category: string;
-  highlightTag: string;
+  author: string;
+  initials: string;
   trip: string;
+  destination: string;
+  category: string;
   rating: number;
-  clientType: string;
-  year: string;
+  review: string;
+  verifiedText: string;
 }
 
 export const testimonials: Testimonial[] = [
   {
     id: '1',
-    quote: 'From private archaeological permits in AlUla to candlelit desert canyon dining, every single hour was pure poetry.',
-    category: 'Archaeological Access',
-    highlightTag: 'AlUla Royal Oasis & Hegra',
-    trip: 'Bespoke Desert Sanctuary',
+    author: 'The Al-Mansoor Family',
+    initials: 'AM',
+    trip: 'Family Holiday in Saudi Arabia',
+    destination: 'AlUla & The Red Sea',
+    category: 'Family Holiday',
     rating: 5,
-    clientType: 'Private Family Office',
-    year: '2026 Dispatch',
+    review:
+      'We booked a 10-day holiday across AlUla and the Red Sea with our three children. Everything from private stargazing among the sandstone canyons to snorkeling with turtles was organized with so much warmth and care. The kids were engaged every single day, and having our coordinator check in on WhatsApp gave us complete peace of mind.',
+    verifiedText: 'Verified Traveler',
   },
   {
     id: '2',
-    quote: 'Flawless Maybach logistics, tarmac VIP protocol, and absolute confidentiality across the Kingdom.',
-    category: 'Executive Protocol',
-    highlightTag: 'Kingdom Executive Summit',
-    trip: 'Diplomatic & C-Suite Delegation',
+    author: 'Sarah & Tariq K.',
+    initials: 'ST',
+    trip: 'European Honeymoon',
+    destination: 'Amalfi Coast & Swiss Alps',
+    category: 'Honeymoon',
     rating: 5,
-    clientType: 'Corporate Global Summit',
-    year: '2026 Dispatch',
+    review:
+      'Yalla Voyage planned our dream honeymoon across Positano and Switzerland. Having our private boat tour along the Amalfi cliffs and panoramic Glacier Express train seats booked in advance made the entire experience effortless, intimate, and magical. Truly the best journey of our lives!',
+    verifiedText: 'Verified Traveler',
   },
   {
     id: '3',
-    quote: 'Overwater Red Sea villas and sunset catamaran sails. Our senior curator anticipated every unspoken wish.',
-    category: 'Overwater Sanctuary',
-    highlightTag: 'The Red Sea Archipelago',
-    trip: 'Private Island Escape',
+    author: 'Dr. Faisal & Leila H.',
+    initials: 'FL',
+    trip: 'Saudi Heritage Expedition',
+    destination: 'Diriyah, Al-Balad & Al Ahsa',
+    category: 'Cultural Discovery',
     rating: 5,
-    clientType: 'Ultra-Luxury Honeymoon',
-    year: '2026 Dispatch',
+    review:
+      'We wanted to explore Saudi heritage with our teenagers. Walking through the quiet coral stone alleys of historic Al-Balad in Jeddah at dusk and watching the golden sunset over the At-Turaif citadel in Diriyah with our private local historian was unforgettable. Superb hospitality and seamless transport.',
+    verifiedText: 'Verified Traveler',
   },
   {
     id: '4',
-    quote: 'Haramain VIP rail and panoramic Clock Tower suites made our Umrah deeply peaceful, serene, and effortless.',
-    category: 'Spiritual Heritage',
-    highlightTag: 'Holy Makkah & Medina Sanctuary',
-    trip: 'VIP Umrah & Cultural Extension',
+    author: 'Ahmed & Mariam R.',
+    initials: 'AM',
+    trip: 'Spiritual Pilgrimage & Family Stay',
+    destination: 'Madinah & Makkah',
+    category: 'Spiritual Journey',
     rating: 5,
-    clientType: 'Private Family Pilgrimage',
-    year: '2026 Dispatch',
+    review:
+      'Our pilgrimage with my elderly parents was completely smooth and stress-free. Our hotel room overlooked the Prophet’s Mosque courtyard, and private wheelchair-accessible transfers were waiting for us at every train station. We could focus entirely on our worship without any logistical worries.',
+    verifiedText: 'Verified Traveler',
   },
   {
     id: '5',
-    quote: 'Direct FBO ramp boarding, bespoke Michelin-standard catering, and seamless helicopter canyon transfers.',
-    category: 'VIP Aviation',
-    highlightTag: 'Gulfstream Private Charter',
-    trip: 'Transcontinental VIP Mobility',
+    author: 'Elena & Marcus V.',
+    initials: 'EV',
+    trip: '15th Anniversary Getaway',
+    destination: 'Paris & Côte d’Azur',
+    category: 'Anniversary Trip',
     rating: 5,
-    clientType: 'Private Jet Client',
-    year: '2026 Dispatch',
+    review:
+      'We celebrated our anniversary traveling from Paris to the French Riviera. The private twilight river cruise on the Seine and the charming boutique hotel in Nice were absolute highlights. The team even had fresh flowers and local pastries waiting in our room. Wonderful, thoughtful service.',
+    verifiedText: 'Verified Traveler',
   },
   {
     id: '6',
-    quote: 'Curated gallery access in Paris and private yacht moorings in Amalfi — absolute precision from start to finish.',
-    category: 'Global Sanctuary',
-    highlightTag: 'European Grand Tour',
-    trip: 'Private Cultural Expedition',
+    author: 'Zaid & Noor S.',
+    initials: 'ZN',
+    trip: 'Autumn Cultural Tour',
+    destination: 'Kyoto & Tokyo, Japan',
+    category: 'Cultural Discovery',
     rating: 5,
-    clientType: 'Bespoke Global Traveler',
-    year: '2026 Dispatch',
+    review:
+      'Our autumn trip to Japan exceeded all expectations. The peaceful morning walk through Kyoto’s bamboo groves before the crowds, our traditional ryokan stay with private onsen baths, and the seamless Shinkansen bullet train transfers made it pure poetry. We will definitely travel with Yalla Voyage again.',
+    verifiedText: 'Verified Traveler',
   },
 ];
 
 export const clientTrustMetrics = [
-  { label: 'Curated Mastery', value: '10 Years Experience' },
+  { label: 'Travel Mastery', value: '20+ Years' },
   { label: 'Client Satisfaction', value: '4.98 / 5.0' },
-  { label: 'Tailored Itineraries', value: '100% Bespoke' },
-  { label: 'Direct Concierge SLA', value: '< 15 Min' },
+  { label: 'Custom Itineraries', value: '100% Bespoke' },
+  { label: 'Dedicated Concierge', value: '24/7 Care' },
 ];

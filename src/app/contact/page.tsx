@@ -38,6 +38,38 @@ const internationalDestinations = [
   'Custom / Multi-Destination',
 ];
 
+const saudiDestinationsAr = [
+  'العلا',
+  'الدرعية',
+  'جدة',
+  'الرياض',
+  'المدينة المنورة',
+  'مدينة الملك عبدالله الاقتصادية',
+  'ينبع',
+  'الباحة',
+  'أمالا',
+  'الأحساء',
+  'أبها وعسير',
+  'الطائف',
+  'وادي الديسة',
+  'مشروع البحر الأحمر',
+];
+
+const internationalDestinationsAr = [
+  'القاهرة والنيل، مصر',
+  'ساحل أمالفي وروما، إيطاليا',
+  'جبال الألب السويسرية، سويسرا',
+  'ملاذ جزيرة موريشيوس',
+  'دبي وأبوظبي، الإمارات',
+  'باريس وكوت دازور، فرنسا',
+  'سانتوريني وسيكلاديز، اليونان',
+  'طوكيو وكيوتو، اليابان',
+  'ملاذ المالديف الفاخر',
+  'بالي وكومودو، إندونيسيا',
+  'إسطنبول وكابادوكيا، تركيا',
+  'برنامج خاص / وجهات متعددة',
+];
+
 const serviceOptions = [
   'Bespoke Luxury Holidays',
   'Wellness & Retreat',
@@ -48,7 +80,22 @@ const serviceOptions = [
   'Curated Saudi Expeditions',
 ];
 
+const serviceOptionsAr = [
+  'عطلات فاخرة مصممة خصيصاً',
+  'استجمام وعافية واستشفاء',
+  'جولات واستكشافات تعليمية',
+  'رحلات سيدات حصرية',
+  'سفر أعمال وتنظيم فعاليات ومؤتمرات',
+  'طيران خاص وتنقلات كبار الشخصيات',
+  'رحلات استكشافية منتقاة في السعودية',
+];
+
+import { useLanguage } from '@/context/LanguageContext';
+
 export default function ContactPage() {
+  const { t, locale, isRTL } = useLanguage();
+  const c = t.contactPage;
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -94,11 +141,15 @@ export default function ContactPage() {
     window.open(`${siteConfig.whatsapp}?text=${encodeURIComponent(lines)}`, '_blank');
   };
 
+  const activeSaudiDestinations = locale === 'ar' ? saudiDestinationsAr : saudiDestinations;
+  const activeIntlDestinations = locale === 'ar' ? internationalDestinationsAr : internationalDestinations;
+  const activeServices = locale === 'ar' ? serviceOptionsAr : serviceOptions;
+
   return (
     <main className="bg-[#F4EFE6] text-[#0F2E23] overflow-hidden">
       <PageHero
-        title="Begin Your Journey"
-        subtitle="Direct concierge access for bespoke itineraries, private aviation, and luxury escapes."
+        title={c.heroTitle}
+        subtitle={c.heroSubtitle}
         image="/images/header-real-contact.jpg"
         alt="Bora Bora Turquoise Lagoon, French Polynesia"
         positionClass="object-center"
@@ -112,13 +163,13 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-6">
               <Reveal>
                 <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#2E6B57] font-semibold block mb-2">
-                  Direct Stewardship
+                  {c.stewardshipBadge}
                 </span>
                 <h2 className="text-display text-3xl sm:text-4xl lg:text-5xl text-[#0F2E23] mb-3 leading-tight font-light">
-                  Let&apos;s architect your next journey.
+                  {c.stewardshipTitle}
                 </h2>
                 <p className="text-[#0F2E23]/75 text-base sm:text-lg leading-relaxed font-light font-sans">
-                  Whether it&apos;s a private jet across continents, an AlUla desert buyout, or a multi-destination itinerary, our senior curators are at your disposal.
+                  {c.stewardshipDesc}
                 </p>
               </Reveal>
 
@@ -135,10 +186,10 @@ export default function ContactPage() {
                       <MessageCircle className="w-5 h-5" fill="white" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-sm text-[#0F2E23]">WhatsApp</p>
-                      <p className="text-[#0F2E23]/60 text-xs mt-0.5 font-sans">Quick message response</p>
+                      <p className="font-semibold text-sm text-[#0F2E23]">{c.whatsappTitle}</p>
+                      <p className="text-[#0F2E23]/60 text-xs mt-0.5 font-sans">{c.whatsappSub}</p>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-[#2E6B57] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className={`w-4 h-4 text-[#2E6B57] group-hover:translate-x-1 transition-transform ${isRTL ? 'rotate-180' : ''}`} />
                   </a>
                 </Reveal>
 
@@ -151,10 +202,10 @@ export default function ContactPage() {
                       <Phone className="w-5 h-5" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-sm text-[#0F2E23]">Phone</p>
-                      <p className="text-[#0F2E23]/60 text-xs mt-0.5 font-mono">{siteConfig.phone}</p>
+                      <p className="font-semibold text-sm text-[#0F2E23]">{c.phoneTitle}</p>
+                      <p className="text-[#0F2E23]/60 text-xs mt-0.5 font-mono" dir="ltr">{siteConfig.phone}</p>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-[#2E6B57] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className={`w-4 h-4 text-[#2E6B57] group-hover:translate-x-1 transition-transform ${isRTL ? 'rotate-180' : ''}`} />
                   </a>
                 </Reveal>
 
@@ -167,10 +218,10 @@ export default function ContactPage() {
                       <Mail className="w-5 h-5" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-sm text-[#0F2E23]">Email</p>
-                      <p className="text-[#0F2E23]/60 text-xs mt-0.5 font-sans">info@yallavoyage.com</p>
+                      <p className="font-semibold text-sm text-[#0F2E23]">{c.emailTitle}</p>
+                      <p className="text-[#0F2E23]/60 text-xs mt-0.5 font-sans" dir="ltr">info@yallavoyage.com</p>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-[#2E6B57] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className={`w-4 h-4 text-[#2E6B57] group-hover:translate-x-1 transition-transform ${isRTL ? 'rotate-180' : ''}`} />
                   </a>
                 </Reveal>
 
@@ -180,8 +231,8 @@ export default function ContactPage() {
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm text-[#0F2E23]">Location</p>
-                      <p className="text-[#0F2E23]/60 text-xs mt-0.5 leading-relaxed font-sans">{siteConfig.address.full}</p>
+                      <p className="font-semibold text-sm text-[#0F2E23]">{c.locationTitle}</p>
+                      <p className="text-[#0F2E23]/60 text-xs mt-0.5 leading-relaxed font-sans">{t.footer.addressVal}</p>
                     </div>
                   </div>
                 </Reveal>
@@ -194,10 +245,10 @@ export default function ContactPage() {
                 <div className="bg-white rounded-3xl border border-[#0F2E23]/10 p-6 sm:p-8 md:p-10 shadow-lg">
                   <div className="mb-6 pb-4 border-b border-[#0F2E23]/10">
                     <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#2E6B57] font-semibold block mb-1">
-                      Inquiry Form
+                      {c.formBadge}
                     </span>
                     <h3 className="text-display text-2xl sm:text-3xl text-[#0F2E23] font-light">
-                      Send Us a Message
+                      {c.formTitle}
                     </h3>
                   </div>
 
@@ -206,7 +257,7 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                       <div>
                         <label htmlFor="contact-name" className="block text-xs font-mono uppercase tracking-wider font-semibold text-[#0F2E23] mb-1.5">
-                          Full Name *
+                          {c.fullNameLabel}
                         </label>
                         <input
                           id="contact-name"
@@ -217,12 +268,12 @@ export default function ContactPage() {
                           value={form.name}
                           onChange={handleChange}
                           className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-[#0F2E23]/15 bg-[#F4EFE6]/40 text-[#0F2E23] text-sm focus:outline-none focus:border-[#2E6B57] focus:ring-2 focus:ring-[#2E6B57]/20 transition-all font-sans"
-                          placeholder="Your Name"
+                          placeholder={c.fullNamePlaceholder}
                         />
                       </div>
                       <div>
                         <label htmlFor="contact-email" className="block text-xs font-mono uppercase tracking-wider font-semibold text-[#0F2E23] mb-1.5">
-                          Email Address *
+                          {c.emailLabel}
                         </label>
                         <input
                           id="contact-email"
@@ -232,7 +283,7 @@ export default function ContactPage() {
                           value={form.email}
                           onChange={handleChange}
                           className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-[#0F2E23]/15 bg-[#F4EFE6]/40 text-[#0F2E23] text-sm focus:outline-none focus:border-[#2E6B57] focus:ring-2 focus:ring-[#2E6B57]/20 transition-all font-sans"
-                          placeholder="your.email@example.com"
+                          placeholder={c.emailPlaceholder}
                         />
                       </div>
                     </div>
@@ -241,7 +292,7 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                       <div>
                         <label htmlFor="contact-phone" className="block text-xs font-mono uppercase tracking-wider font-semibold text-[#0F2E23] mb-1.5">
-                          Phone Number
+                          {c.phoneLabel}
                         </label>
                         <input
                           id="contact-phone"
@@ -250,12 +301,12 @@ export default function ContactPage() {
                           value={form.phone}
                           onChange={handleChange}
                           className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-[#0F2E23]/15 bg-[#F4EFE6]/40 text-[#0F2E23] text-sm focus:outline-none focus:border-[#2E6B57] focus:ring-2 focus:ring-[#2E6B57]/20 transition-all font-sans"
-                          placeholder="+966 50 000 0000"
+                          placeholder={c.phonePlaceholder}
                         />
                       </div>
                       <div>
                         <label htmlFor="contact-destination" className="block text-xs font-mono uppercase tracking-wider font-semibold text-[#0F2E23] mb-1.5">
-                          Destination
+                          {c.destinationLabel}
                         </label>
                         <select
                           id="contact-destination"
@@ -264,14 +315,14 @@ export default function ContactPage() {
                           onChange={handleChange}
                           className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-[#0F2E23]/15 bg-[#F4EFE6]/40 text-[#0F2E23] text-sm focus:outline-none focus:border-[#2E6B57] focus:ring-2 focus:ring-[#2E6B57]/20 transition-all font-sans"
                         >
-                          <option value="">Select a Destination</option>
-                          <optgroup label="Saudi Arabia">
-                            {saudiDestinations.map((d) => (
+                          <option value="">{c.selectDestination}</option>
+                          <optgroup label={c.saudiGroup}>
+                            {activeSaudiDestinations.map((d) => (
                               <option key={d} value={d}>{d}</option>
                             ))}
                           </optgroup>
-                          <optgroup label="International">
-                            {internationalDestinations.map((d) => (
+                          <optgroup label={c.intlGroup}>
+                            {activeIntlDestinations.map((d) => (
                               <option key={d} value={d}>{d}</option>
                             ))}
                           </optgroup>
@@ -283,7 +334,7 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
                       <div>
                         <label htmlFor="contact-service" className="block text-xs font-mono uppercase tracking-wider font-semibold text-[#0F2E23] mb-1.5">
-                          Service
+                          {c.serviceLabel}
                         </label>
                         <select
                           id="contact-service"
@@ -292,15 +343,15 @@ export default function ContactPage() {
                           onChange={handleChange}
                           className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-[#0F2E23]/15 bg-[#F4EFE6]/40 text-[#0F2E23] text-sm focus:outline-none focus:border-[#2E6B57] focus:ring-2 focus:ring-[#2E6B57]/20 transition-all font-sans"
                         >
-                          <option value="">Select Service</option>
-                          {serviceOptions.map((s) => (
+                          <option value="">{c.selectService}</option>
+                          {activeServices.map((s) => (
                             <option key={s} value={s}>{s}</option>
                           ))}
                         </select>
                       </div>
                       <div>
                         <label htmlFor="contact-date" className="block text-xs font-mono uppercase tracking-wider font-semibold text-[#0F2E23] mb-1.5">
-                          Travel Date
+                          {c.dateLabel}
                         </label>
                         <input
                           id="contact-date"
@@ -314,7 +365,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label htmlFor="contact-travellers" className="block text-xs font-mono uppercase tracking-wider font-semibold text-[#0F2E23] mb-1.5">
-                          Guests
+                          {c.guestsLabel}
                         </label>
                         <input
                           id="contact-travellers"
@@ -333,7 +384,7 @@ export default function ContactPage() {
                     {/* Row 4: Message */}
                     <div>
                       <label htmlFor="contact-message" className="block text-xs font-mono uppercase tracking-wider font-semibold text-[#0F2E23] mb-1.5">
-                        Message / Notes
+                        {c.messageLabel}
                       </label>
                       <textarea
                         id="contact-message"
@@ -342,7 +393,7 @@ export default function ContactPage() {
                         value={form.message}
                         onChange={handleChange}
                         className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-[#0F2E23]/15 bg-[#F4EFE6]/40 text-[#0F2E23] text-sm focus:outline-none focus:border-[#2E6B57] focus:ring-2 focus:ring-[#2E6B57]/20 transition-all resize-none font-sans"
-                        placeholder="Tell us about your trip dates, preferred activities, or questions..."
+                        placeholder={c.messagePlaceholder}
                       />
                     </div>
 
@@ -352,7 +403,7 @@ export default function ContactPage() {
                         type="submit"
                         className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0F2E23] text-[#F4EFE6] hover:bg-[#2E6B57] text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md cursor-pointer font-sans"
                       >
-                        <MessageCircle className="w-4 h-4 text-[#25D366]" /> Send via WhatsApp
+                        <MessageCircle className="w-4 h-4 text-[#25D366]" /> {c.sendWhatsAppBtn}
                       </button>
                       <a
                         href={`mailto:info@arabiaguidetravel.com?subject=${encodeURIComponent(
@@ -362,7 +413,7 @@ export default function ContactPage() {
                         )}`}
                         className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#0F2E23]/20 text-[#0F2E23] hover:bg-[#0F2E23] hover:text-[#F4EFE6] text-xs font-semibold uppercase tracking-wider transition-all duration-300 font-sans"
                       >
-                        <Send className="w-3.5 h-3.5" /> Send via Email
+                        <Send className="w-3.5 h-3.5" /> {c.sendEmailBtn}
                       </a>
                     </div>
                   </form>

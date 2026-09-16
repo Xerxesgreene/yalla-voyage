@@ -31,6 +31,36 @@ body {
   overflow-x: hidden;
 }
 
+/* ── Arabic RTL Typography and Layout Enhancements ── */
+[dir="rtl"] {
+  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  text-align: right;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+  letter-spacing: normal !important;
+}
+
+[dir="rtl"] .font-heading,
+[dir="rtl"] .font-display {
+  font-family: 'Cairo', 'Tajawal', sans-serif !important;
+}
+
+[dir="rtl"] .font-sans {
+  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif !important;
+}
+
+/* Smooth transition when switching direction */
+html {
+  transition: direction 0.3s ease;
+}
+
 /* ── Custom 3D Paper Plane Cursor (Fine Pointers) ── */
 @media (pointer: fine) {
   * {

@@ -17,9 +17,12 @@ import {
   MessageCircle,
 } from 'lucide-react';
 import { YallaLogo } from '@/components/ui/YallaLogo';
+import { useLanguage } from '@/context/LanguageContext';
+import { LanguageSelector } from '@/components/ui/LanguageSelector';
 
 export function Navbar() {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   const [isVisible, setIsVisible] = useState(true);
   const [isAtTop, setIsAtTop] = useState(true);
@@ -77,22 +80,22 @@ export function Navbar() {
   const isScrolledDark = !isAtTop;
 
   const desktopNavLinks = [
-    { label: 'Home', href: '/', icon: Home },
-    { label: 'Explore Saudi', href: '/explore-saudi', icon: Palmtree, badge: 'Kingdom' },
-    { label: 'Destinations', href: '/destinations', icon: Globe },
-    { label: 'Packages', href: '/packages', icon: Luggage },
-    { label: 'Services', href: '/services', icon: Sparkles },
-    { label: 'About', href: '/about', icon: Users },
+    { label: t.nav.home, href: '/', icon: Home },
+    { label: t.nav.exploreSaudi, href: '/explore-saudi', icon: Palmtree, badge: t.nav.kingdomBadge },
+    { label: t.nav.destinations, href: '/destinations', icon: Globe },
+    { label: t.nav.packages, href: '/packages', icon: Luggage },
+    { label: t.nav.services, href: '/services', icon: Sparkles },
+    { label: t.nav.about, href: '/about', icon: Users },
   ];
 
   const mobileNavLinks = [
-    { label: 'Home', href: '/', icon: Home },
-    { label: 'Explore Saudi', href: '/explore-saudi', icon: Palmtree, badge: 'Kingdom' },
-    { label: 'Destinations', href: '/destinations', icon: Globe },
-    { label: 'Packages', href: '/packages', icon: Luggage },
-    { label: 'Services', href: '/services', icon: Sparkles },
-    { label: 'About', href: '/about', icon: Users },
-    { label: 'Contact', href: '/contact', icon: MessageCircle },
+    { label: t.nav.home, href: '/', icon: Home },
+    { label: t.nav.exploreSaudi, href: '/explore-saudi', icon: Palmtree, badge: t.nav.kingdomBadge },
+    { label: t.nav.destinations, href: '/destinations', icon: Globe },
+    { label: t.nav.packages, href: '/packages', icon: Luggage },
+    { label: t.nav.services, href: '/services', icon: Sparkles },
+    { label: t.nav.about, href: '/about', icon: Users },
+    { label: t.nav.contact, href: '/contact', icon: MessageCircle },
   ];
 
   return (
@@ -159,17 +162,20 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* ── Right: Plan Your Trip CTA (Redirects to Contact Page) ── */}
-          <div className="hidden sm:flex items-center gap-3 shrink-0">
+          {/* ── Right: Language Selector & Plan Your Trip CTA ── */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* Language Selector Dropdown Button on the Right Side of Navbar */}
+            <LanguageSelector isScrolledDark={isScrolledDark} />
+
             <Link
               href="/contact"
-              className={`group inline-flex items-center gap-2.5 pl-4 pr-1.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 shadow-sm font-sans ${
+              className={`hidden sm:inline-flex group items-center gap-2.5 pl-4 pr-1.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 shadow-sm font-sans ${
                 isScrolledDark
                   ? 'bg-white text-[#0F2E23] hover:bg-[#39C27D] hover:text-[#071912]'
                   : 'bg-[#0F2E23] text-[#F4EFE6] hover:bg-[#2E6B57]'
               }`}
             >
-              <span>Plan Your Trip</span>
+              <span>{t.nav.planYourTrip}</span>
               <span
                 className={`w-6 h-6 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 ${
                   isScrolledDark ? 'bg-[#0F2E23] text-white' : 'bg-white text-[#0F2E23]'
@@ -217,8 +223,13 @@ export function Navbar() {
             </button>
           </div>
 
+          {/* Mobile Language Switcher */}
+          <div className="pt-4 pb-2">
+            <LanguageSelector variant="mobile" />
+          </div>
+
           {/* Mobile Links */}
-          <nav className="flex flex-col gap-1.5 my-auto py-6" aria-label="Mobile navigation">
+          <nav className="flex flex-col gap-1.5 my-auto py-4" aria-label="Mobile navigation">
             {mobileNavLinks.map((item, i) => {
               const Icon = item.icon;
               const isActive = pathname === item.href;

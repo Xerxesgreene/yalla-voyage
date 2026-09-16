@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { ArrowUpRight, Phone, Mail } from 'lucide-react';
 import { YallaLogo } from '@/components/ui/YallaLogo';
 import { siteConfig } from '@/data/site';
+import { useLanguage } from '@/context/LanguageContext';
 
 function InstagramIcon({ className = 'w-3.5 h-3.5' }: { className?: string }) {
   return (
@@ -28,6 +29,7 @@ function InstagramIcon({ className = 'w-3.5 h-3.5' }: { className?: string }) {
 
 export function Footer() {
   const pathname = usePathname();
+  const { t, locale } = useLanguage();
 
   return (
     <footer className="relative bg-[#06150E] text-[#F4EFE6] overflow-hidden pt-12 sm:pt-16 pb-8 rounded-t-[36px] sm:rounded-t-[52px] lg:rounded-t-[64px] border-t border-[#2E6B57]/30 shadow-[0_-25px_60px_rgba(6,21,14,0.3)]">
@@ -57,10 +59,10 @@ export function Footer() {
           <div className="relative z-10 px-6 py-12 sm:px-12 sm:py-16 lg:px-16 lg:py-20 text-center max-w-3xl mx-auto flex flex-col items-center justify-center">
             <div className="space-y-4 sm:space-y-5 flex flex-col items-center">
               <h2 className="font-serif text-3xl sm:text-5xl lg:text-[54px] font-normal tracking-tight text-[#F4EFE6] leading-[1.12]">
-                Your Journey Starts Here
+                {t.footer.bannerTitle}
               </h2>
               <p className="text-xs sm:text-sm lg:text-base text-[#DAD6CD]/90 font-light max-w-lg leading-relaxed mx-auto">
-                Turn your travel dreams into unforgettable adventures with personalized planning &amp; expert guidance.
+                {t.footer.bannerSubtitle}
               </p>
 
               {/* Action & Trust Badges */}
@@ -70,20 +72,20 @@ export function Footer() {
                   href="/contact"
                   className="group/btn inline-flex items-center gap-3.5 pl-6 pr-2.5 py-2.5 sm:pl-7 sm:pr-3 sm:py-3 rounded-full bg-white text-[#0F2E23] hover:bg-[#39C27D] hover:text-[#06150E] transition-all duration-300 shadow-xl font-medium text-xs sm:text-sm tracking-wide font-sans"
                 >
-                  <span>Book a destination</span>
-                  <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0F2E23] text-white group-hover/btn:bg-[#06150E] flex items-center justify-center transition-transform duration-300 group-hover/btn:rotate-45">
-                    <ArrowUpRight className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
+                  <span>{t.footer.bookDestination}</span>
+                  <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0F2E23] text-white group-hover/btn:bg-[#06150E] flex items-center justify-center transition-transform duration-300 group-hover/btn:rotate-45 rtl:group-hover/btn:-rotate-45">
+                    <ArrowUpRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 rtl:rotate-90" />
                   </span>
                 </Link>
 
                 {/* Rating & Travelers Trust */}
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#DAD6CD] bg-[#06150E]/40 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/10">
-                  <span className="font-semibold text-white">4.8/5</span>
+                  <span className="font-semibold text-white">4.9/5</span>
                   <div className="flex items-center text-[#F5A623]">
                     {'★'.repeat(5)}
                   </div>
                   <span className="font-light text-[#DAD6CD]/70 hidden xs:inline">
-                    Trusted by 1K+ Travelers
+                    {locale === 'ar' ? 'موثوق من أكثر من 1200 مسافر' : 'Trusted by 1.2K+ Travelers'}
                   </span>
                 </div>
               </div>
@@ -100,7 +102,7 @@ export function Footer() {
               <YallaLogo variant="horizontal" theme="dark" showTagline={true} size="md" />
             </Link>
             <p className="text-xs sm:text-sm font-light text-[#DAD6CD]/80 leading-relaxed max-w-md font-sans">
-              Bespoke travel curator crafted for the modern traveler. Discover Saudi Arabia&apos;s ancient sanctuaries and global horizons with precision, passion, and devotion.
+              {t.footer.aboutBrand}
             </p>
           </div>
 
@@ -109,35 +111,35 @@ export function Footer() {
             {/* Column 1: PAGES */}
             <div className="space-y-4">
               <h4 className="text-xs font-mono font-semibold tracking-widest uppercase text-[#39C27D]">
-                PAGES
+                {t.footer.quickLinks}
               </h4>
               <ul className="space-y-2.5 text-xs sm:text-[13px] font-sans font-light">
                 <li>
-                  <Link href="/about" className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-block transition-all duration-200">
-                    About
+                  <Link href="/about" className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 rtl:hover:-translate-x-1 inline-block transition-all duration-200">
+                    {t.nav.about}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/destinations" className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-block transition-all duration-200">
-                    Destinations
+                  <Link href="/destinations" className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 rtl:hover:-translate-x-1 inline-block transition-all duration-200">
+                    {t.nav.destinations}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/packages" className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-block transition-all duration-200">
-                    Packages
+                  <Link href="/packages" className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 rtl:hover:-translate-x-1 inline-block transition-all duration-200">
+                    {t.nav.packages}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-block transition-all duration-200">
-                    Services
+                  <Link href="/services" className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 rtl:hover:-translate-x-1 inline-block transition-all duration-200">
+                    {t.nav.services}
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/travel-journal"
-                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-block transition-all duration-200"
+                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 rtl:hover:-translate-x-1 inline-block transition-all duration-200"
                   >
-                    Travel Journal
+                    {locale === 'ar' ? 'مدونة السفر' : 'Travel Journal'}
                   </Link>
                 </li>
               </ul>
@@ -146,13 +148,13 @@ export function Footer() {
             {/* Column 2: CONNECT & SOCIAL */}
             <div className="space-y-4">
               <h4 className="text-xs font-mono font-semibold tracking-widest uppercase text-[#39C27D]">
-                CONNECT
+                {locale === 'ar' ? 'تواصل معنا' : 'CONNECT'}
               </h4>
               <ul className="space-y-2.5 text-xs sm:text-[13px] font-sans font-light">
                 <li>
                   <a
                     href="mailto:info@yallavoyage.com"
-                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-flex items-center gap-2 transition-all duration-200"
+                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 rtl:hover:-translate-x-1 inline-flex items-center gap-2 transition-all duration-200"
                   >
                     <Mail className="w-3.5 h-3.5 text-[#39C27D]" />
                     <span>info@yallavoyage.com</span>
@@ -163,7 +165,7 @@ export function Footer() {
                     href="https://www.instagram.com/yalla__voyage?stkn=dmZnOXkwd3RzMGFm"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 inline-flex items-center gap-2 transition-all duration-200"
+                    className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 rtl:hover:-translate-x-1 inline-flex items-center gap-2 transition-all duration-200"
                   >
                     <InstagramIcon className="w-3.5 h-3.5 text-[#39C27D]" />
                     <span>@yalla__voyage</span>
@@ -186,9 +188,22 @@ export function Footer() {
 
         </div>
 
-        {/* ── BOTTOM COPYRIGHT & BRAND (Centered on Desktop & Mobile) ── */}
-        <div className="pt-8 border-t border-[#2E6B57]/25 text-center text-xs font-mono text-[#DAD6CD]/60">
-          <p>&copy; {new Date().getFullYear()} Yalla Voyage. All rights reserved.</p>
+        {/* ── Sub-Footer: Copyright & Fine Print ── */}
+        <div className="pt-8 border-t border-[#2E6B57]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#DAD6CD]/60 font-sans">
+          <p>
+            &copy; {new Date().getFullYear()} {t.footer.allRightsReserved}
+          </p>
+          <div className="flex items-center gap-6">
+            <Link href="/about" className="hover:text-[#39C27D] transition-colors">
+              {t.nav.about}
+            </Link>
+            <Link href="/contact" className="hover:text-[#39C27D] transition-colors">
+              {t.nav.contact}
+            </Link>
+            <Link href="/explore-saudi" className="hover:text-[#39C27D] transition-colors">
+              {t.nav.exploreSaudi}
+            </Link>
+          </div>
         </div>
 
       </div>

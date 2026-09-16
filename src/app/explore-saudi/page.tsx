@@ -20,7 +20,11 @@ import { saudiDestinations, SaudiDestination } from '@/data/saudi';
 import { experiences } from '@/data/experiences';
 import { siteConfig } from '@/data/site';
 
+import { useLanguage } from '@/context/LanguageContext';
+
 export default function ExploreSaudiPage() {
+  const { t, locale, isRTL } = useLanguage();
+  const es = t.exploreSaudiPage;
   const [activeTab, setActiveTab] = useState<string>('all');
 
   const filteredDestinations =
@@ -32,8 +36,8 @@ export default function ExploreSaudiPage() {
     <main className="bg-[#F4EFE6] text-[#0F2E23] overflow-hidden">
       {/* ── EDITORIAL CINEMATIC HERO BANNER ── */}
       <PageHero
-        title="Explore Saudi"
-        subtitle="Discover Saudi like never before."
+        title={es.heroTitle}
+        subtitle={es.heroSubtitle}
         image="/images/header-real-saudi.jpg"
         alt="AlUla Sandstone Desert Sanctuary, Saudi Arabia"
         positionClass="object-center"
@@ -43,9 +47,9 @@ export default function ExploreSaudiPage() {
       <section className="py-16 md:py-20 bg-white border-b border-[#0F2E23]/10">
         <div className="container-wide">
           <SectionHeading
-            badge="THE YALLA VOYAGE ADVANTAGE"
-            title="Native Mastery, Royal Protocol & Total Discretion."
-            description="Delivering unparalleled operational perfection, royal protocol access, and authentic hospitality across the Kingdom."
+            badge={es.advantageBadge}
+            title={es.advantageTitle}
+            description={es.advantageDesc}
           />
 
           <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-6" stagger={0.08}>
@@ -56,10 +60,10 @@ export default function ExploreSaudiPage() {
                   <Compass className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-display text-[#F4EFE6] mb-2.5 font-semibold">
-                  Generational Local Mastery
+                  {es.advantage1Title}
                 </h3>
                 <p className="text-[#F4EFE6]/75 text-xs sm:text-sm leading-relaxed font-light font-sans">
-                  Yalla Voyage maintains deep institutional roots across Saudi Arabia, unlocking private archaeological permits, royal palace dining, and confidential C-suite access.
+                  {es.advantage1Desc}
                 </p>
               </div>
             </div>
@@ -71,10 +75,10 @@ export default function ExploreSaudiPage() {
                   <Award className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-display text-[#F4EFE6] mb-2.5 font-semibold">
-                  Uncompromising Luxury Pacing
+                  {es.advantage2Title}
                 </h3>
                 <p className="text-[#F4EFE6]/75 text-xs sm:text-sm leading-relaxed font-light font-sans">
-                  Every Yalla Voyage itinerary is precision-engineered to your exact schedule — featuring private helicopter charters, Maybach fleets, and 5-star desert sanctuaries.
+                  {es.advantage2Desc}
                 </p>
               </div>
             </div>
@@ -86,10 +90,10 @@ export default function ExploreSaudiPage() {
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-display text-[#F4EFE6] mb-2.5 font-semibold">
-                  Direct Concierge Stewardship
+                  {es.advantage3Title}
                 </h3>
                 <p className="text-[#F4EFE6]/75 text-xs sm:text-sm leading-relaxed font-light font-sans">
-                  With a dedicated 24/7 Yalla Voyage concierge on call, every flight connection, VIP baggage escort, and visa fast-track is handled with flawless discretion.
+                  {es.advantage3Desc}
                 </p>
               </div>
             </div>
@@ -102,9 +106,9 @@ export default function ExploreSaudiPage() {
         <div className="container-wide">
           {/* Section Heading */}
           <SectionHeading
-            badge="REGIONAL EXPEDITIONS"
-            title="Kingdom Horizons: From Red Sea Reefs to Desert Canyons."
-            description="Curated by Yalla Voyage to reveal the profound duality of the Kingdom — timeless heritage and visionary luxury."
+            badge={es.regionalBadge}
+            title={es.regionalTitle}
+            description={es.regionalDesc}
           />
 
           {/* Filter Pills Controls Bar (Consistent with Destinations & Packages) */}
@@ -117,7 +121,7 @@ export default function ExploreSaudiPage() {
                   : 'bg-white text-[#0F2E23]/70 hover:bg-white hover:text-[#0F2E23] border border-[#0F2E23]/10 hover:border-[#2E6B57]/30 shadow-xs'
               }`}
             >
-              <span>All Destinations</span>
+              <span>{es.allDestinations}</span>
             </button>
             {saudiDestinations.map((dest) => (
               <button
@@ -129,7 +133,7 @@ export default function ExploreSaudiPage() {
                     : 'bg-white text-[#0F2E23]/70 hover:bg-white hover:text-[#0F2E23] border border-[#0F2E23]/10 hover:border-[#2E6B57]/30 shadow-xs'
                 }`}
               >
-                <span>{dest.name}</span>
+                <span>{locale === 'ar' && dest.arabicName ? dest.arabicName : dest.name}</span>
               </button>
             ))}
           </div>
@@ -137,7 +141,7 @@ export default function ExploreSaudiPage() {
           {/* Destination Cards */}
           <div className="space-y-10">
             {filteredDestinations.map((dest, idx) => (
-              <DestinationVideoCard key={dest.slug} dest={dest} index={idx} />
+              <DestinationVideoCard key={dest.slug} dest={dest} index={idx} locale={locale} sanctuaryBadge={es.sanctuaryBadge} />
             ))}
           </div>
         </div>
@@ -147,9 +151,9 @@ export default function ExploreSaudiPage() {
       <section className="py-16 md:py-24 bg-white border-b border-[#0F2E23]/10 relative overflow-hidden">
         <div className="container-wide relative z-10">
           <SectionHeading
-            badge="YALLA VOYAGE INVITATIONS"
-            title="Not Tours. Rare & Private Invitations."
-            description="Exclusive cultural, archaeological, and culinary immersions unlocked by Yalla Voyage's native relationships."
+            badge={es.signatureBadge}
+            title={es.signatureTitle}
+            description={es.signatureDesc}
           />
 
           <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-7" stagger={0.08}>
@@ -167,7 +171,7 @@ export default function ExploreSaudiPage() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F2E23]/60 via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4">
                     <span className="px-3.5 py-1 rounded-full text-[10px] uppercase tracking-wider font-mono font-semibold bg-white/95 text-[#0F2E23] shadow-xs">
                       {exp.category}
                     </span>
@@ -187,7 +191,7 @@ export default function ExploreSaudiPage() {
                   <div className="pt-4 border-t border-[#0F2E23]/8 flex items-center justify-between text-xs font-mono text-[#2E6B57]">
                     <span className="flex items-center gap-1.5">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#39C27D]" />
-                      <span>Curated by Yalla Voyage</span>
+                      <span>{es.curatedBy}</span>
                     </span>
                     <span className="text-[#0F2E23]/60 font-sans">{exp.duration}</span>
                   </div>
@@ -205,7 +209,8 @@ export default function ExploreSaudiPage() {
                 target="_blank"
                 variant="primary"
               >
-                Inquire With Yalla Voyage <ArrowRight className="w-4 h-4" />
+                <span>{es.inquireBtn}</span>
+                <ArrowRight className={`w-4 h-4 transition-transform ${isRTL ? 'rotate-180' : ''}`} />
               </MagneticButton>
             </div>
           </Reveal>
@@ -218,20 +223,20 @@ export default function ExploreSaudiPage() {
           <Reveal>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0F2E23] text-[#F4EFE6] text-[11px] font-mono font-bold tracking-widest uppercase mb-4 shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-[#39C27D] animate-pulse inline-block" />
-              <span>YALLA VOYAGE PRIVATE CLIENT DESK</span>
+              <span>{es.deskBadge}</span>
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-light text-[#0F2E23] mb-5 leading-[1.08]">
-              Your Kingdom story begins here.
+              {es.ctaTitle}
               <br />
               <span className="font-semibold italic text-[#2E6B57] font-serif">
-                Crafted by Yalla Voyage.
+                {es.ctaHighlight}
               </span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.1}>
             <p className="text-sm sm:text-base text-[#0F2E23]/70 mb-8 max-w-md mx-auto font-light leading-relaxed font-sans">
-              Connect directly with our senior Saudi travel designers to architect a seamless, bespoke journey tailored to your exact preferences.
+              {es.ctaDesc}
             </p>
           </Reveal>
 
@@ -244,14 +249,15 @@ export default function ExploreSaudiPage() {
                 target="_blank"
                 variant="primary"
               >
-                Consult With Yalla Voyage <ArrowRight className="w-4 h-4" />
+                <span>{es.consultBtn}</span>
+                <ArrowRight className={`w-4 h-4 transition-transform ${isRTL ? 'rotate-180' : ''}`} />
               </MagneticButton>
 
               <Link
                 href="/contact"
                 className="px-6 py-3.5 rounded-full border border-[#0F2E23]/20 text-[#0F2E23] text-xs font-semibold uppercase tracking-wider hover:bg-[#0F2E23] hover:text-[#F4EFE6] transition-all font-sans bg-white shadow-xs"
               >
-                Inquire Online
+                {es.inquireOnlineBtn}
               </Link>
             </div>
           </Reveal>
@@ -267,12 +273,18 @@ export default function ExploreSaudiPage() {
 function DestinationVideoCard({
   dest,
   index,
+  locale,
+  sanctuaryBadge = 'Yalla Voyage Sanctuary',
 }: {
   dest: SaudiDestination;
   index: number;
+  locale?: string;
+  sanctuaryBadge?: string;
 }) {
   const isEven = index % 2 === 0;
   const topPlaces = dest.places.slice(0, 4);
+  const isAr = locale === 'ar';
+  const displayName = isAr && dest.arabicName ? dest.arabicName : dest.name;
 
   return (
     <Reveal>
@@ -282,7 +294,7 @@ function DestinationVideoCard({
           <div className={`lg:col-span-6 relative aspect-[16/10] sm:aspect-[4/3] lg:aspect-auto min-h-[320px] sm:min-h-[380px] lg:min-h-[440px] overflow-hidden group bg-[#0F2E23] ${!isEven ? 'lg:order-2' : ''}`}>
             <Image
               src={dest.image}
-              alt={dest.name}
+              alt={displayName}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -291,9 +303,9 @@ function DestinationVideoCard({
             <div className="absolute inset-0 bg-gradient-to-t from-[#0F2E23]/60 via-transparent to-transparent pointer-events-none" />
 
             {/* Location Badge */}
-            <div className="absolute top-4 left-4 z-10">
+            <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4 z-10">
               <span className="px-3.5 py-1.5 rounded-full text-[10.5px] font-mono font-semibold uppercase tracking-widest bg-black/60 text-white backdrop-blur-md border border-white/20 shadow-xs">
-                {dest.name}
+                {displayName}
               </span>
             </div>
           </div>
@@ -303,8 +315,8 @@ function DestinationVideoCard({
             <div>
               <div className="flex items-center gap-2 text-xs font-mono text-[#2E6B57] font-semibold mb-3 uppercase tracking-wider">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#39C27D]" />
-                <span>Yalla Voyage Sanctuary</span>
-                {dest.arabicName && (
+                <span>{sanctuaryBadge}</span>
+                {!isAr && dest.arabicName && (
                   <>
                     <span>•</span>
                     <span className="font-serif font-normal text-sm">{dest.arabicName}</span>
@@ -313,7 +325,7 @@ function DestinationVideoCard({
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-display font-light text-[#0F2E23] mb-2 leading-tight tracking-tight">
-                {dest.name}
+                {displayName}
               </h2>
 
               <p className="text-[#2E6B57] font-serif italic text-base sm:text-lg mb-3">

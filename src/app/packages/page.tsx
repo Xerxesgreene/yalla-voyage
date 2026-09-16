@@ -11,9 +11,13 @@ import { PackageCard } from '@/components/packages/PackageCard';
 import { packages, TravelPackage } from '@/data/packages';
 import { siteConfig } from '@/data/site';
 
+import { useLanguage } from '@/context/LanguageContext';
+
 type PackageFilter = 'all' | 'top' | 'saudi' | 'special';
 
 export default function PackagesPage() {
+  const { t, isRTL } = useLanguage();
+  const p = t.packagesPage;
   const [filter, setFilter] = useState<PackageFilter>('all');
 
   const filtered = useMemo(() => {
@@ -24,9 +28,9 @@ export default function PackagesPage() {
   const counts = useMemo(() => {
     return {
       all: packages.length,
-      top: packages.filter((p) => p.category === 'top').length,
-      saudi: packages.filter((p) => p.category === 'saudi').length,
-      special: packages.filter((p) => p.category === 'special').length,
+      top: packages.filter((pkg) => pkg.category === 'top').length,
+      saudi: packages.filter((pkg) => pkg.category === 'saudi').length,
+      special: packages.filter((pkg) => pkg.category === 'special').length,
     };
   }, []);
 
@@ -34,8 +38,8 @@ export default function PackagesPage() {
     <main className="bg-[#F4EFE6] text-[#0F2E23] overflow-hidden">
       {/* ── CINEMATIC HERO BANNER ── */}
       <PageHero
-        title="Our Packages"
-        subtitle="Bespoke luxury itineraries handcrafted across top destinations and timeless horizons."
+        title={p.heroTitle}
+        subtitle={p.heroSubtitle}
         image="/images/header-real-packages.jpg"
         alt="Mount Fuji and Chureito Pagoda, Japan"
         positionClass="object-center"
@@ -47,18 +51,18 @@ export default function PackagesPage() {
           
           {/* Section Heading */}
           <SectionHeading
-            badge="TOP DESTINATIONS"
-            title="Our Packages"
-            description="Handcrafted journeys blending private access, refined pacing, and personalized concierge care."
+            badge={p.showcaseBadge}
+            title={p.showcaseTitle}
+            description={p.showcaseDesc}
           />
 
           {/* Clean Controls / Category Filter Pills */}
           <div className="flex items-center gap-2 flex-wrap mb-12 pb-8 border-b border-[#0F2E23]/10">
             {[
-              { id: 'all', label: 'All Packages', count: counts.all },
-              { id: 'top', label: 'Top Destinations', count: counts.top },
-              { id: 'saudi', label: 'Saudi Sanctuaries', count: counts.saudi },
-              { id: 'special', label: 'Specialty & Retreats', count: counts.special },
+              { id: 'all', label: p.filterAll, count: counts.all },
+              { id: 'top', label: p.filterTop, count: counts.top },
+              { id: 'saudi', label: p.filterSaudi, count: counts.saudi },
+              { id: 'special', label: p.filterSpecial, count: counts.special },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -97,23 +101,23 @@ export default function PackagesPage() {
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-4">
                 <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#39C27D] font-semibold block">
-                  Bespoke Studio
+                  {p.studioBadge}
                 </span>
                 <h3 className="text-display text-2xl sm:text-3xl lg:text-4xl text-[#F4EFE6] font-light leading-tight">
-                  Seeking a custom package crafted for your dates?
+                  {p.studioTitle}
                 </h3>
                 <p className="text-[#F4EFE6]/75 text-xs sm:text-sm leading-relaxed font-light font-sans max-w-2xl">
-                  Every package can be customized from a blank canvas to fit your private schedule, helicopter transfers, and personal preferences.
+                  {p.studioDesc}
                 </p>
-                <div className="flex items-center gap-4 text-xs font-mono text-[#39C27D] pt-1">
+                <div className="flex items-center gap-4 text-xs font-mono text-[#39C27D] pt-1 flex-wrap">
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Custom Itineraries
+                    <CheckCircle2 className="w-3.5 h-3.5" /> {p.studioPill1}
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> 24/7 Concierge
+                    <CheckCircle2 className="w-3.5 h-3.5" /> {p.studioPill2}
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Private Aviation
+                    <CheckCircle2 className="w-3.5 h-3.5" /> {p.studioPill3}
                   </div>
                 </div>
               </div>
@@ -127,13 +131,14 @@ export default function PackagesPage() {
                   variant="primary"
                   className="w-full text-center"
                 >
-                  <MessageCircle className="w-4 h-4 text-[#25D366]" /> Chat With Senior Curator
+                  <MessageCircle className="w-4 h-4 text-[#25D366]" /> {p.chatCuratorBtn}
                 </MagneticButton>
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-white/20 text-[#F4EFE6] hover:bg-white/10 text-xs font-semibold uppercase tracking-wider transition-all duration-300 font-sans text-center"
                 >
-                  Inquire Online <ArrowRight className="w-3.5 h-3.5" />
+                  <span>{p.inquireOnlineBtn}</span>
+                  <ArrowRight className={`w-3.5 h-3.5 transition-transform ${isRTL ? 'rotate-180' : ''}`} />
                 </Link>
               </div>
             </div>

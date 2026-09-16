@@ -17,33 +17,103 @@ import { MagneticButton } from '@/components/ui/MagneticButton';
 import { services, Service, ServiceCategory } from '@/data/services';
 import { siteConfig } from '@/data/site';
 
+import { useLanguage } from '@/context/LanguageContext';
+
 type FilterId = 'all' | ServiceCategory;
 
+const arabicServiceMap: Record<string, {
+  title: string;
+  categoryLabel: string;
+  badge: string;
+  tagline: string;
+  description: string;
+  highlights: string[];
+}> = {
+  'bespoke-travel': {
+    title: 'رحلات واستكشافات مخصصة',
+    categoryLabel: 'رحلات حصرية',
+    badge: 'حصري وفاخر',
+    tagline: 'برامج سفر مفصلة — من الاستكشافات الصحراوية إلى الفلل العائمة في الجزر.',
+    description: 'نصمم رحلات مخصصة بالكامل: استكشافات الأخاديد الصحراوية، حجز الجزر الخاصة، والتنقل بين الجزر، وملاذات الأزواج. كل مسار مبني على وتيرتك وتفضيلاتك دون أي قوالب مسبقة.',
+    highlights: ['تصميم مسار يومي مخصص بالكامل', 'تخييم فاخر ومسارات أودية وجزر خاصة', 'حجوزات حصرية للفلل والمنتجعات العائمة', 'مرشدون محليون وخبراء معتمدون', 'دعم مصمم رحلات خاص على مدار الساعة', 'تغطية شاملة لكافة التصاريح والمواصلات'],
+  },
+  'private-aviation': {
+    title: 'الطيران الخاص والأسطول الفاخر',
+    categoryLabel: 'تنقلات النخبة',
+    badge: 'طيران وتنقلات',
+    tagline: 'سافر وتنقل وفق جدولك الزمني الخاص — بلا انتظار، وبلا أي مساومة.',
+    description: 'احصل على طائرات أسطولنا الخاص مع صعود مباشر من صالات الطيران الخاص، ووجبات طيران فاخرة، وتوصيل راقٍ بسيارات مايباخ ورينج روفر والفئة S مع سائقين محترفين.',
+    highlights: ['أسطول عالمي: طائرات خفيفة ومتوسطة وثقيلة', 'صعود مباشر من صالات كبار الشخصيات', 'وجبات طيران مخصصة بمعايير ميشلان', 'أحدث سيارات مايباخ ورينج روفر والفئة S', 'سائقون مدربون بروتوكولياً وموقعون على اتفاقيات السرية', 'متابعة مباشرة للرحلات وضمان دقة المواعيد'],
+  },
+  'wellness-retreat': {
+    title: 'ملاذات الصحة والاستجمام',
+    categoryLabel: 'ملاذات متكاملة',
+    badge: 'استجمام وعافية',
+    tagline: 'ملاذات استجمام فاخرة، وعلاجات مياه حرارية، وملاذات متجددة منعزلة.',
+    description: 'استرخِ في ملاذات العافية الشاملة ذات المستوى العالمي — من المنتجعات الحرارية في جبال الألب وأجنحة الأيورفيدا في العلا إلى فلل التأمل الخاصة المطلة على المحيط.',
+    highlights: ['استشارات عافية وطول عمر خاصة ومنتقاة', 'مراكز سبا حرارية وجلسات استشفاء صوتي', 'برامج طعام عضوي طازج من المزرعة إلى المائدة', 'مدربون خاصون لليوغا والتنفس واستعادة الحيوية', 'جلسات علاج مائي وحمام مغربي فاخر', 'كونسيرج عافية مخصص على مدار الساعة'],
+  },
+  'educational-tours': {
+    title: 'الجولات والاستكشافات التعليمية',
+    categoryLabel: 'إثراء معرفي',
+    badge: 'تعليم واستكشاف',
+    tagline: 'رحلات تعليمية حية للمدارس والجامعات والشباب تفتح آفاق المعرفة والتاريخ.',
+    description: 'برامج استكشافية ثقافية وعلمية يقودها نخبة من الأكاديميين والمؤرخين، تركز على الآثار والعلوم البيئية والقيادة.',
+    highlights: ['إشراف ومرافقة أكاديمية متخصصة', 'ورش عمل ميدانية في مواقع التراث العالمي', 'أعلى معايير السلامة والرعاية الطلابية', 'أنشطة بناء الشخصية والقيادة الجماعية', 'تصاريح بحثية وزيارات ميدانية خاصة', 'تنسيق لوجستي شامل معتمد'],
+  },
+  'ladies-trips': {
+    title: 'رحلات السيدات الفاخرة',
+    categoryLabel: 'رحلات خاصة',
+    badge: 'سيدات',
+    tagline: 'ملاذات استثنائية مصممة حصرياً للسيدات بخصوصية تامة وأناقة رفيعة.',
+    description: 'رحلات فاخرة متكاملة الخصوصية تجمع بين الاسترخاء في أرقى المنتجعات العالمية، وجلسات التسوق الشخصي الحصرية، والاستكشافات الثقافية الراقية.',
+    highlights: ['خصوصية مطلقة مع طواقم نسائية متخصصة', 'حجوزات حصرية في أفخم المنتجعات والسبا', 'خدمات تسوق شخصي وتجارب أزياء حصرية', 'تجارب طهي راقية مع شيفات عالميين', 'أنشطة استجمام وتأمل في أجواء ساحرة', 'عناية كونسيرج متكاملة على مدار الساعة'],
+  },
+  'corporate-travel': {
+    title: 'سياحة الأعمال والمؤتمرات (MICE)',
+    categoryLabel: 'أعمال وتنظيم',
+    badge: 'سياحة أعمال',
+    tagline: 'إدارة متكاملة لسفر الشركات والمؤتمرات وحوافز الموظفين بدقة متناهية.',
+    description: 'تنظيم قمم الأعمال والاجتماعات رفيعة المستوى لكبار المسؤولين التنفيذيين، مع توفير كافة التسهيلات التقنية واللوجستية والإقامة الفاخرة.',
+    highlights: ['إدارة شاملة لوفود المؤتمرات والاجتماعات', 'حجوزات قاعات وفنادق حصرية بأسعار تفضيلية', 'لوجستيات نقل وفود ومسارات مطار سريعة', 'تنظيم فعاليات عشاء واجتماعات تنفيذية راقية', 'تقارير مالية وتتبع مسارات السفر لحظياً', 'مدير حساب مخصص متفرغ 24/7'],
+  },
+  'vip-concierge': {
+    title: 'الكونسيرج والخدمات اللوجستية الفاخرة',
+    categoryLabel: 'خدمات متكاملة',
+    badge: 'كونسيرج خاص',
+    tagline: 'كل طلب مهما بدا مستحيلاً يصبح واقعاً بكل خصوصية وسرعة.',
+    description: 'خدمات كونسيرج على مدار الساعة تغطي حجوزات المطاعم الحائزة على نجوم ميشلان، وتذاكر الفعاليات العالمية الحصرية، واستخراج التأشيرات السريعة.',
+    highlights: ['أولوية حجز في أشهر المطاعم والنوادي الحصرية', 'تذاكر منصات كبار الشخصيات للفعاليات العالمية', 'خدمات التسوق الفاخر واقتناء القطع النادرة', 'مسار سريع للجوازات والتأشيرات الدبلوماسية', 'مرافقة واستقبال VIP في مطارات العالم', 'سرية مطلقة ومطابقة لمعايير NDA'],
+  },
+};
+
 export default function ServicesPage() {
+  const { t, locale, isRTL } = useLanguage();
+  const s = t.servicesPage;
   const [activeFilter, setActiveFilter] = useState<FilterId>('all');
 
   const filteredServices =
     activeFilter === 'all'
       ? services
-      : services.filter((s) => s.category === activeFilter);
+      : services.filter((svc) => svc.category === activeFilter);
 
   const filters: { id: FilterId; label: string }[] = [
-    { id: 'all', label: 'All Services' },
-    { id: 'bespoke', label: 'Signature Journeys' },
-    { id: 'wellness', label: 'Wellness & Retreat' },
-    { id: 'educational', label: 'Educational Tours' },
-    { id: 'ladies', label: 'Ladies Trips' },
-    { id: 'aviation', label: 'VIP Mobility' },
-    { id: 'corporate', label: 'Corporate & Events' },
-    { id: 'concierge', label: 'Concierge & Logistics' },
+    { id: 'all', label: s.filterAll },
+    { id: 'bespoke', label: s.filterBespoke },
+    { id: 'wellness', label: s.filterWellness },
+    { id: 'educational', label: s.filterEducational },
+    { id: 'ladies', label: s.filterLadies },
+    { id: 'aviation', label: s.filterAviation },
+    { id: 'corporate', label: s.filterCorporate },
+    { id: 'concierge', label: s.filterConcierge },
   ];
 
   return (
     <main className="bg-[#F4EFE6] text-[#0F2E23] overflow-hidden">
       {/* ── EDITORIAL CINEMATIC HERO BANNER ── */}
       <PageHero
-        title="Architected Services"
-        subtitle="Bespoke travel curated with precision, discretion, and personalized care."
+        title={s.heroTitle}
+        subtitle={s.heroSubtitle}
         image="/images/header-real-services.jpg"
         alt="Lake Como and Bellagio Waterfront, Italy"
         positionClass="object-center"
@@ -53,9 +123,9 @@ export default function ServicesPage() {
       <section className="py-16 md:py-20 bg-white border-b border-[#0F2E23]/10">
         <div className="container-wide">
           <SectionHeading
-            badge="THE YALLA VOYAGE ADVANTAGE"
-            title="Native Mastery, Royal Protocol & White-Glove Delivery."
-            description="Delivering unparalleled operational perfection, confidential protocol access, and authentic luxury concierge stewardship across every journey."
+            badge={s.advantageBadge}
+            title={s.advantageTitle}
+            description={s.advantageDesc}
           />
 
           <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-6" stagger={0.08}>
@@ -66,10 +136,10 @@ export default function ServicesPage() {
                   <Compass className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-display text-[#F4EFE6] mb-2.5 font-semibold">
-                  Tailored Without Templates
+                  {s.advantage1Title}
                 </h3>
                 <p className="text-[#F4EFE6]/75 text-xs sm:text-sm leading-relaxed font-light font-sans">
-                  Every itinerary operates on zero templates. From private island buyouts to historian-led excavations, each agenda is curated from a blank canvas.
+                  {s.advantage1Desc}
                 </p>
               </div>
             </div>
@@ -81,10 +151,10 @@ export default function ServicesPage() {
                   <Award className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-display text-[#F4EFE6] mb-2.5 font-semibold">
-                  Guaranteed Response SLA
+                  {s.advantage2Title}
                 </h3>
                 <p className="text-[#F4EFE6]/75 text-xs sm:text-sm leading-relaxed font-light font-sans">
-                  Backed by our direct senior desk. Urgent requests, flight re-routings, and visa fast-tracks receive dedicated priority liaison.
+                  {s.advantage2Desc}
                 </p>
               </div>
             </div>
@@ -96,10 +166,10 @@ export default function ServicesPage() {
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-display text-[#F4EFE6] mb-2.5 font-semibold">
-                  VIP Confidentiality & NDA
+                  {s.advantage3Title}
                 </h3>
                 <p className="text-[#F4EFE6]/75 text-xs sm:text-sm leading-relaxed font-light font-sans">
-                  Diplomats, high-net-worth families, and executive C-suites trust our discreet coordination. All movements are protected with stringent confidentiality protocols.
+                  {s.advantage3Desc}
                 </p>
               </div>
             </div>
@@ -112,12 +182,12 @@ export default function ServicesPage() {
         <div className="container-wide">
           {/* Section Heading */}
           <SectionHeading
-            badge="OUR SERVICES"
-            title="Distinct Dimensions of Bespoke Luxury."
-            description="Specialized travel services engineered to give you complete operational control, absolute privacy, and white-glove delivery."
+            badge={s.showcaseBadge}
+            title={s.showcaseTitle}
+            description={s.showcaseDesc}
           />
 
-          {/* Filter Pills Controls Bar (Consistent with Separate Saudi Page) */}
+          {/* Filter Pills Controls Bar */}
           <div className="flex items-center gap-2 flex-wrap mb-12 pb-8 border-b border-[#0F2E23]/10">
             {filters.map((tab) => (
               <button
@@ -134,10 +204,10 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          {/* Service Cards (Matching Exact Sizing & Clean Design of Saudi Page) */}
+          {/* Service Cards */}
           <div className="space-y-10">
             {filteredServices.map((service, idx) => (
-              <ServiceDivisionCard key={service.slug} service={service} index={idx} />
+              <ServiceDivisionCard key={service.slug} service={service} index={idx} locale={locale} />
             ))}
           </div>
         </div>
@@ -149,20 +219,20 @@ export default function ServicesPage() {
           <Reveal>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0F2E23] text-[#F4EFE6] text-[11px] font-mono font-bold tracking-widest uppercase mb-4 shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-[#39C27D] animate-pulse inline-block" />
-              <span>YALLA VOYAGE PRIVATE CLIENT DESK</span>
+              <span>{s.deskBadge}</span>
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-light text-[#0F2E23] mb-5 leading-[1.08]">
-              Your bespoke journey begins here.
+              {s.ctaTitle}
               <br />
               <span className="font-semibold italic text-[#2E6B57] font-serif">
-                Crafted by Yalla Voyage.
+                {s.ctaHighlight}
               </span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.1}>
             <p className="text-sm sm:text-base text-[#0F2E23]/70 mb-8 max-w-md mx-auto font-light leading-relaxed font-sans">
-              Connect directly with our senior travel designers to architect a seamless, bespoke journey tailored to your exact preferences.
+              {s.ctaDesc}
             </p>
           </Reveal>
 
@@ -175,14 +245,15 @@ export default function ServicesPage() {
                 target="_blank"
                 variant="primary"
               >
-                Consult With Yalla Voyage <ArrowRight className="w-4 h-4" />
+                <span>{s.consultBtn}</span>
+                <ArrowRight className={`w-4 h-4 transition-transform ${isRTL ? 'rotate-180' : ''}`} />
               </MagneticButton>
 
               <Link
                 href="/contact"
                 className="px-6 py-3.5 rounded-full border border-[#0F2E23]/20 text-[#0F2E23] text-xs font-semibold uppercase tracking-wider hover:bg-[#0F2E23] hover:text-[#F4EFE6] transition-all font-sans bg-white shadow-xs"
               >
-                Inquire Online
+                {s.inquireOnlineBtn}
               </Link>
             </div>
           </Reveal>
@@ -193,18 +264,27 @@ export default function ServicesPage() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   SERVICE CARD — Proportioned Exactly Like the Saudi Page
-   (Clean alternating layout, no division numberings, no per-card buttons)
+   SERVICE CARD — Proportioned with locale support
    ═══════════════════════════════════════════════════════════════ */
 function ServiceDivisionCard({
   service,
   index,
+  locale,
 }: {
   service: Service;
   index: number;
+  locale: string;
 }) {
   const isEven = index % 2 === 0;
-  const topHighlights = service.highlights.slice(0, 4);
+  const arData = locale === 'ar' ? arabicServiceMap[service.slug] : undefined;
+
+  const displayTitle = arData?.title ?? service.title;
+  const displayCategory = arData?.categoryLabel ?? service.categoryLabel;
+  const displayBadge = arData?.badge ?? service.badge;
+  const displayTagline = arData?.tagline ?? service.tagline;
+  const displayDesc = arData?.description ?? service.description;
+  const highlightsList = arData?.highlights ?? service.highlights;
+  const topHighlights = highlightsList.slice(0, 4);
 
   return (
     <Reveal>
@@ -221,7 +301,7 @@ function ServiceDivisionCard({
           >
             <Image
               src={service.image}
-              alt={service.title}
+              alt={displayTitle}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -230,9 +310,9 @@ function ServiceDivisionCard({
             <div className="absolute inset-0 bg-gradient-to-t from-[#0F2E23]/60 via-transparent to-transparent pointer-events-none" />
 
             {/* Top Badge */}
-            <div className="absolute top-4 left-4 z-10">
+            <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4 z-10">
               <span className="px-3.5 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-wider font-semibold bg-white/95 text-[#0F2E23] backdrop-blur-md border border-white/20 shadow-xs">
-                {service.badge}
+                {displayBadge}
               </span>
             </div>
           </div>
@@ -243,25 +323,25 @@ function ServiceDivisionCard({
               !isEven ? 'lg:order-1' : ''
             }`}
           >
-            {/* Header Kicker (No numbering) */}
+            {/* Header Kicker */}
             <div className="flex items-center gap-2 text-xs font-mono text-[#2E6B57] font-semibold mb-2.5 uppercase tracking-wider">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#39C27D]" />
-              <span>{service.categoryLabel}</span>
+              <span>{displayCategory}</span>
             </div>
 
             {/* Title */}
             <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-display font-light text-[#0F2E23] mb-2 leading-tight tracking-tight">
-              {service.title}
+              {displayTitle}
             </h2>
 
             {/* Tagline */}
             <p className="text-[#2E6B57] font-serif italic text-sm sm:text-base mb-3">
-              &ldquo;{service.tagline}&rdquo;
+              &ldquo;{displayTagline}&rdquo;
             </p>
 
             {/* Description */}
             <p className="text-xs sm:text-sm text-[#0F2E23]/75 font-light leading-relaxed mb-6 font-sans">
-              {service.description}
+              {displayDesc}
             </p>
 
             {/* Highlights / Capabilities Pills */}

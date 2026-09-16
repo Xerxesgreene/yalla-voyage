@@ -26,10 +26,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       if (saved === 'en' || saved === 'ar') {
         setLocaleState(saved);
         document.documentElement.lang = saved;
-        document.documentElement.dir = saved === 'ar' ? 'rtl' : 'ltr';
+        document.documentElement.dir = 'ltr';
+        document.documentElement.setAttribute('data-lang', saved);
       } else {
         document.documentElement.lang = 'en';
         document.documentElement.dir = 'ltr';
+        document.documentElement.setAttribute('data-lang', 'en');
       }
     } catch {
       // Fallback in case localStorage is restricted
@@ -42,7 +44,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     try {
       localStorage.setItem(STORAGE_KEY, newLocale);
       document.documentElement.lang = newLocale;
-      document.documentElement.dir = newLocale === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.dir = 'ltr';
+      document.documentElement.setAttribute('data-lang', newLocale);
     } catch {
       // Storage unavailable
     }
@@ -52,7 +55,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     setLocale(locale === 'en' ? 'ar' : 'en');
   }, [locale, setLocale]);
 
-  const isRTL = locale === 'ar';
+  // Do not force RTL layout: translate in-place from where it is
+  const isRTL = false;
   const t = useMemo(() => translations[locale], [locale]);
 
   const value = useMemo(

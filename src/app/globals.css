@@ -31,34 +31,54 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Arabic RTL Typography and Layout Enhancements ── */
-[dir="rtl"] {
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
-  text-align: right;
+/* ── Luxury Arabic Typography (In-Place Translation, Natural LTR Layout Preserved) ── */
+html[lang="ar"],
+[data-lang="ar"] {
+  --font-heading: 'Alexandria', 'Almarai', sans-serif;
+  --font-display: 'Alexandria', 'Almarai', sans-serif;
+  --font-body: 'Almarai', 'Alexandria', system-ui, sans-serif;
+  --font-sans: 'Almarai', 'Alexandria', system-ui, sans-serif;
+  --font-serif: 'El Messiri', 'Amiri', serif;
 }
 
-[dir="rtl"] h1,
-[dir="rtl"] h2,
-[dir="rtl"] h3,
-[dir="rtl"] h4,
-[dir="rtl"] h5,
-[dir="rtl"] h6 {
-  font-family: 'Cairo', 'Tajawal', sans-serif;
+html[lang="ar"],
+html[lang="ar"] body,
+[data-lang="ar"],
+[data-lang="ar"] body {
+  font-family: var(--font-body);
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6,
+[data-lang="ar"] h1,
+[data-lang="ar"] h2,
+[data-lang="ar"] h3,
+[data-lang="ar"] h4,
+[data-lang="ar"] h5,
+[data-lang="ar"] h6 {
+  font-family: var(--font-heading);
   letter-spacing: normal !important;
 }
 
-[dir="rtl"] .font-heading,
-[dir="rtl"] .font-display {
-  font-family: 'Cairo', 'Tajawal', sans-serif !important;
+html[lang="ar"] .font-heading,
+html[lang="ar"] .font-display,
+[data-lang="ar"] .font-heading,
+[data-lang="ar"] .font-display {
+  font-family: var(--font-heading) !important;
 }
 
-[dir="rtl"] .font-sans {
-  font-family: 'Cairo', 'Tajawal', system-ui, sans-serif !important;
+html[lang="ar"] .font-sans,
+[data-lang="ar"] .font-sans {
+  font-family: var(--font-sans) !important;
 }
 
-/* Smooth transition when switching direction */
-html {
-  transition: direction 0.3s ease;
+html[lang="ar"] .font-serif,
+[data-lang="ar"] .font-serif {
+  font-family: var(--font-serif) !important;
 }
 
 /* ── Custom 3D Paper Plane Cursor (Fine Pointers) ── */

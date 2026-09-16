@@ -286,7 +286,7 @@ export default function DestinationsPage() {
                       {/* Line 2: Large Serif Destination Title in Pure White */}
                       <h3
                         style={{
-                          fontFamily: locale === 'ar' ? "'Cairo', sans-serif" : "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                          fontFamily: locale === 'ar' ? "'El Messiri', 'Almarai', sans-serif" : "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
                           color: '#FFFFFF',
                         }}
                         className="text-3xl sm:text-4xl lg:text-[38px] !text-white font-normal leading-[1.08] tracking-tight group-hover:text-[#39C27D] transition-colors drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"

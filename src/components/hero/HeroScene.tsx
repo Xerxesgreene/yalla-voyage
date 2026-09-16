@@ -55,7 +55,7 @@ export function HeroScene() {
         {/* Left-Aligned Typographic Group in Open Sky */}
         <div
           ref={contentRef}
-          className="max-w-[280px] sm:max-w-md lg:max-w-lg mr-auto rtl:mr-0 rtl:ml-auto text-left rtl:text-right pointer-events-auto space-y-2.5 sm:space-y-5"
+          className="max-w-[280px] sm:max-w-md lg:max-w-lg mr-auto text-left pointer-events-auto space-y-2.5 sm:space-y-5"
         >
           {/* Main Headline */}
           <h1 className="hero-anim text-[24px] sm:text-4xl md:text-5xl lg:text-[60px] font-heading font-medium text-[#0F2E23] tracking-tight leading-[1.1]">
@@ -75,7 +75,7 @@ export function HeroScene() {
               className="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 sm:px-6 sm:py-3 rounded-full bg-[#0F2E23] hover:bg-[#2E6B57] text-[#F4EFE6] text-[10.5px] sm:text-sm font-sans font-medium uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.98]"
             >
               <span>{t.hero.beginVoyage}</span>
-              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 rtl:rotate-180" />
+              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             </Link>
           </div>
         </div>

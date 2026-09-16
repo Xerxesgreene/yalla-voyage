@@ -674,13 +674,13 @@ export const translations: Record<Locale, TranslationDictionary> = {
     hero: {
       titleLine1: 'نصنع تجارب',
       titleLine2: 'سفر',
-      titleHighlight: 'استثنائية.',
-      subtitle: 'تصمم يالّا فوياج رحلات فريدة بدقة فائقة، وشغف لا محدود، وعناية مطلقة بكل تفصيلة.',
+      titleHighlight: 'استثنائية',
+      subtitle: 'تصمم يالّا فوياج رحلات فريدة بدقة فائقة، وشغف لا محدود، وعناية مطلقة بكل تفصيلة',
       beginVoyage: 'ابدأ رحلتك',
     },
     whoWeAre: {
       badge: 'من نحن',
-      title: 'من نحن: صناعة تجارب سفر استثنائية.',
+      title: 'من نحن: صناعة تجارب سفر استثنائية',
       para1Prefix:
         'ندرك تماماً حاجتكم إلى الجودة والثقة عندما يتعلق الأمر بصنع ذكريات عطلات لا تُنسى. لذا، عندما تختارون ',
       brandName: 'YALLA VOYAGE',

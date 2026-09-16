@@ -162,9 +162,9 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* ── Right: Language Selector & Plan Your Trip CTA ── */}
+          {/* ── Right Controls: Language Selector, Plan Trip CTA & Hamburger ── */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            {/* Language Selector Dropdown Button on the Right Side of Navbar */}
+            {/* Language Selector Dropdown Button */}
             <LanguageSelector isScrolledDark={isScrolledDark} />
 
             <Link
@@ -184,21 +184,21 @@ export function Navbar() {
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </span>
             </Link>
-          </div>
 
-          {/* ── Mobile Hamburger Button ── */}
-          <button
-            className={`lg:hidden p-2 transition-colors rounded-xl ${
-              isScrolledDark
-                ? 'text-[#F4EFE6] hover:text-[#39C27D] bg-white/5'
-                : 'text-[#0F2E23] hover:text-[#2E6B57] bg-black/5'
-            }`}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+            {/* Mobile Hamburger Button */}
+            <button
+              className={`lg:hidden p-2 transition-colors rounded-xl ${
+                isScrolledDark
+                  ? 'text-[#F4EFE6] hover:text-[#39C27D] bg-white/5'
+                  : 'text-[#0F2E23] hover:text-[#2E6B57] bg-black/5'
+              }`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </header>
 

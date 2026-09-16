@@ -113,11 +113,6 @@ html[lang="ar"] .font-mono,
   text-align: right;
 }
 
-/* Marquee track must always lay out left-to-right regardless of page direction */
-[dir="rtl"] .animate-infinite-scroll {
-  direction: ltr;
-}
-
 /* ── Custom 3D Paper Plane Cursor (Fine Pointers) ── */
 @media (pointer: fine) {
   * {

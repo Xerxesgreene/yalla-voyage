@@ -67,8 +67,13 @@ export function TestimonialsSection() {
     },
   ];
 
-  // Duplicated set for seamless CSS marquee scroll
-  const marqueeItems = [...localizedTestimonials, ...localizedTestimonials];
+  // Quadrupled set for seamless continuous CSS marquee scroll without gaps
+  const marqueeItems = [
+    ...localizedTestimonials,
+    ...localizedTestimonials,
+    ...localizedTestimonials,
+    ...localizedTestimonials,
+  ];
 
   const waMsg =
     locale === 'ar'
@@ -116,8 +121,8 @@ export function TestimonialsSection() {
         </BlurReveal>
       </div>
 
-      {/* ── Continuous Infinite Motion Stream ── */}
-      <div className="relative w-full overflow-hidden select-none py-4">
+      {/* ── Continuous Infinite Motion Stream (LTR coordinate space ensures gap-free looping) ── */}
+      <div dir="ltr" className="relative w-full overflow-hidden select-none py-4">
         {/* Soft edge masks */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-28 bg-gradient-to-r from-[#0A1A14] via-[#0A1A14]/80 to-transparent z-20" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-28 bg-gradient-to-l from-[#0A1A14] via-[#0A1A14]/80 to-transparent z-20" />
@@ -127,6 +132,7 @@ export function TestimonialsSection() {
           {marqueeItems.map((item, idx) => (
             <div
               key={`${item.id}-${idx}`}
+              dir={locale === 'ar' ? 'rtl' : 'ltr'}
               className="flex-shrink-0 w-[300px] sm:w-[380px] lg:w-[420px] mx-2.5 sm:mx-3.5 flex flex-col justify-between p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-[#0F2E23]/80 backdrop-blur-xl border border-[#2E6B57]/40 hover:border-[#39C27D]/80 hover:bg-[#0F2E23] transition-all duration-300 shadow-xl group cursor-pointer"
             >
               {/* Top: Stars, Category & Destination */}

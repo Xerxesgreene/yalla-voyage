@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { useOptionalLanguage } from '@/context/LanguageContext';
 
 interface YallaLogoProps {
   className?: string;
@@ -10,6 +11,7 @@ interface YallaLogoProps {
   showTagline?: boolean;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   id?: string;
+  locale?: 'en' | 'ar';
 }
 
 export function YallaLogo({
@@ -19,7 +21,11 @@ export function YallaLogo({
   showTagline = false,
   size = 'md',
   id,
+  locale: propLocale,
 }: YallaLogoProps) {
+  const langContext = useOptionalLanguage();
+  const currentLocale = propLocale || langContext?.locale || 'en';
+  const isArabic = currentLocale === 'ar';
   const isDark = theme === 'dark';
 
   // Sizing matched to trimmed logo aspect ratio 600x369 (~1.626)
@@ -31,6 +37,9 @@ export function YallaLogo({
   }[size];
 
   const taglineColor = isDark ? '#DAD6CD' : '#6D8377';
+  const logoSrc = isArabic
+    ? '/yalla-voyage-logo-ar-transparent.png'
+    : '/yalla-voyage-logo-transparent.png';
 
   return (
     <div
@@ -45,8 +54,8 @@ export function YallaLogo({
         }}
       >
         <Image
-          src="/yalla-voyage-logo-transparent.png"
-          alt="Yalla Voyage"
+          src={logoSrc}
+          alt={isArabic ? 'يلا Voyage' : 'Yalla Voyage'}
           width={sizeMap.width * 2}
           height={sizeMap.height * 2}
           className="object-contain w-full h-full"
@@ -63,12 +72,15 @@ export function YallaLogo({
 
       {showTagline && (
         <span
-          className={`uppercase font-sans font-bold tracking-[0.22em] mt-1 ${sizeMap.tagline} opacity-90`}
+          className={`uppercase font-sans font-bold mt-1 ${sizeMap.tagline} opacity-90 ${
+            isArabic ? 'tracking-normal' : 'tracking-[0.22em]'
+          }`}
           style={{ color: taglineColor }}
         >
-          EXPLORE MORE. CREATE MEMORIES.
+          {isArabic ? 'اكتشف المزيد. اصنع ذكريات لا تُنسى.' : 'EXPLORE MORE. CREATE MEMORIES.'}
         </span>
       )}
     </div>
   );
 }
+

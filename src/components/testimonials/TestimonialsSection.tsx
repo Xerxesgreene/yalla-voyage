@@ -3,12 +3,26 @@
 import React from 'react';
 import { Star, MessageCircle, CheckCircle2, MapPin } from 'lucide-react';
 import { BlurReveal } from '@/components/ui/BlurReveal';
-import { testimonials, clientTrustMetrics } from '@/data/testimonials';
+import { testimonials } from '@/data/testimonials';
 import { siteConfig } from '@/data/site';
 import { useLanguage } from '@/context/LanguageContext';
 
 export function TestimonialsSection() {
   const { t, locale } = useLanguage();
+
+  const trustMetrics = locale === 'ar'
+    ? [
+        { value: '+20 عاماً', label: 'إتقان السياحة الفاخرة' },
+        { value: '4.98 / 5.0', label: 'رضا العملاء' },
+        { value: '100% مخصص', label: 'برامج سفر فريدة' },
+        { value: '24/7 اهتمام', label: 'كونسيرج متخصص' },
+      ]
+    : [
+        { value: '20+ Years', label: 'Travel Mastery' },
+        { value: '4.98 / 5.0', label: 'Client Satisfaction' },
+        { value: '100% Bespoke', label: 'Custom Itineraries' },
+        { value: '24/7 Care', label: 'Dedicated Concierge' },
+      ];
 
   const localizedTestimonials = [
     {
@@ -165,9 +179,9 @@ export function TestimonialsSection() {
       <div className="container-wide relative z-10 mt-10">
         <BlurReveal delay={0.25}>
           <div className="pt-8 border-t border-[#2E6B57]/30 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {clientTrustMetrics.map((stat) => (
+            {trustMetrics.map((stat) => (
               <div key={stat.label} className="space-y-1">
-                <span className="block text-xl sm:text-2xl md:text-3xl font-heading font-medium text-[#39C27D]">
+                <span className="block text-xl sm:text-2xl md:text-3xl font-heading font-medium text-[#39C27D]" dir="ltr">
                   {stat.value}
                 </span>
                 <span className="text-[10.5px] font-mono uppercase tracking-[0.16em] text-[#DAD6CD]/80 font-medium">

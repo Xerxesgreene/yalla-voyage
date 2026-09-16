@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useOptionalLanguage } from '@/context/LanguageContext';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [
@@ -17,6 +18,8 @@ export default function Navbar() {
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
   const pathname = usePathname();
+  const langContext = useOptionalLanguage();
+  const isArabic = langContext?.locale === 'ar';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -39,7 +42,11 @@ export default function Navbar() {
       <nav className={`${styles.nav} container`}>
         {/* Logo */}
         <Link href="/" className={styles.logo}>
-          <img src="/logo.png" alt="Yalla Voyage Logo" className={styles.logoImage} />
+          <img
+            src={isArabic ? "/yalla-voyage-logo-ar-transparent.png" : "/logo.png"}
+            alt={isArabic ? "يلا Voyage" : "Yalla Voyage Logo"}
+            className={styles.logoImage}
+          />
         </Link>
 
         {/* Desktop Links */}

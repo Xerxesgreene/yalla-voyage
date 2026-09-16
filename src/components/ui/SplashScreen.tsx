@@ -4,10 +4,14 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { useOptionalLanguage } from '@/context/LanguageContext';
 
 export function SplashScreen() {
   const pathname = usePathname();
+  const langContext = useOptionalLanguage();
+  const isArabic = langContext?.locale === 'ar';
   const isHomepage = pathname === '/';
+
 
   const [mounted, setMounted] = useState(false);
   const [showSplash, setShowSplash] = useState(false);
@@ -187,8 +191,8 @@ export function SplashScreen() {
             <div className="relative">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/yalla-voyage-logo-transparent.png"
-                alt="Yalla Voyage"
+                src={isArabic ? "/yalla-voyage-logo-ar-transparent.png" : "/yalla-voyage-logo-transparent.png"}
+                alt={isArabic ? "يلا Voyage" : "Yalla Voyage"}
                 className="w-[340px] sm:w-[440px] md:w-[500px] max-w-[85vw] h-auto object-contain select-none drop-shadow-sm"
               />
 
@@ -218,7 +222,9 @@ export function SplashScreen() {
 
             {/* Tagline */}
             <motion.p
-              className="mt-5 text-[11px] sm:text-[13px] tracking-[0.35em] uppercase font-sans font-medium text-[#2E6B57]"
+              className={`mt-5 text-[11px] sm:text-[13px] uppercase font-sans font-medium text-[#2E6B57] ${
+                isArabic ? 'tracking-wider font-bold' : 'tracking-[0.35em]'
+              }`}
               initial={{ opacity: 0, y: 8 }}
               animate={
                 phase === 'presence'
@@ -229,8 +235,9 @@ export function SplashScreen() {
               }
               transition={{ duration: 0.6, ease: 'easeOut', delay: phase === 'presence' ? 0.15 : 0 }}
             >
-              Explore More · Create Memories
+              {isArabic ? 'اكتشف المزيد · اصنع ذكريات لا تُنسى' : 'Explore More · Create Memories'}
             </motion.p>
+
 
             {/* Slender Luxury Progress Bar */}
             <motion.div

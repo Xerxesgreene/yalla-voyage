@@ -382,7 +382,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       pillar3Desc: "From first inquiry to touchdown, our team communicates in the language you're most comfortable in.",
     },
     services: {
-      badge: 'SERVICES & CAPABILITIES',
+      badge: 'SERVICES',
       titleMain: 'Architected Without Limits.',
       titleHighlight: 'Crafted for Uncompromising Travel.',
       description:

@@ -85,7 +85,7 @@ export function Footer() {
                     {'★'.repeat(5)}
                   </div>
                   <span className="font-light text-[#DAD6CD]/70 hidden xs:inline">
-                    {locale === 'ar' ? 'موثوق من أكثر من 1200 مسافر' : 'Trusted by 1.2K+ Travelers'}
+                    {locale === 'ar' ? 'موثوق من أكثر من ١٢٠٠ مسافر' : 'Trusted by 1.2K+ Travelers'}
                   </span>
                 </div>
               </div>
@@ -180,7 +180,7 @@ export function Footer() {
                   className="inline-flex items-center gap-2 text-xs font-mono text-[#F4EFE6] bg-[#13382B] px-3.5 py-1.5 rounded-full border border-[#2E6B57]/40 hover:border-[#39C27D] transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#39C27D]" />
-                  <span>{siteConfig.phone}</span>
+                  <span>{locale === 'ar' ? '+٩٦٦ ٥٦ ٧٣٥ ٧٢٥٠' : siteConfig.phone}</span>
                 </a>
               </div>
             </div>

@@ -81,6 +81,43 @@ html[lang="ar"] .font-serif,
   font-family: var(--font-serif) !important;
 }
 
+/* ── RTL Layout — Full Right-to-Left Direction ── */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* In RTL / Arabic, override font-mono to use the main Arabic-capable sans-serif font —
+   monospace fonts have no Arabic glyphs and fall back to an undesirable system font */
+html[lang="ar"] .font-mono,
+[data-lang="ar"] .font-mono,
+[dir="rtl"] .font-mono {
+  font-family: var(--font-sans), 'Almarai', 'Alexandria', sans-serif !important;
+  letter-spacing: 0.02em;
+}
+
+
+/* Ensure container-wide respects RTL text-align */
+[dir="rtl"] .container-wide {
+  text-align: right;
+}
+
+/* Override left-only utilities so headings & paragraphs align right */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] p {
+  text-align: right;
+}
+
+/* Marquee track must always lay out left-to-right regardless of page direction */
+[dir="rtl"] .animate-infinite-scroll {
+  direction: ltr;
+}
+
 /* ── Custom 3D Paper Plane Cursor (Fine Pointers) ── */
 @media (pointer: fine) {
   * {

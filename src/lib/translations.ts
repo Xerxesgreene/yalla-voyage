@@ -720,8 +720,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
     },
     services: {
       badge: 'الخدمات والإمكانيات',
-      titleMain: 'مصممة بلا حدود.',
-      titleHighlight: 'متقنة لسفر لا يقبل المساومة.',
+      titleMain: 'مصممة بلا حدود',
+      titleHighlight: 'متقنة لسفر لا يقبل المساومة',
       description:
         'من الطيران الخاص والملاذات الجزرية المنعزلة إلى قمم الأعمال واللوجستيات التنفيذية لكبار الشخصيات — نهندس رحلاتكم بدقة لا تشوبها شائبة.',
       exploreAll: 'استكشف كافة قطاعات الخدمات',

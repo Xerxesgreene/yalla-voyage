@@ -13,18 +13,50 @@ export function HaoqiServicesSection() {
   const router = useRouter();
   const { t, locale } = useLanguage();
 
-  const serviceTitleMap: Record<string, string> = {
-    'Private Jet Charters': t.services.items.privateJets,
-    'Bespoke Itineraries': t.services.items.bespokeItineraries,
-    'Luxury Fleet & Chauffeur': t.services.items.luxuryFleet,
-    'VIP Umrah & Spiritual Journeys': t.services.items.vipUmrah,
-    'Corporate Travel & MICE': t.services.items.corporateMice,
-    'Luxury Hotel & Villa Buyouts': t.services.items.hotelBuyouts,
-    'Ultra-Luxury Yacht Charters': t.services.items.yachtCharters,
-    'Wellness & Healing Retreats': t.services.items.wellnessRetreats,
-    'Visa, Passport & VIP Concierge': t.services.items.vipConcierge,
-    'Luxury Ladies Trips': t.services.items.ladiesTrips,
-    'Educational & Youth Expeditions': t.services.items.educationalExpeditions,
+  const arabicHomepageServices: Record<
+    string,
+    { title: string; tagline: string; badge: string }
+  > = {
+    'Bespoke Travel & Adventures': {
+      title: 'السفر والمغامرات المصممة خصيصاً',
+      tagline: 'برامج سياحية متفردة بلا قوالب جاهزة، بإشراف كبار المرشدين المحليين.',
+      badge: 'رحلات خاصة',
+    },
+    'Wellness and Retreat': {
+      title: 'الاستجمام والملاذات الصحية',
+      tagline: 'ملاذات استشفاء صحية شاملة، وينابيع علاجية، وإجازات هادئة لتجديد الطاقة.',
+      badge: 'ملاذات صحية',
+    },
+    'Educational Tours': {
+      title: 'الرحلات التعليمية والثقافية',
+      tagline: 'دراسات معمارية ومواقع أثرية يقودها نخبة من المؤرخين، وبعثات استكشافية حية.',
+      badge: 'ثقافة ومعرفة',
+    },
+    'Ladies Trips': {
+      title: 'رحلات السيدات الخاصة',
+      tagline: 'رحلات صممت حصرياً للسيدات بأقصى درجات الفخامة والخصوصية والاستجمام.',
+      badge: 'رحلات نسائية',
+    },
+    'Private Aviation & Chauffeurs': {
+      title: 'الطيران الخاص والتنقل الفاخر',
+      tagline: 'سافر وفق جدولك الزمني دون انتظار، مع وصول مباشر لصالات كبار الشخصيات.',
+      badge: 'طيران خاص',
+    },
+    'Corporate MICE & Retreats': {
+      title: 'سياحة الأعمال والمؤتمرات',
+      tagline: 'تنظيم متكامل للقمم العالمية، واستئجار الوجهات بالكامل، والرحلات الجماعية.',
+      badge: 'سياحة أعمال',
+    },
+    'Flights & 5-Star Hotels': {
+      title: 'حجوزات الطيران والفنادق الفاخرة',
+      tagline: 'ترقيات مجانية للغرف، وتذاكر الدرجة الأولى، وأسعار تفضيلية مرنة.',
+      badge: 'أسعار تفضيلية',
+    },
+    'Visas & Documentation': {
+      title: 'التأشيرات والخدمات اللوجستية',
+      tagline: 'إصدار تأشيرات الدخول السريعة، والتأشيرات الإلكترونية، واستشارات السفر.',
+      badge: 'تأشيرات سريعة',
+    },
   };
 
   return (
@@ -51,7 +83,7 @@ export function HaoqiServicesSection() {
           
           {/* Service Text & Highlights (order-2 on mobile, order-1 on desktop) */}
           <div className="order-2 lg:order-1 lg:col-span-5 space-y-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-heading font-medium text-[#0F2E23] leading-[1.08] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-heading font-medium text-[#0F2E23] leading-[1.15] tracking-tight">
               {t.services.titleMain} <span className="text-[#2E6B57]">{t.services.titleHighlight}</span>
             </h2>
 
@@ -62,7 +94,8 @@ export function HaoqiServicesSection() {
             {/* Service Pillars List -> Links directly to service page */}
             <div className="pt-2 space-y-3">
               {homepageServices.map((svc) => {
-                const localizedTitle = serviceTitleMap[svc.title] || svc.title;
+                const arData = arabicHomepageServices[svc.title];
+                const localizedTitle = locale === 'ar' && arData ? arData.title : svc.title;
                 return (
                   <Link
                     key={svc.title}
@@ -75,7 +108,7 @@ export function HaoqiServicesSection() {
                         {localizedTitle}
                       </span>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#0F2E23]/40 group-hover:text-[#2E6B57] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:rotate-90 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-[#0F2E23]/40 group-hover:text-[#2E6B57] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </Link>
                 );
               })}
@@ -88,7 +121,7 @@ export function HaoqiServicesSection() {
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#0F2E23] hover:bg-[#2E6B57] text-[#F4EFE6] text-xs font-semibold uppercase tracking-wider transition-all shadow-md group font-sans"
               >
                 <span>{t.services.exploreAll}</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:rotate-180 transition-transform text-[#39C27D]" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#39C27D]" />
               </Link>
             </div>
           </div>
@@ -113,7 +146,9 @@ export function HaoqiServicesSection() {
                 }}
               >
                 {homepageServices.map((service) => {
-                  const localizedTitle = serviceTitleMap[service.title] || service.title;
+                  const arData = arabicHomepageServices[service.title];
+                  const localizedTitle = locale === 'ar' && arData ? arData.title : service.title;
+                  const localizedTagline = locale === 'ar' && arData ? arData.tagline : service.tagline;
                   return (
                     <Card key={service.title} className="group/card relative w-full h-full select-none cursor-pointer">
                       {/* Background Full-Bleed Image */}
@@ -138,22 +173,22 @@ export function HaoqiServicesSection() {
                           </h3>
 
                           <p className="text-xs sm:text-[13px] text-[#DAD6CD]/90 font-light leading-relaxed font-sans line-clamp-2">
-                            {service.tagline}
+                            {localizedTagline}
                           </p>
                         </div>
 
                         {/* Properly Placed Discover Button */}
                         <div className="pt-3 border-t border-white/15 flex items-center justify-between">
                           <span className="text-xs font-mono font-medium text-[#39C27D] uppercase tracking-wider">
-                            {locale === 'ar' ? 'استكشف الخدمة' : 'Explore Service'}
+                            {locale === 'ar' ? 'خدمة متميزة' : 'Explore Service'}
                           </span>
                           <Link
                             href={service.href || '/services'}
                             onClick={(e) => e.stopPropagation()}
                             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white hover:bg-[#39C27D] text-[#0F2E23] hover:text-[#06150E] text-xs font-sans font-semibold uppercase tracking-wider transition-all duration-300 shadow-md group-hover/card:bg-[#39C27D] group-hover/card:text-[#06150E]"
                           >
-                            <span>{locale === 'ar' ? 'اكتشف' : 'Discover'}</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover/card:translate-x-1 rtl:rotate-180 transition-transform" />
+                            <span>{locale === 'ar' ? 'اكتشف الخدمة' : 'Discover'}</span>
+                            <ArrowRight className="w-3.5 h-3.5 group-hover/card:translate-x-1 transition-transform" />
                           </Link>
                         </div>
                       </div>

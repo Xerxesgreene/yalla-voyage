@@ -53,7 +53,7 @@ export default function AboutPage() {
                 <div className="pt-2">
                   <MagneticButton
                     href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
-                      'Hello Yalla Voyage, I would love to learn more about your private travel philosophy.'
+                      'Hello يلا سفر, I would love to learn more about your private travel philosophy.'
                     )}`}
                     target="_blank"
                     variant="primary"
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-[#0F2E23]/10 group bg-white">
                   <Image
                     src="/images/alula-luxury-sanctuary.jpg"
-                    alt="Yalla Voyage AlUla Expedition"
+                    alt="يلا سفر AlUla Expedition"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 1024px) 100vw, 50vw"

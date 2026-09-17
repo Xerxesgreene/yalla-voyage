@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
+import { useLanguage } from '@/context/LanguageContext';
 import { ServicesSolarSystem } from './ServicesSolarSystem';
 
 const servicePillars = [
@@ -52,6 +53,8 @@ export function ServicesShowcase({
   showPillars = true,
   className = '',
 }: ServicesShowcaseProps) {
+  const { t } = useLanguage();
+
   return (
     <section className={`section-pad relative overflow-hidden bg-[#0F2E23] text-[#F4EFE6] ${className}`}>
       {/* Decorative ambient gradients */}
@@ -80,7 +83,7 @@ export function ServicesShowcase({
           <div className="mt-16 pt-16 border-t border-[#2E6B57]/30">
             <div className="text-center max-w-xl mx-auto mb-10">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#39C27D] mb-1 block font-mono">
-                The Yalla Voyage Standard
+                {t.whatSetsUsApart.standardBadge}
               </span>
               <h3 className="text-display text-2xl sm:text-3xl text-[#F4EFE6] font-light">
                 How We Deliver Perfection

@@ -97,7 +97,7 @@ export function CurvedRibbonHero({ onSelectService, className = '' }: CurvedRibb
       },
       {
         num: 'SEAL',
-        title: 'YALLA VOYAGE',
+        title: 'يلا سفر',
         subtitle: 'HAUTE CURATION • EST. 2024',
         type: 'stamp',
         bgColor: '#0F2E23',
@@ -327,7 +327,7 @@ export function CurvedRibbonHero({ onSelectService, className = '' }: CurvedRibb
             ctx.fillStyle = '#39C27D';
             ctx.font = 'bold 12px monospace';
             ctx.textAlign = 'left';
-            ctx.fillText('YALLA VOYAGE', imgX + 18, imgY + imgH - 52);
+            ctx.fillText('يلا سفر', imgX + 18, imgY + imgH - 52);
 
             ctx.fillStyle = '#FFFFFF';
             ctx.font = '800 20px "Plus Jakarta Sans", sans-serif';
@@ -406,7 +406,7 @@ export function CurvedRibbonHero({ onSelectService, className = '' }: CurvedRibb
     bctx.fillStyle = '#39C27D';
     bctx.font = 'bold 24px monospace';
     bctx.textAlign = 'center';
-    bctx.fillText('YALLA VOYAGE • PRIVATE ATELIER', 256, 264);
+    bctx.fillText('يلا سفر • PRIVATE ATELIER', 256, 264);
 
     const backTexture = new THREE.CanvasTexture(backCanvas);
     backTexture.wrapS = THREE.RepeatWrapping;

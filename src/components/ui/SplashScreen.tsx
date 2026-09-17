@@ -192,7 +192,7 @@ export function SplashScreen() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={isArabic ? "/yalla-voyage-logo-ar-transparent.png" : "/yalla-voyage-logo-transparent.png"}
-                alt={isArabic ? "يلا Voyage" : "Yalla Voyage"}
+                alt={isArabic ? "يلا سفر" : "Yalla Voyage"}
                 className="w-[340px] sm:w-[440px] md:w-[500px] max-w-[85vw] h-auto object-contain select-none drop-shadow-sm"
               />
 

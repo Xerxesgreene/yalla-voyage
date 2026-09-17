@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     'Yalla Voyage crafts extraordinary travel — corporate, luxury, cruise, and beyond — with precision, passion, and a team that never settles for ordinary. Where journeys become stories.',
   keywords: [
     'travel agency',
+    'Yalla Voyage',
     'Saudi Arabia',
     'luxury travel',
     'AlUla',

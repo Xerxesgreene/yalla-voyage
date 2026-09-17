@@ -22,7 +22,7 @@ import { LanguageSelector } from '@/components/ui/LanguageSelector';
 
 export function Navbar() {
   const pathname = usePathname();
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   const [isVisible, setIsVisible] = useState(true);
   const [isAtTop, setIsAtTop] = useState(true);
@@ -116,7 +116,7 @@ export function Navbar() {
             id="navbar-brand-logo"
             href="/"
             className="flex items-center group transition-transform duration-300 hover:scale-[1.02] shrink-0"
-            aria-label="Yalla Voyage Home"
+            aria-label={locale === 'ar' ? 'يلا سفر Home' : 'Yalla Voyage Home'}
           >
             <YallaLogo
               variant="horizontal"

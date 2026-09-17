@@ -34,7 +34,7 @@ export function HeroScene() {
     <section
       ref={heroRef}
       className="relative min-h-[100svh] w-full overflow-hidden bg-[#F4EFE6] text-[#0F2E23] select-none flex flex-col justify-start sm:justify-center"
-      aria-label="Yalla Voyage Sanctuary Hero"
+      aria-label="يلا سفر Sanctuary Hero"
     >
       {/* ── Base Hero Background Image (62% X frames the Arab traveler on the right and open sky on the left; mirrored in RTL) ── */}
       <img

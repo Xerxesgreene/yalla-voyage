@@ -125,7 +125,7 @@ export default function ContactPage() {
   const handleSubmitWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
     const lines = [
-      `*Yalla Voyage Inquiry*`,
+      `*يلا سفر Inquiry*`,
       form.name ? `• Name: ${form.name}` : '',
       form.email ? `• Email: ${form.email}` : '',
       form.phone ? `• Phone: ${form.phone}` : '',
@@ -407,7 +407,7 @@ export default function ContactPage() {
                       </button>
                       <a
                         href={`mailto:info@arabiaguidetravel.com?subject=${encodeURIComponent(
-                          `Yalla Voyage Inquiry: ${form.name || 'Travel Request'}`
+                          `يلا سفر Inquiry: ${form.name || 'Travel Request'}`
                         )}&body=${encodeURIComponent(
                           `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nDestination: ${form.destination}\nService: ${form.service}\nDates: ${form.travelDate}\nGuests: ${form.travellers}\nNotes: ${form.message}`
                         )}`}

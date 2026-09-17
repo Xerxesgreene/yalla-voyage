@@ -78,7 +78,7 @@ export function ServiceModal({ service, onClose }: ServiceModalProps) {
   if (!service) return null;
 
   const whatsappHref = `${siteConfig.whatsapp}?text=${encodeURIComponent(
-    `Hello Yalla Voyage, I am interested in booking or receiving a custom quote for "${service.title}".`
+    `Hello يلا سفر, I am interested in booking or receiving a custom quote for "${service.title}".`
   )}`;
 
   return (

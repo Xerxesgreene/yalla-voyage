@@ -111,7 +111,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
-          <p>© {new Date().getFullYear()} Yalla Voyage. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} يلا سفر. All rights reserved.</p>
           <div className={styles.bottomLinks}>
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Service</Link>

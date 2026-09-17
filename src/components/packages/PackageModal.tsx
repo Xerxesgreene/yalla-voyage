@@ -39,7 +39,7 @@ export function PackageModal({ pkg, onClose }: PackageModalProps) {
   if (!pkg) return null;
 
   const whatsappHref = `${siteConfig.whatsapp}?text=${encodeURIComponent(
-    `Hello Yalla Voyage, I would like to inquire about the "${pkg.title}" package (${pkg.duration}).`
+    `Hello يلا سفر, I would like to inquire about the "${pkg.title}" package (${pkg.duration}).`
   )}`;
 
   return (

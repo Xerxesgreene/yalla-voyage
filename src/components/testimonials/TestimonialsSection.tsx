@@ -77,8 +77,8 @@ export function TestimonialsSection() {
 
   const waMsg =
     locale === 'ar'
-      ? 'مرحباً يالّا فوياج، أود استشارة أخصائي سفر بشأن التخطيط لرحلتنا القادمة.'
-      : 'Hello Yalla Voyage, I would like to consult with a travel specialist regarding planning our upcoming trip.';
+      ? 'مرحباً يلا سفر، أود استشارة أخصائي سفر بشأن التخطيط لرحلتنا القادمة.'
+      : 'Hello يلا سفر, I would like to consult with a travel specialist regarding planning our upcoming trip.';
 
   return (
     <section

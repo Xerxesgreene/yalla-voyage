@@ -196,7 +196,7 @@ export default function Hero() {
         {/* Left Column (Top of zig-zag) */}
         <div ref={wordmarkLeftRef} className={styles.wordmarkLeft}>
           <div className={styles.logoMobileWrap}>
-            <img src="/logo.png" alt="Yalla Voyage" className={styles.logoMobile} />
+            <img src="/logo.png" alt="يلا سفر" className={styles.logoMobile} />
           </div>
           <div ref={bgTextTopRef} className={`${styles.heroLogoWrap} ${styles.logoYallaWrap}`}>
             <img src="/logo.png" alt="Yalla" className={`${styles.heroLogo} ${styles.logoYalla}`} />

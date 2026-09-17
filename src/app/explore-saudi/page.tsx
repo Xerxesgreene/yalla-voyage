@@ -29,7 +29,7 @@ const arabicSaudiDestinationsMap: Record<
   alula: {
     tagline: 'حيث تلتقي الحكايات القديمة بسكينة سماء الصحراء',
     description:
-      'العلا ليست مجرد وجهة؛ بل هي شعور استثنائي تحمله معك طويلاً. بإشراف حصري من خبراء يلا فوياج المحليين، استكشف أول موقع للتراث العالمي لليونسكو في السعودية، حيث تهمس مقابر الأنباط المنحوتة في الصخور بقصص ضاربة في عمق التاريخ.',
+      'العلا ليست مجرد وجهة؛ بل هي شعور استثنائي تحمله معك طويلاً. بإشراف حصري من خبراء يلا سفر المحليين، استكشف أول موقع للتراث العالمي لليونسكو في السعودية، حيث تهمس مقابر الأنباط المنحوتة في الصخور بقصص ضاربة في عمق التاريخ.',
     places: [
       'الحِجر (تراث عالمي لليونسكو)',
       'البلدة القديمة',
@@ -77,7 +77,7 @@ const arabicSaudiDestinationsMap: Record<
   madinah: {
     tagline: 'واحة السكينة والجمال الروحاني الخالد',
     description:
-      'مدينة تأسر القلوب بصفائها ونورها. في المدينة المنورة تلتقي الطمأنينة الروحية والجمال الخالد في رحلات ثقافية هادئة تصممها يلا فوياج بكل عناية ووقار.',
+      'مدينة تأسر القلوب بصفائها ونورها. في المدينة المنورة تلتقي الطمأنينة الروحية والجمال الخالد في رحلات ثقافية هادئة تصممها يلا سفر بكل عناية ووقار.',
     places: [
       'المسجد النبوي الشريف',
       'مسجد وممشى قباء',
@@ -201,7 +201,7 @@ const arabicExperiencesMap: Record<
     category: 'تجارب طهي',
     location: 'واحة العلا الغنّاء',
     description:
-      'انغمس في مزرعة حية داخل واحة العلا من تنظيم يلا فوياج. شاهد كبار طهاة التراث وهم يحضرون فطوراً سعودياً أصيلاً بمحاصيل الواحة الطازجة والقهوة السعودية الفاخرة.',
+      'انغمس في مزرعة حية داخل واحة العلا من تنظيم يلا سفر. شاهد كبار طهاة التراث وهم يحضرون فطوراً سعودياً أصيلاً بمحاصيل الواحة الطازجة والقهوة السعودية الفاخرة.',
     duration: '3 ساعات',
   },
   'threads-of-tradition': {
@@ -210,7 +210,7 @@ const arabicExperiencesMap: Record<
     category: 'تراث وثقافة',
     location: 'جدة / العلا',
     description:
-      'السدو من أعرق الفنون العربية المسجلة في اليونسكو. عبر ترتيبات يلا فوياج الخاصة، اجلس بصحبة أمهر الحرفيات البدويات واكتشف معاني الرموز الهندسية التراثية المتوارثة.',
+      'السدو من أعرق الفنون العربية المسجلة في اليونسكو. عبر ترتيبات يلا سفر الخاصة، اجلس بصحبة أمهر الحرفيات البدويات واكتشف معاني الرموز الهندسية التراثية المتوارثة.',
     duration: 'ساعتان ونصف',
   },
   'palm-leaf-weaving': {
@@ -228,7 +228,7 @@ const arabicExperiencesMap: Record<
     category: 'مغامرات وأصالة',
     location: 'صحراء العلا',
     description:
-      'التف حول موقد النار الهادئ بين جبال العلا الصخرية مع يلا فوياج، وتذوق الشاي المهيّل واستمع لحكايات البادية والشعر العربي الأصيل تحت واحدة من أصفى سموات الأرض.',
+      'التف حول موقد النار الهادئ بين جبال العلا الصخرية مع يلا سفر، وتذوق الشاي المهيّل واستمع لحكايات البادية والشعر العربي الأصيل تحت واحدة من أصفى سموات الأرض.',
     duration: 'أمسية كاملة',
   },
 };
@@ -386,7 +386,7 @@ export default function ExploreSaudiPage() {
                   <div className="relative aspect-[16/10] overflow-hidden bg-[#0F2E23]/5">
                     <Image
                       src={exp.image}
-                      alt={`Yalla Voyage ${expTitle}`}
+                      alt={`يلا سفر ${expTitle}`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-106"
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -426,7 +426,7 @@ export default function ExploreSaudiPage() {
             <div className="text-center mt-12">
               <MagneticButton
                 href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
-                  'Hello Yalla Voyage, I want to book signature private Saudi experiences with your concierge.'
+                  'Hello يلا سفر, I want to book signature private Saudi experiences with your concierge.'
                 )}`}
                 target="_blank"
                 variant="primary"
@@ -466,7 +466,7 @@ export default function ExploreSaudiPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <MagneticButton
                 href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
-                  'Hello Yalla Voyage! Please help me curate a private luxury Saudi itinerary.'
+                  'Hello يلا سفر! Please help me curate a private luxury Saudi itinerary.'
                 )}`}
                 target="_blank"
                 variant="primary"
@@ -496,7 +496,7 @@ function DestinationVideoCard({
   dest,
   index,
   locale,
-  sanctuaryBadge = 'Yalla Voyage Sanctuary',
+  sanctuaryBadge = 'يلا سفر Sanctuary',
 }: {
   dest: SaudiDestination;
   index: number;

@@ -8,7 +8,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Travel Blog',
-  description: 'Travel tips, destination guides, and stories from Saudi Arabia and the GCC by Yalla Voyage.',
+  description: 'Travel tips, destination guides, and stories from Saudi Arabia and the GCC by يلا سفر.',
 };
 
 export default function BlogPage() {

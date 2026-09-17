@@ -33,7 +33,7 @@ export function HaoqiServiceModal({ service, onClose }: HaoqiServiceModalProps) 
     (s) => s.title.toLowerCase().includes(service.title.toLowerCase()) || service.title.toLowerCase().includes(s.title.toLowerCase())
   );
 
-  const whatsappMessage = `Hello Yalla Voyage Concierge, I would like to inquire about technical details and bookings for: ${service.title}.`;
+  const whatsappMessage = `Hello يلا سفر Concierge, I would like to inquire about technical details and bookings for: ${service.title}.`;
   const whatsappHref = `${siteConfig.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
@@ -52,7 +52,7 @@ export function HaoqiServiceModal({ service, onClose }: HaoqiServiceModalProps) 
             <span className="w-2 h-2 rounded-full bg-[#2E6B57] animate-pulse" />
             <span>SERVICE SPECIFICATION [{service.index}]</span>
             <span className="text-white/30">•</span>
-            <span className="text-white/60 uppercase">YALLA VOYAGE ECOSYSTEM</span>
+            <span className="text-white/60 uppercase">يلا سفر ECOSYSTEM</span>
           </div>
 
           <button

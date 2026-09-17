@@ -44,7 +44,7 @@ export default function Navbar() {
         <Link href="/" className={styles.logo}>
           <img
             src={isArabic ? "/yalla-voyage-logo-ar-transparent.png" : "/logo.png"}
-            alt={isArabic ? "يلا Voyage" : "Yalla Voyage Logo"}
+            alt="يلا سفر"
             className={styles.logoImage}
           />
         </Link>

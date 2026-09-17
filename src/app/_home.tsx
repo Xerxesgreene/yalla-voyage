@@ -52,9 +52,9 @@ const SERVICES = [
 ];
 
 const TESTIMONIALS = [
-  { name: 'Fatima Al-Rashid',       loc: 'Riyadh, KSA',    text: 'Yalla Voyage made our AlUla trip absolutely magical. Every detail was perfect — from the hotel to the guided tours. We felt like royalty.' },
+  { name: 'Fatima Al-Rashid',       loc: 'Riyadh, KSA',    text: 'يلا سفر made our AlUla trip absolutely magical. Every detail was perfect — from the hotel to the guided tours. We felt like royalty.' },
   { name: 'Mohammed Al-Mansoori',   loc: 'Abu Dhabi, UAE',  text: 'Booked the Maldives package for our anniversary. The overwater villa exceeded all expectations. Responsive at every step.' },
-  { name: 'Sara Al-Otaibi',         loc: 'Jeddah, KSA',    text: 'Istanbul with Yalla Voyage was the best trip of my life. From flights to the Bosphorus cruise — seamlessly arranged.' },
+  { name: 'Sara Al-Otaibi',         loc: 'Jeddah, KSA',    text: 'Istanbul with يلا سفر was the best trip of my life. From flights to the Bosphorus cruise — seamlessly arranged.' },
 ];
 
 // ── Component ──────────────────────────────────────────────────────────────
@@ -100,7 +100,7 @@ export default function HomeClient() {
             </div>
             <div className={`reveal reveal-delay-2 ${styles.aboutRight}`}>
               <h2 className={styles.aboutHeadline}>
-                Yalla Voyage is a collective of{' '}
+                يلا سفر is a collective of{' '}
                 <em>passionate travel designers</em>{' '}
                 born out of a desire to create meaningful journeys
               </h2>

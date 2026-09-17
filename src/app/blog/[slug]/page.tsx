@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="container-sm">
               <div className={styles.postCtaCard}>
                 <h3>Ready to Visit?</h3>
-                <p>Let Yalla Voyage plan your perfect trip to this destination.</p>
+                <p>Let يلا سفر plan your perfect trip to this destination.</p>
                 <a href="/contact" className="btn btn-primary">Plan My Trip</a>
               </div>
             </div>

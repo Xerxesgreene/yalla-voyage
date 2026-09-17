@@ -19,7 +19,7 @@ export function JournalNav() {
         <Link
           href="/"
           className="flex items-center group transition-transform duration-300 hover:scale-[1.02] shrink-0"
-          aria-label="Yalla Voyage Home"
+          aria-label="يلا سفر Home"
         >
           <YallaLogo variant="horizontal" theme="dark" size="md" />
         </Link>
@@ -30,7 +30,7 @@ export function JournalNav() {
 
           <a
             href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
-              'Hello Yalla Voyage, I am browsing your Travel Journal and would like to speak with a bespoke curator.'
+              'Hello يلا سفر, I am browsing your Travel Journal and would like to speak with a bespoke curator.'
             )}`}
             target="_blank"
             rel="noopener noreferrer"

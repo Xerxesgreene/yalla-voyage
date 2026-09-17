@@ -125,7 +125,7 @@ export default function PackagesPage() {
               <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3.5 justify-end">
                 <MagneticButton
                   href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
-                    'Hello Yalla Voyage, I would like to design a bespoke private travel package.'
+                    'Hello يلا سفر, I would like to design a bespoke private travel package.'
                   )}`}
                   target="_blank"
                   variant="primary"

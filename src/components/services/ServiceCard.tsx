@@ -149,7 +149,7 @@ export function ServiceCard({ service, index, onOpenModal }: ServiceCardProps) {
   };
 
   const whatsappHref = `${siteConfig.whatsapp}?text=${encodeURIComponent(
-    `Hello Yalla Voyage, I would like to inquire about your "${service.title}" service.`
+    `Hello يلا سفر, I would like to inquire about your "${service.title}" service.`
   )}`;
 
   return (

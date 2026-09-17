@@ -55,7 +55,7 @@ export function YallaLogo({
       >
         <Image
           src={logoSrc}
-          alt={isArabic ? 'يلا Voyage' : 'Yalla Voyage'}
+          alt={isArabic ? 'يلا سفر' : 'Yalla Voyage'}
           width={sizeMap.width * 2}
           height={sizeMap.height * 2}
           className="object-contain w-full h-full"

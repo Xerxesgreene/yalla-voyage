@@ -322,8 +322,8 @@ export default function DestinationsPage() {
                 </h3>
                 <p className="text-[#F4EFE6]/75 text-xs sm:text-sm leading-relaxed font-light font-sans max-w-2xl">
                   {locale === 'ar'
-                    ? 'بجانب وجهاتنا المميزة، تصمم يلا فوياج رحلات سرية واستئجار جزر خاصة ويخوت فاخرة عبر أكثر من 60 دولة وفق أقصى درجات الخصوصية والكتمان.'
-                    : 'Beyond our featured destinations, Yalla Voyage architects confidential journeys, private island buyouts, and remote superyacht charters across 60+ countries under strict NDA protocols.'}
+                    ? 'بجانب وجهاتنا المميزة، تصمم يلا سفر رحلات سرية واستئجار جزر خاصة ويخوت فاخرة عبر أكثر من 60 دولة وفق أقصى درجات الخصوصية والكتمان.'
+                    : 'Beyond our featured destinations, يلا سفر architects confidential journeys, private island buyouts, and remote superyacht charters across 60+ countries under strict NDA protocols.'}
                 </p>
                 <div className="flex items-center gap-4 text-xs font-mono text-[#39C27D] pt-1">
                   <div className="flex items-center gap-1.5">
@@ -342,8 +342,8 @@ export default function DestinationsPage() {
                 <MagneticButton
                   href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
                     locale === 'ar'
-                      ? 'مرحباً يلا فوياج، أود استشارة أحد كبار مصممي الرحلات بخصوص وجهة خاصة مصممة خصيصاً لي.'
-                      : 'Hello Yalla Voyage, I would like to consult with a Senior Travel Designer regarding a private custom destination.'
+                      ? 'مرحباً يلا سفر، أود استشارة أحد كبار مصممي الرحلات بخصوص وجهة خاصة مصممة خصيصاً لي.'
+                      : 'Hello يلا سفر, I would like to consult with a Senior Travel Designer regarding a private custom destination.'
                   )}`}
                   target="_blank"
                   variant="primary"

@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return {};
 
   return {
-    title: `${article.title} | Yalla Voyage Journal`,
+    title: `${article.title} | يلا سفر Journal`,
     description: article.excerpt,
     openGraph: {
       title: article.title,
@@ -196,7 +196,7 @@ export default async function JournalDetailPage({ params }: Props) {
                 </Link>
                 <a
                   href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
-                    `Hello Yalla Voyage, I would like to inquire about a journey to ${article.destination}.`
+                    `Hello يلا سفر, I would like to inquire about a journey to ${article.destination}.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"

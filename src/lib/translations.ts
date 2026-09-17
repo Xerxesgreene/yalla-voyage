@@ -346,7 +346,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       title: 'Who We Are: Crafting Exceptional Travel Experiences.',
       para1Prefix:
         'We understand your need for quality and trust when it comes to providing memorable holiday experiences. That’s why, when you choose ',
-      brandName: 'YALLA VOYAGE',
+      brandName: 'Yalla Voyage',
       para1Suffix:
         ', you can be confident that our team of highly experienced, multilingual professionals—with their in-depth knowledge and meticulous planning—will ensure your holiday is one you cherish forever.',
       para2:
@@ -374,12 +374,15 @@ export const translations: Record<Locale, TranslationDictionary> = {
       legacyDesc: 'Every journey is engineered to create lifelong cherished memories.',
       conciergeLabel: 'Bespoke Concierge Network',
       inquireNow: 'Inquire Now',
-      pillar1Title: 'Global Expertise, Personal Touch',
-      pillar1Desc: 'Our advisors have explored the destinations they recommend — every itinerary comes from real experience, not a brochure.',
-      pillar2Title: 'Tailored, Not Templated',
-      pillar2Desc: 'Corporate trip or dream vacation — every itinerary is built around you, your pace, and your priorities.',
-      pillar3Title: 'Multilingual 24/7 Support',
-      pillar3Desc: "From first inquiry to touchdown, our team communicates in the language you're most comfortable in.",
+      pillar1Title: 'GCC-Focused Expertise',
+      pillar1Desc:
+        'Our understanding of travellers from the UAE & KSA allows us to recommend destinations, stays, experiences, and itineraries that truly suit the region.',
+      pillar2Title: 'Curated, One-of-a-Kind Experiences',
+      pillar2Desc:
+        "Beyond standard packages, we design unique itineraries and access (private tours, exclusive stays, off-the-beaten-path activities) that generic booking sites can't replicate.",
+      pillar3Title: 'Personalised From Start to Finish',
+      pillar3Desc:
+        'From planning and bookings to recommendations and on-trip support, we focus on personal service and attention to detail, making travel feel effortless.',
     },
     services: {
       badge: 'SERVICES',
@@ -387,7 +390,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       titleHighlight: 'Crafted for Uncompromising Travel.',
       description:
         'From private aviation and secluded island sanctuaries to executive summits and VIP concierge logistics — engineered with flawless precision.',
-      exploreAll: 'Explore All Service Divisions',
+      exploreAll: 'Explore All Services',
       items: {
         privateJets: 'Private Jet Charters',
         bespokeItineraries: 'Bespoke Itineraries',
@@ -580,7 +583,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     servicesPage: {
       heroTitle: 'Architected Services',
       heroSubtitle: 'Bespoke travel curated with precision, discretion, and personalized care.',
-      advantageBadge: 'THE YALLA VOYAGE ADVANTAGE',
+      advantageBadge: 'THE Yalla Voyage ADVANTAGE',
       advantageTitle: 'Native Mastery, Royal Protocol & White-Glove Delivery.',
       advantageDesc: 'Delivering unparalleled operational perfection, confidential protocol access, and authentic luxury concierge stewardship across every journey.',
       advantage1Title: 'Tailored Without Templates',
@@ -600,7 +603,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       filterAviation: 'VIP Mobility',
       filterCorporate: 'Corporate & Events',
       filterConcierge: 'Concierge & Logistics',
-      deskBadge: 'YALLA VOYAGE PRIVATE CLIENT DESK',
+      deskBadge: 'Yalla Voyage PRIVATE CLIENT DESK',
       ctaTitle: 'Your bespoke journey begins here.',
       ctaHighlight: 'Crafted by Yalla Voyage.',
       ctaDesc: 'Connect directly with our senior travel designers to architect a seamless, bespoke journey tailored to your exact preferences.',
@@ -629,7 +632,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     exploreSaudiPage: {
       heroTitle: 'Explore Saudi',
       heroSubtitle: 'Discover Saudi like never before.',
-      advantageBadge: 'THE YALLA VOYAGE ADVANTAGE',
+      advantageBadge: 'THE Yalla Voyage ADVANTAGE',
       advantageTitle: 'Native Mastery, Royal Protocol & Total Discretion.',
       advantageDesc: 'Delivering unparalleled operational perfection, royal protocol access, and authentic hospitality across the Kingdom.',
       advantage1Title: 'Generational Local Mastery',
@@ -643,12 +646,12 @@ export const translations: Record<Locale, TranslationDictionary> = {
       regionalDesc: 'Curated by Yalla Voyage to reveal the profound duality of the Kingdom — timeless heritage and visionary luxury.',
       allDestinations: 'All Destinations',
       sanctuaryBadge: 'Yalla Voyage Sanctuary',
-      signatureBadge: 'YALLA VOYAGE INVITATIONS',
+      signatureBadge: 'Yalla Voyage INVITATIONS',
       signatureTitle: 'Not Tours. Rare & Private Invitations.',
       signatureDesc: "Exclusive cultural, archaeological, and culinary immersions unlocked by Yalla Voyage's native relationships.",
       curatedBy: 'Curated by Yalla Voyage',
       inquireBtn: 'Inquire With Yalla Voyage',
-      deskBadge: 'YALLA VOYAGE PRIVATE CLIENT DESK',
+      deskBadge: 'Yalla Voyage PRIVATE CLIENT DESK',
       ctaTitle: 'Your Kingdom story begins here.',
       ctaHighlight: 'Crafted by Yalla Voyage.',
       ctaDesc: 'Connect directly with our senior Saudi travel designers to architect a seamless, bespoke journey tailored to your exact preferences.',
@@ -675,7 +678,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       titleLine1: 'نصنع تجارب',
       titleLine2: 'سفر',
       titleHighlight: 'استثنائية',
-      subtitle: 'تصمم يالّا فوياج رحلات فريدة بدقة فائقة، وشغف لا محدود، وعناية مطلقة بكل تفصيلة',
+      subtitle: 'تصمم يلا سفر رحلات فريدة بدقة فائقة، وشغف لا محدود، وعناية مطلقة بكل تفصيلة',
       beginVoyage: 'ابدأ رحلتك',
     },
     whoWeAre: {
@@ -683,7 +686,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       title: 'من نحن: صناعة تجارب سفر استثنائية',
       para1Prefix:
         'ندرك تماماً حاجتكم إلى الجودة والثقة عندما يتعلق الأمر بصنع ذكريات عطلات لا تُنسى. لذا، عندما تختارون ',
-      brandName: 'YALLA VOYAGE',
+      brandName: 'يلا سفر',
       para1Suffix:
         '، يمكنكم أن تكونوا على ثقة تامة بأن فريقنا من الخبراء المتمرسين متعددي اللغات—بما يملكونه من معرفة متعمقة وتخطيط دقيق ومتقن—سيجعل من إجازتكم تجربة تعتزون بها طوال العمر.',
       para2:
@@ -702,7 +705,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       narrative3Prefix: 'في ',
       narrative3Suffix:
         '، نحن لا نكتفي بحجز الرحلات؛ بل نصنع إرثاً من الذكريات الخالدة. وتضمن شبكتنا العالمية الواسعة من الشركاء الحصريين حصول عملائنا على أولوية الدخول، وترقيات فورية للغرف، وتجارب استثنائية غير متاحة للعامة ولا يمكن العثور عليها عبر الإنترنت.',
-      standardBadge: 'معايير يالّا فوياج',
+      standardBadge: 'معايير يلا سفر',
       masteryTitle: 'ريادة لأكثر من 20 عاماً',
       masteryDesc: 'عقدان من إتقان العمليات اللوجستية لنخبة المسافرين حول العالم.',
       accessTitle: 'وصول حصري خاص',
@@ -711,12 +714,15 @@ export const translations: Record<Locale, TranslationDictionary> = {
       legacyDesc: 'كل رحلة مصممة بعناية لتخليد أروع الذكريات طوال العمر.',
       conciergeLabel: 'شبكة كونسيرج مخصصة',
       inquireNow: 'استفسر الآن',
-      pillar1Title: 'خبرة عالمية بلمسة شخصية',
-      pillar1Desc: 'خبراؤنا زاروا بأنفسهم الوجهات التي يوصون بها — كل خط سير مستوحى من تجربة حقيقية وليس من مجرد كتيبات.',
-      pillar2Title: 'مصممة خصيصاً لا قوالب جاهزة',
-      pillar2Desc: 'سواء كانت رحلة أعمال تنفيذية أو إجازة الأحلام — نصمم كل برنامج وفق وتيرتكم وأولوياتكم الخاصة.',
-      pillar3Title: 'دعم متواصل 24/7 بلغات متعددة',
-      pillar3Desc: 'من أول استفسار وحتى العودة بالسلامة، يتواصل معكم فريقنا باللغة التي تفضلونها بكل يسر واهتمام.',
+      pillar1Title: 'خبرة متخصصة تلائم دول الخليج',
+      pillar1Desc:
+        'فهمنا العميق للمسافرين من دولة الإمارات والمملكة العربية السعودية يتيح لنا اقتراح وجهات، وإقامات، وتجارب، وخطط سفر تلائم المنطقة بكل مثالية.',
+      pillar2Title: 'تجارب منتقاة وفريدة من نوعها',
+      pillar2Desc:
+        'أبعد من الباقات التقليدية، نصمم مسارات سفر استثنائية ونوفر وصولاً حصرياً (جولات خاصة، إقامات مميزة، وأنشطة خارجة عن المألوف) تعجز منصات الحجز التقليدية عن تقديمها.',
+      pillar3Title: 'خدمة شخصية من البداية حتى النهاية',
+      pillar3Desc:
+        'من التخطيط والحجوزات إلى التوصيات والدعم أثناء الرحلة، نركز على الخدمة الشخصية والاهتمام بأدق التفاصيل، لنجعل تجربة سفركم غاية في الراحة والانسيابية.',
     },
     services: {
       badge: 'الخدمات والإمكانيات',
@@ -724,7 +730,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       titleHighlight: 'متقنة لسفر لا يقبل المساومة',
       description:
         'من الطيران الخاص والملاذات الجزرية المنعزلة إلى قمم الأعمال واللوجستيات التنفيذية لكبار الشخصيات — نهندس رحلاتكم بدقة لا تشوبها شائبة.',
-      exploreAll: 'استكشف كافة قطاعات الخدمات',
+      exploreAll: 'استكشف كافة الخدمات',
       items: {
         privateJets: 'استئجار الطائرات الخاصة',
         bespokeItineraries: 'برامج سفر مصممة خصيصاً',
@@ -782,12 +788,12 @@ export const translations: Record<Locale, TranslationDictionary> = {
       titleMain: 'رحلات حقيقية.',
       titleHighlight: 'ذكريات تنبض بالحياة.',
       subtitle:
-        'قصص وتجارب صادقة من عائلات وأزواج ونخبة مسافرين تحولت عطلات أحلامهم إلى واقع بديع ومبهر بفضل يالّا فوياج.',
+        'قصص وتجارب صادقة من عائلات وأزواج ونخبة مسافرين تحولت عطلات أحلامهم إلى واقع بديع ومبهر بفضل يلا سفر.',
       talkSpecialist: 'تحدث مع مستشار السفر',
       trustRating: 'تقييم 4.9/5 • موثوق من أكثر من 1,200 مسافر من النخبة',
       items: {
         quote1:
-          'بدءاً من المروحية الخاصة فوق الأنهار الجليدية السويسرية وحتى شاليهنا المنعزل في زيرمات، نفذت يالّا فوياج كل تفصيلة بكمال واحترافية مطلقة.',
+          'بدءاً من المروحية الخاصة فوق الأنهار الجليدية السويسرية وحتى شاليهنا المنعزل في زيرمات، نفذت يلا سفر كل تفصيلة بكمال واحترافية مطلقة.',
         name1: 'د. طارق الحسيني',
         role1: 'مسافر تنفيذي • الرياض',
         quote2:
@@ -795,7 +801,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
         name2: 'سارة ومنصور ك.',
         role2: 'عملاء شهر عسل • دبي',
         quote3:
-          'كان تنظيم رحلة لـ 45 شخصية رفيعة المستوى عبر ثلاث قارات يبدو مستحيلاً حتى تولت يالّا فوياج الأمر. لوجستيات قمة أعمال لا تشوبها شائبة من البداية إلى النهاية.',
+          'كان تنظيم رحلة لـ 45 شخصية رفيعة المستوى عبر ثلاث قارات يبدو مستحيلاً حتى تولت يلا سفر الأمر. لوجستيات قمة أعمال لا تشوبها شائبة من البداية إلى النهاية.',
         name3: 'فيصل بن عثمان',
         role3: 'عضو منتدب • مجموعة استثمار خاص',
         quote4:
@@ -831,7 +837,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       featuredTitle: 'الدليل الفاخر الشامل إلى العلا: أصداء الأنباط وملاذات الصحراء الساحرة',
       featuredExcerpt:
         'رحلة استثنائية عبر الحِجر عند الفجر، ومطاعم ميشلان الفاخرة تحت سماء الصحراء المرصعة بالنجوم، وأروع الفلل الصخرية المنعزلة في العالم.',
-      editorialLabel: 'فريق تحرير يالّا فوياج',
+      editorialLabel: 'فريق تحرير يلا سفر',
       readMore: 'اقرأ المزيد',
     },
     footer: {
@@ -841,14 +847,14 @@ export const translations: Record<Locale, TranslationDictionary> = {
       bookDestination: 'احجز وجهتك الآن',
       trustBadge: 'تقييم 4.9/5 • موثوق من أكثر من 1,200 مسافر',
       aboutBrand:
-        'تصمم يالّا فوياج تجارب سفر استثنائية — خطوط سير حصرية، طيران خاص، ملاذات فاخرة، وذكريات تدوم لأجيال بخبرة تزيد عن 20 عاماً.',
+        'تصمم يلا سفر تجارب سفر استثنائية — خطوط سير حصرية، طيران خاص، ملاذات فاخرة، وذكريات تدوم لأجيال بخبرة تزيد عن 20 عاماً.',
       quickLinks: 'روابط سريعة',
       destinationsCol: 'أبرز الوجهات',
       servicesCol: 'خدماتنا',
       contactCol: 'بيانات التواصل',
       addressVal: 'طريق المدينة المنورة، حي الرويس، جدة 23214، المملكة العربية السعودية',
       copyright: 'جميع الحقوق محفوظة.',
-      allRightsReserved: 'شركة يالّا فوياج للسفر والسياحة. جميع الحقوق محفوظة.',
+      allRightsReserved: 'شركة يلا سفر للسفر والسياحة. جميع الحقوق محفوظة.',
     },
     common: {
       learnMore: 'اعرف المزيد',
@@ -865,7 +871,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       heroSubtitle: 'عقدان من الشغف والخصوصية والرحلات الاستثنائية عبر المملكة العربية السعودية وآفاق العالم.',
       genesisBadge: 'البداية والنشأة',
       genesisTitle: 'وُلدت في قلب المملكة العربية السعودية، وصُممت للعالم بأكمله.',
-      genesisQuote: 'في يالّا فوياج، نحن لا نكتفي بحجز الرحلات — بل نصمم لحظات استثنائية ستتذكرونها لسنوات طويلة.',
+      genesisQuote: 'في يلا سفر، نحن لا نكتفي بحجز الرحلات — بل نصمم لحظات استثنائية ستتذكرونها لسنوات طويلة.',
       genesisDesc: 'بأكثر من 20 عاماً من الخبرة في قطاع السفر الفاخر، بدءاً من سفر الأعمال المتقن إلى الملاذات الحصرية المريحة، نحول اللوجستيات إلى فن راقٍ. نجمع بين المعرفة العميقة بالوجهات، والوصول الحصري الخاص، واللمسة الإنسانية الأصيلة التي لا تغيب أبداً.',
       curatorBtn: 'تحدث مع مصمم رحلاتنا',
       standardBadge: 'معاييرنا • خبرة تفوق 20 عاماً',
@@ -917,7 +923,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     servicesPage: {
       heroTitle: 'خدماتنا المصممة بدقة',
       heroSubtitle: 'سياحة فاخرة مصممة بعناية فائقة وخصوصية تامة واهتمام شخصي بكل تفصيلة.',
-      advantageBadge: 'مزايا يالّا فوياج',
+      advantageBadge: 'مزايا يلا سفر',
       advantageTitle: 'خبرة محلية متأصلة، بروتوكول رفيع وخدمة بمستوى القفاز الأبيض.',
       advantageDesc: 'نقدم كمالاً تشغيلياً لا مثيل له، ووصولاً بروتوكولياً سرياً، وعناية استثنائية متفانية عبر كل محطة في رحلتكم.',
       advantage1Title: 'مخصصة بالكامل بلا قوالب جاهزة',
@@ -937,11 +943,11 @@ export const translations: Record<Locale, TranslationDictionary> = {
       filterAviation: 'طيران وتنقلات خاصة',
       filterCorporate: 'أعمال وفعاليات',
       filterConcierge: 'كونسيرج ولوجستيات',
-      deskBadge: 'مكتب عملاء يالّا فوياج الخاص',
+      deskBadge: 'مكتب عملاء يلا سفر الخاص',
       ctaTitle: 'رحلتك المصممة خصيصاً تبدأ هنا.',
-      ctaHighlight: 'بصمة متقنة من يالّا فوياج.',
+      ctaHighlight: 'بصمة متقنة من يلا سفر.',
       ctaDesc: 'تواصل مباشرة مع كبار مصممي رحلاتنا لابتكار برنامج سفر استثنائي يلائم تفضيلاتك الخاصة بدقة متناهية.',
-      consultBtn: 'استشر خبراء يالّا فوياج',
+      consultBtn: 'استشر خبراء يلا سفر',
       inquireOnlineBtn: 'استفسر عبر الموقع',
     },
     packagesPage: {
@@ -966,30 +972,30 @@ export const translations: Record<Locale, TranslationDictionary> = {
     exploreSaudiPage: {
       heroTitle: 'اكتشف السعودية',
       heroSubtitle: 'اكتشف أرض المملكة كما لم ترها من قبل.',
-      advantageBadge: 'مزايا يالّا فوياج',
+      advantageBadge: 'مزايا يلا سفر',
       advantageTitle: 'ريادة محلية متأصلة، بروتوكول ملكي وسرية تامة.',
       advantageDesc: 'كمال تشغيلي لا يُضاهى، وصول بروتوكولي مرموق، وكرم ضيافة أصيل يمتد عبر أرجاء المملكة.',
       advantage1Title: 'خبرة محلية عريقة متوارثة',
-      advantage1Desc: 'تمتلك يالّا فوياج جذوراً أصيلة عميقة في المملكة، تفتح لك أبواب تصاريح الآثار الحصرية، والضيافة الملكية، والوصول التنفيذي الخاص.',
+      advantage1Desc: 'تمتلك يلا سفر جذوراً أصيلة عميقة في المملكة، تفتح لك أبواب تصاريح الآثار الحصرية، والضيافة الملكية، والوصول التنفيذي الخاص.',
       advantage2Title: 'وتيرة فخامة لا تقبل المساومة',
       advantage2Desc: 'كل خط سير مصمم بدقة متناهية ليلائم جدولك — متضمناً طائرات الهليكوبتر الخاصة، أساطيل المايباخ، وأرقى الملاذات الصحراوية فئة 5 نجوم.',
       advantage3Title: 'عناية كونسيرج مباشرة وشاملة',
-      advantage3Desc: 'مع كونسيرج يالّا فوياج المخصص المتاح على مدار الساعة، تتم متابعة رحلات الطيران ومرافقة الحقائب والمسار السريع للتأشيرات باحترافية وسرية تامة.',
+      advantage3Desc: 'مع كونسيرج يلا سفر المخصص المتاح على مدار الساعة، تتم متابعة رحلات الطيران ومرافقة الحقائب والمسار السريع للتأشيرات باحترافية وسرية تامة.',
       regionalBadge: 'استكشافات مناطق المملكة',
       regionalTitle: 'آفاق المملكة: من شعاب البحر الأحمر إلى أخاديد الصحراء.',
-      regionalDesc: 'تنسيق متقن من يالّا فوياج ليكشف عن التناغم البديع في المملكة — بين عراقة التاريخ ورؤية المستقبل الفاخرة.',
+      regionalDesc: 'تنسيق متقن من يلا سفر ليكشف عن التناغم البديع في المملكة — بين عراقة التاريخ ورؤية المستقبل الفاخرة.',
       allDestinations: 'جميع الوجهات',
-      sanctuaryBadge: 'ملاذات يالّا فوياج',
-      signatureBadge: 'دعوات يالّا فوياج الخاصة',
+      sanctuaryBadge: 'ملاذات يلا سفر',
+      signatureBadge: 'دعوات يلا سفر الخاصة',
       signatureTitle: 'ليست مجرد جولات. بل دعوات نادرة وخاصة.',
-      signatureDesc: 'تجارب ثقافية وأثرية ومطعمية حصرية تفتحها علاقات يالّا فوياج الوثيقة والمتأصلة.',
-      curatedBy: 'تصميم وإشراف يالّا فوياج',
-      inquireBtn: 'استفسر مع يالّا فوياج',
-      deskBadge: 'مكتب عملاء يالّا فوياج الخاص',
+      signatureDesc: 'تجارب ثقافية وأثرية ومطعمية حصرية تفتحها علاقات يلا سفر الوثيقة والمتأصلة.',
+      curatedBy: 'تصميم وإشراف يلا سفر',
+      inquireBtn: 'استفسر مع يلا سفر',
+      deskBadge: 'مكتب عملاء يلا سفر الخاص',
       ctaTitle: 'قصتك في أرض المملكة تبدأ هنا.',
-      ctaHighlight: 'بصمة متقنة من يالّا فوياج.',
+      ctaHighlight: 'بصمة متقنة من يلا سفر.',
       ctaDesc: 'تواصل مباشرة مع كبار مصممي رحلاتنا في السعودية لتنسيق رحلة استثنائية تلائم كافة تطلعاتك.',
-      consultBtn: 'استشر خبراء يالّا فوياج',
+      consultBtn: 'استشر خبراء يلا سفر',
       inquireOnlineBtn: 'استفسر عبر الموقع',
     },
   },

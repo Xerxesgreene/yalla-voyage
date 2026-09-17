@@ -257,7 +257,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <MagneticButton
                 href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
-                  'Hello Yalla Voyage! Please help me curate a private luxury itinerary.'
+                  'Hello يلا سفر! Please help me curate a private luxury itinerary.'
                 )}`}
                 target="_blank"
                 variant="primary"

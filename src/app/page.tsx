@@ -55,7 +55,7 @@ function WhoWeAre() {
             </Reveal>
 
             <Reveal delay={0.18}>
-              <p className="text-[#0F2E23]/80 text-base sm:text-lg leading-relaxed font-light font-sans">
+              <p className="text-[#0F2E23]/85 text-base sm:text-lg leading-relaxed font-normal font-sans">
                 {t.whoWeAre.para2}
               </p>
             </Reveal>
@@ -136,7 +136,7 @@ function WhatSetsUsApart() {
             <Reveal delay={0.25}>
               <p className="text-[#0F2E23]/75 text-sm sm:text-base leading-relaxed font-light font-sans">
                 {t.whatSetsUsApart.narrative3Prefix}
-                <strong className="font-semibold text-[#0F2E23]">YALLA VOYAGE</strong>
+                <strong className="font-semibold text-[#0F2E23]">{t.whoWeAre.brandName}</strong>
                 {t.whatSetsUsApart.narrative3Suffix}
               </p>
             </Reveal>

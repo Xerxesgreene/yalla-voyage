@@ -6,7 +6,7 @@ import { journalArticles } from '@/data/journal';
 import { JournalNav } from '@/components/journal/JournalNav';
 
 export const metadata = {
-  title: 'Travel Journals | Yalla Voyage',
+  title: 'Travel Journals | يلا سفر',
   description:
     'Curated travel journals, reflections, and field stories from Italy, Dubai, Russia, Switzerland, Saudi Arabia, Japan, and beyond.',
 };
@@ -25,7 +25,7 @@ export default function TravelJournalPage() {
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-mono uppercase tracking-widest text-[#2E6B57] font-semibold flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#39C27D]" />
-              <span>Yalla Voyage Editorial</span>
+              <span>يلا سفر Editorial</span>
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-medium tracking-tight text-[#0F2E23] leading-none">
               Our Journals

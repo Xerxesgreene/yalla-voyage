@@ -28,27 +28,27 @@ export const siteConfig = {
 
 export const whyUsItems = [
   {
-    title: 'Global Expertise, Personal Touch',
+    title: 'GCC-Focused Expertise',
     description:
-      'Our advisors have explored the destinations they recommend — so every itinerary comes from real experience, not a brochure.',
+      'Our understanding of travellers from the UAE & KSA allows us to recommend destinations, stays, experiences, and itineraries that truly suit the region.',
     icon: 'Globe',
   },
   {
-    title: 'Multilingual, Around-the-Clock Support',
+    title: 'Personalised From Start to Finish',
     description:
-      'From first inquiry to touchdown, our team communicates in the language you\'re most comfortable in, whenever you need us.',
+      'From planning and bookings to recommendations and on-trip support, we focus on personal service and attention to detail, making travel feel effortless.',
     icon: 'MessageCircle',
+  },
+  {
+    title: 'Curated, One-of-a-Kind Experiences',
+    description:
+      'Beyond standard packages, we design unique itineraries and access (private tours, exclusive stays, off-the-beaten-path activities) that generic booking sites can\'t replicate.',
+    icon: 'Compass',
   },
   {
     title: 'Authentic Experiences',
     description:
       'We go beyond tourism to create meaningful connections with culture, heritage, and local communities.',
-    icon: 'Compass',
-  },
-  {
-    title: 'Tailored, Not Templated',
-    description:
-      'Corporate trip or dream vacation — every itinerary is built around you, your pace, and your priorities.',
     icon: 'Sparkles',
   },
   {

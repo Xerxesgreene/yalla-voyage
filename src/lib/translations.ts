@@ -316,6 +316,26 @@ export interface TranslationDictionary {
     consultBtn: string;
     inquireOnlineBtn: string;
   };
+  journalPage: {
+    editorialBadge: string;
+    pageTitle: string;
+    heroQuote: string;
+    heroQuoteAuthor: string;
+    featuredDispatch: string;
+    readFullDispatch: string;
+    readStory: string;
+    by: string;
+    backToJournals: string;
+    curatedHighlights: string;
+    planTripTo: string;
+    planTripDesc: string;
+    contactUs: string;
+    whatsapp: string;
+    moreJournals: string;
+    viewAll: string;
+    readArrow: string;
+    basedIn: string;
+  };
 }
 
 export const translations: Record<Locale, TranslationDictionary> = {
@@ -658,6 +678,27 @@ export const translations: Record<Locale, TranslationDictionary> = {
       consultBtn: 'Consult With Yalla Voyage',
       inquireOnlineBtn: 'Inquire Online',
     },
+    journalPage: {
+      editorialBadge: 'يلا سفر Editorial',
+      pageTitle: 'Our Journals',
+      heroQuote:
+        '“We travel not to escape life, but for life not to escape us. To wander is to awaken the soul to moments that linger long after the voyage ends.”',
+      heroQuoteAuthor: '— Curated Field Notes & Global Horizons',
+      featuredDispatch: 'Featured Dispatch',
+      readFullDispatch: 'Read Full Dispatch',
+      readStory: 'Read Story',
+      by: 'By',
+      backToJournals: 'Back to Journals',
+      curatedHighlights: 'Curated Highlights for This Experience',
+      planTripTo: 'Plan a trip to',
+      planTripDesc: 'Speak with our team to craft your custom private itinerary.',
+      contactUs: 'Contact Us',
+      whatsapp: 'WhatsApp',
+      moreJournals: 'More Journals to Explore',
+      viewAll: 'View All',
+      readArrow: 'Read →',
+      basedIn: 'Based in',
+    },
   },
   ar: {
     nav: {
@@ -997,6 +1038,27 @@ export const translations: Record<Locale, TranslationDictionary> = {
       ctaDesc: 'تواصل مباشرة مع كبار مصممي رحلاتنا في السعودية لتنسيق رحلة استثنائية تلائم كافة تطلعاتك.',
       consultBtn: 'استشر خبراء يلا سفر',
       inquireOnlineBtn: 'استفسر عبر الموقع',
+    },
+    journalPage: {
+      editorialBadge: 'افتتاحية يلا سفر',
+      pageTitle: 'مدونات السفر',
+      heroQuote:
+        '«لا نسافر للهروب من الحياة، بل لكي لا تفوتنا الحياة. الترحال هو إيقاظ للروح نحو لحظات تبقى حية في الوجدان طويلاً بعد نهاية الرحلة.»',
+      heroQuoteAuthor: '— مذكرات ميدانية وآفاق عالمية مختارة',
+      featuredDispatch: 'تقرير مميز',
+      readFullDispatch: 'اقرأ التقرير كاملاً',
+      readStory: 'اقرأ القصة',
+      by: 'بقلم',
+      backToJournals: 'العودة إلى المدونات',
+      curatedHighlights: 'أبرز معالم التجربة المختارة',
+      planTripTo: 'خطط لرحلتك إلى',
+      planTripDesc: 'تحدث مع فريقنا لتصميم مسار رحلتك الخاصة والمخصصة بدقة.',
+      contactUs: 'تواصل معنا',
+      whatsapp: 'واتساب',
+      moreJournals: 'المزيد من مدوناتنا للاستكشاف',
+      viewAll: 'عرض الكل',
+      readArrow: 'اقرأ ←',
+      basedIn: 'يقيم في',
     },
   },
 };

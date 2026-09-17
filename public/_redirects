@@ -1,0 +1,7 @@
+# Subdomain rewrites for journals.yallavoyage.com
+https://journals.yallavoyage.com/                     /travel-journal/         200!
+https://journals.yallavoyage.com/travel-journal/*     /travel-journal/:splat   200!
+https://journals.yallavoyage.com/*                    /travel-journal/:splat   200!
+http://journals.yallavoyage.com/                      /travel-journal/         200!
+http://journals.yallavoyage.com/travel-journal/*      /travel-journal/:splat   200!
+http://journals.yallavoyage.com/*                     /travel-journal/:splat   200!

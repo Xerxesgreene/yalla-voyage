@@ -1,0 +1,40 @@
+[build]
+  publish = "out"
+  command = "npm run build"
+
+# Subdomain rewrites for journals.yallavoyage.com
+[[redirects]]
+  from = "https://journals.yallavoyage.com/"
+  to = "/travel-journal"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://journals.yallavoyage.com/travel-journal/*"
+  to = "/travel-journal/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://journals.yallavoyage.com/*"
+  to = "/travel-journal/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "http://journals.yallavoyage.com/"
+  to = "/travel-journal"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "http://journals.yallavoyage.com/travel-journal/*"
+  to = "/travel-journal/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "http://journals.yallavoyage.com/*"
+  to = "/travel-journal/:splat"
+  status = 200
+  force = true

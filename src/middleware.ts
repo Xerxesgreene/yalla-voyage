@@ -1,4 +1,4 @@
-// middleware.ts — passthrough (admin removed)
+// middleware.ts — passthrough (static export compatible)
 import { NextResponse, type NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {

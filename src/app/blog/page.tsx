@@ -7,8 +7,32 @@ import { BLOG_POSTS } from '@/lib/data/seed';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Travel Blog',
-  description: 'Travel tips, destination guides, and stories from Saudi Arabia and the GCC by يلا سفر.',
+  title: 'Travel Blog | Stories, Guides & Tips from Saudi Arabia & GCC',
+  description:
+    'Travel tips, destination guides, luxury reviews, and cultural stories from Saudi Arabia and the GCC by Yalla Voyage (يلا سفر).',
+  alternates: {
+    canonical: '/blog',
+  },
+  openGraph: {
+    title: 'Yalla Voyage Travel Blog | Stories & Guides',
+    description:
+      'Travel tips, destination guides, and inspiring field dispatches across Saudi Arabia and the world.',
+    url: 'https://www.yallavoyage.com/blog',
+    images: [
+      {
+        url: '/images/header-real-saudi.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Yalla Voyage Blog',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Yalla Voyage Travel Blog',
+    description: 'Travel tips and destination guides from Saudi Arabia and beyond.',
+    images: ['/images/header-real-saudi.jpg'],
+  },
 };
 
 export default function BlogPage() {

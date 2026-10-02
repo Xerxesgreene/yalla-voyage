@@ -3,19 +3,46 @@ import Navbar from '@/components/public/Navbar';
 import Footer from '@/components/public/Footer';
 import { format } from 'date-fns';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import styles from './page.module.css';
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = BLOG_POSTS.find(p => p.slug === slug);
   if (!post) return {};
+  const coverImage = post.cover_image || '/images/header-real-saudi.jpg';
+
   return {
-    title: post.title,
-    description: post.excerpt,
+    title: `${post.title} | Yalla Voyage Blog`,
+    description: post.excerpt || undefined,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt || undefined,
+      url: `https://www.yallavoyage.com/blog/${post.slug}`,
+      type: 'article',
+      publishedTime: post.published_at || undefined,
+      images: [
+        {
+          url: coverImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt || undefined,
+      images: [coverImage],
+    },
   };
 }
 
@@ -25,9 +52,41 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   const date = post.published_at || post.created_at;
+  const coverImage = post.cover_image || '/images/header-real-saudi.jpg';
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: coverImage,
+    datePublished: date,
+    dateModified: post.updated_at || date,
+    author: {
+      '@type': 'Organization',
+      name: 'Yalla Voyage',
+      url: 'https://www.yallavoyage.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Yalla Voyage',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.yallavoyage.com/logo.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.yallavoyage.com/blog/${post.slug}`,
+    },
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Navbar />
       <main>
         <article>

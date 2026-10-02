@@ -20,9 +20,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return {};
 
   return {
-    title: `${article.title} | يلا سفر Journal`,
+    title: `${article.title} | Yalla Voyage Journal`,
     description: article.excerpt,
+    alternates: {
+      canonical: `/travel-journal/${article.slug}`,
+    },
     openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: `https://www.yallavoyage.com/travel-journal/${article.slug}`,
+      type: 'article',
+      images: [
+        {
+          url: article.image,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
       title: article.title,
       description: article.excerpt,
       images: [article.image],
@@ -43,5 +61,38 @@ export default async function JournalDetailPage({ params }: Props) {
     .filter((a) => a.slug !== article.slug)
     .slice(0, 3);
 
-  return <JournalDetailClient article={article} relatedArticles={relatedArticles} />;
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.excerpt,
+    image: article.image,
+    author: {
+      '@type': 'Person',
+      name: article.author.name,
+      jobTitle: article.author.role,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Yalla Voyage',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.yallavoyage.com/logo.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.yallavoyage.com/travel-journal/${article.slug}`,
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <JournalDetailClient article={article} relatedArticles={relatedArticles} />
+    </>
+  );
 }

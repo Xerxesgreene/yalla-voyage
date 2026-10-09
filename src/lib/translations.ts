@@ -358,7 +358,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       titleLine1: 'Crafting exceptional',
       titleLine2: 'travel',
       titleHighlight: 'experiences.',
-      subtitle: 'Yalla Voyage crafts extraordinary travel with precision, passion, and devotion.',
+      subtitle: 'From hidden gems to iconic destinations, Yalla Voyage turns your travel dreams into seamless journeys.',
       beginVoyage: 'Begin Your Voyage',
     },
     whoWeAre: {
@@ -719,7 +719,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       titleLine1: 'نصنع تجارب',
       titleLine2: 'سفر',
       titleHighlight: 'استثنائية',
-      subtitle: 'تصمم يلا سفر رحلات فريدة بدقة فائقة، وشغف لا محدود، وعناية مطلقة بكل تفصيلة',
+      subtitle: 'من الجواهر الخفية إلى الوجهات الأيقونية، تحوّل يلا سفر أحلامكم في السفر إلى رحلات سلسة لا تُنسى',
       beginVoyage: 'ابدأ رحلتك',
     },
     whoWeAre: {

@@ -30,7 +30,7 @@ export function TraveloProcessSection() {
       number: '01',
       title: t.process.step1Title,
       description: t.process.step1Desc,
-      image: '/images/step-consultation.jpg',
+      image: '/images/step-consultation-arabic-lady.jpg',
       icon: <MessageCircle className="w-5 h-5 text-[#2E6B57]" />,
     },
     {

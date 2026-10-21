@@ -104,6 +104,14 @@ export function Footer() {
             <p className="text-xs sm:text-sm font-light text-[#DAD6CD]/80 leading-relaxed max-w-md font-sans">
               {t.footer.aboutBrand}
             </p>
+            {/* UAE License Badge */}
+            <div className="pt-1 flex items-center gap-2">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#13382B] border border-[#2E6B57]/40 text-[11px] sm:text-xs font-mono text-[#DAD6CD]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#39C27D] animate-pulse" />
+                <span className="text-[#39C27D] font-medium">{t.footer.uaeLicenseLabel}:</span>
+                <span className="font-semibold text-white tracking-wider">{t.footer.uaeLicenseVal}</span>
+              </span>
+            </div>
           </div>
 
           {/* Right Navigation: 2 Columns Side-by-Side on Mobile and Desktop */}
@@ -190,9 +198,15 @@ export function Footer() {
 
         {/* ── Sub-Footer: Copyright & Fine Print ── */}
         <div className="pt-8 border-t border-[#2E6B57]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#DAD6CD]/60 font-sans">
-          <p>
-            &copy; {new Date().getFullYear()} {t.footer.allRightsReserved}
-          </p>
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-3 text-center sm:text-start">
+            <p>
+              &copy; {new Date().getFullYear()} {t.footer.allRightsReserved}
+            </p>
+            <span className="hidden sm:inline text-[#2E6B57]/50">•</span>
+            <p className="font-mono text-[#DAD6CD]/70 text-[11px] sm:text-xs">
+              {t.footer.uaeLicenseLabel}: <span className="text-white font-medium">{t.footer.uaeLicenseVal}</span>
+            </p>
+          </div>
           <div className="flex items-center gap-6">
             <Link href="/about" className="hover:text-[#39C27D] transition-colors">
               {t.nav.about}

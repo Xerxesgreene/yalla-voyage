@@ -115,6 +115,12 @@ const jsonLdData = {
       telephone: '+966 56 341 4649',
       email: 'info@yallavoyage.com',
       priceRange: '$$$$',
+      taxID: '262912213488',
+      identifier: {
+        '@type': 'PropertyValue',
+        name: 'UAE License Number',
+        value: '262912213488',
+      },
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Al-Madinah Al-Munawarah road, Al-Ruwais',

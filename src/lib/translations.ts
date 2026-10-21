@@ -173,6 +173,8 @@ export interface TranslationDictionary {
     addressVal: string;
     copyright: string;
     allRightsReserved: string;
+    uaeLicenseLabel: string;
+    uaeLicenseVal: string;
   };
   common: {
     learnMore: string;
@@ -535,6 +537,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
       addressVal: 'Al-Madinah Al-Munawarah road, Al-Ruwais, Jeddah 23214, Saudi Arabia',
       copyright: 'All rights reserved.',
       allRightsReserved: 'Yalla Voyage Travel & Tourism. All rights reserved.',
+      uaeLicenseLabel: 'UAE License',
+      uaeLicenseVal: '262912213488',
     },
     common: {
       learnMore: 'Learn More',
@@ -896,6 +900,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
       addressVal: 'طريق المدينة المنورة، حي الرويس، جدة 23214، المملكة العربية السعودية',
       copyright: 'جميع الحقوق محفوظة.',
       allRightsReserved: 'شركة يلا سفر للسفر والسياحة. جميع الحقوق محفوظة.',
+      uaeLicenseLabel: 'رقم الترخيص بدولة الإمارات',
+      uaeLicenseVal: '262912213488',
     },
     common: {
       learnMore: 'اعرف المزيد',

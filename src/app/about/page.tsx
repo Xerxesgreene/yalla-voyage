@@ -50,7 +50,7 @@ export default function AboutPage() {
               </Reveal>
 
               <Reveal delay={0.3}>
-                <div className="pt-2">
+                <div className="pt-2 flex flex-wrap items-center gap-4">
                   <MagneticButton
                     href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
                       'Hello يلا سفر, I would love to learn more about your private travel philosophy.'
@@ -61,6 +61,12 @@ export default function AboutPage() {
                     <span>{a.curatorBtn}</span>
                     <ArrowRight className={`w-4 h-4 transition-transform ${isRTL ? 'rotate-180' : ''}`} />
                   </MagneticButton>
+
+                  <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white border border-[#0F2E23]/10 text-xs font-mono text-[#0F2E23]/80 shadow-xs">
+                    <span className="w-2 h-2 rounded-full bg-[#39C27D] animate-pulse" />
+                    <span className="font-medium text-[#2E6B57]">{isRTL ? 'ترخيص الإمارات:' : 'UAE License:'}</span>
+                    <span className="font-semibold text-[#0F2E23] tracking-wide">262912213488</span>
+                  </div>
                 </div>
               </Reveal>
             </div>

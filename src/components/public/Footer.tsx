@@ -43,6 +43,10 @@ export default function Footer() {
           <p className={styles.tagline}>
             Your journey, beautifully crafted. From the sands of AlUla to the shores of the Maldives — we take you there.
           </p>
+          <div style={{ marginTop: '0.75rem', marginBottom: '1rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.35rem 0.85rem', borderRadius: '9999px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', fontSize: '0.75rem', fontFamily: 'monospace', color: '#DAD6CD' }}>
+            <span style={{ color: '#39C27D', fontWeight: 600 }}>UAE License:</span>
+            <span style={{ color: '#fff', letterSpacing: '0.05em' }}>262912213488</span>
+          </div>
 
           {/* Socials */}
           <div className={styles.socials}>
@@ -111,7 +115,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
-          <p>© {new Date().getFullYear()} يلا سفر. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} يلا سفر. All rights reserved. • UAE License No. 262912213488</p>
           <div className={styles.bottomLinks}>
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Service</Link>

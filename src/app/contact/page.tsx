@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { Phone, MapPin, Mail, MessageCircle, Send, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Phone, MapPin, Mail, MessageCircle, Send, ArrowRight } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { siteConfig } from '@/data/site';
@@ -233,27 +233,6 @@ export default function ContactPage() {
                     <div>
                       <p className="font-semibold text-sm text-[#0F2E23]">{c.locationTitle}</p>
                       <p className="text-[#0F2E23]/60 text-xs mt-0.5 leading-relaxed font-sans">{t.footer.addressVal}</p>
-                    </div>
-                  </div>
-                </Reveal>
-
-                <Reveal delay={0.3}>
-                  <div className="flex items-start gap-4 p-4.5 rounded-2xl bg-white border border-[#2E6B57]/20 bg-gradient-to-br from-white to-[#39C27D]/5 shadow-xs">
-                    <div className="w-11 h-11 rounded-xl bg-[#0F2E23] flex items-center justify-center flex-shrink-0 text-[#39C27D] mt-0.5 shadow-xs">
-                      <ShieldCheck className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <p className="font-semibold text-sm text-[#0F2E23]">
-                          {isRTL ? 'الترخيص التجاري بدولة الإمارات' : 'UAE Commercial License'}
-                        </p>
-                        <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-medium bg-[#39C27D]/20 text-[#0F2E23]">
-                          {isRTL ? 'معتمد' : 'VERIFIED'}
-                        </span>
-                      </div>
-                      <p className="text-[#0F2E23]/70 text-xs mt-1 font-mono tracking-wider font-semibold">
-                        {isRTL ? 'رقم الترخيص: ' : 'License No: '}262912213488
-                      </p>
                     </div>
                   </div>
                 </Reveal>

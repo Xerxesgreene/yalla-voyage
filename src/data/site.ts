@@ -6,11 +6,6 @@ export const siteConfig = {
   url: 'https://www.yallavoyage.com',
   email: 'info@yallavoyage.com',
   phone: '+966 56 341 4649',
-  uaeLicense: '262912213488',
-  license: {
-    uae: '262912213488',
-    label: 'UAE License No. 262912213488',
-  },
   whatsapp: 'https://wa.me/966563414649',
   whatsappMessage: 'Hello Yalla Voyage, I\'d like to plan an exceptional trip.',
   address: {

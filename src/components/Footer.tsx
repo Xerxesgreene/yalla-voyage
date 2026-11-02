@@ -44,7 +44,7 @@ export function Footer() {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/footer-journey-banner.jpg"
+              src="/images/footer-journey-banner.webp"
               alt="Your Journey Starts Here"
               fill
               priority
@@ -110,9 +110,9 @@ export function Footer() {
           <div className="md:col-span-6 grid grid-cols-2 gap-8 sm:gap-12">
             {/* Column 1: PAGES */}
             <div className="space-y-4">
-              <h4 className="text-xs font-mono font-semibold tracking-widest uppercase text-[#39C27D]">
+              <h3 className="text-xs font-mono font-semibold tracking-widest uppercase text-[#39C27D]">
                 {t.footer.quickLinks}
-              </h4>
+              </h3>
               <ul className="space-y-2.5 text-xs sm:text-[13px] font-sans font-light">
                 <li>
                   <Link href="/about" className="text-[#DAD6CD]/85 hover:text-[#39C27D] hover:translate-x-1 rtl:hover:-translate-x-1 inline-block transition-all duration-200">
@@ -147,9 +147,9 @@ export function Footer() {
 
             {/* Column 2: CONNECT & SOCIAL */}
             <div className="space-y-4">
-              <h4 className="text-xs font-mono font-semibold tracking-widest uppercase text-[#39C27D]">
+              <h3 className="text-xs font-mono font-semibold tracking-widest uppercase text-[#39C27D]">
                 {locale === 'ar' ? 'تواصل معنا' : 'CONNECT'}
-              </h4>
+              </h3>
               <ul className="space-y-2.5 text-xs sm:text-[13px] font-sans font-light">
                 <li>
                   <a
@@ -184,7 +184,8 @@ export function Footer() {
                   className="inline-flex items-center gap-2 text-xs font-mono text-[#F4EFE6] bg-[#13382B] px-3.5 py-1.5 rounded-full border border-[#2E6B57]/40 hover:border-[#39C27D] transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#39C27D]" />
-                  <span>{locale === 'ar' ? '+٩٦٦ ٥٦ ٣٤١ ٤٦٤٩' : siteConfig.phone}</span>
+                  {/* U+200E (LRM) after each group stops the bidi algorithm from reversing Arabic-Indic digit groups */}
+                  <span dir="ltr">{locale === 'ar' ? '+٩٦٦‎ ٥٦‎ ٣٤١‎ ٤٦٤٩' : siteConfig.phone}</span>
                 </a>
               </div>
             </div>

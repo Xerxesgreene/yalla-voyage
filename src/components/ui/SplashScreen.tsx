@@ -73,6 +73,15 @@ export function SplashScreen() {
       return;
     }
 
+    // Skip the timed intro for people who prefer reduced motion and for automated
+    // clients (crawlers, AI agents, test runners) that it would only block.
+    const skipIntro =
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches || navigator.webdriver;
+    if (skipIntro && !forceSplash) {
+      setShowSplash(false);
+      return;
+    }
+
     setShowSplash(true);
 
     // Initial measurement after short layout stabilization

@@ -87,6 +87,9 @@ export const metadata: Metadata = {
   },
   authors: [{ name: 'Yalla Voyage', url: 'https://www.yallavoyage.com' }],
   category: 'travel',
+  other: {
+    'domain-verification': 'f043b75b167910cbcb66bc79ce7cfacf7a0beaef29597d412f8584645422807b',
+  },
   icons: {
     icon: [
       { url: '/icon.png', sizes: '32x32', type: 'image/png' },

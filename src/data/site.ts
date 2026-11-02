@@ -9,12 +9,13 @@ export const siteConfig = {
   whatsapp: 'https://wa.me/966563414649',
   whatsappMessage: 'Hello Yalla Voyage, I\'d like to plan an exceptional trip.',
   address: {
-    street: 'Al-Madinah Al-Munawarah road',
-    area: 'Al-Ruwais',
+    street: 'Near Lulu Hypermarket, Medina Road',
+    area: 'Ruwais Dist.',
     city: 'Jeddah',
-    zip: '23214',
-    country: 'Saudi Arabia',
-    full: 'Al-Madinah Al-Munawarah road, Al-Ruwais, Jeddah 23214',
+    poBox: '286',
+    zip: '7309',
+    country: 'Kingdom Saudi Arabia',
+    full: 'Near Lulu Hypermarket, Medina Road, Ruwais Dist., PO Box 286, Jeddah: 7309',
   },
   nav: [
     { label: 'Destinations', href: '/destinations' },

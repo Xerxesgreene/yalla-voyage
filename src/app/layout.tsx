@@ -120,9 +120,10 @@ const jsonLdData = {
       priceRange: '$$$$',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Al-Madinah Al-Munawarah road, Al-Ruwais',
+        streetAddress: 'Near Lulu Hypermarket, Medina Road, Ruwais Dist.',
+        postOfficeBoxNumber: '286',
         addressLocality: 'Jeddah',
-        postalCode: '23214',
+        postalCode: '7309',
         addressCountry: 'SA',
       },
       geo: {

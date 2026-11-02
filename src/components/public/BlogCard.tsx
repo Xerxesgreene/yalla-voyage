@@ -23,7 +23,7 @@ export default function BlogCard({ post }: BlogCardProps) {
       <Link href={`/blog/${post.slug}`} className={styles.imageLink}>
         <div className={styles.imageWrap}>
           <img
-            src={post.cover_image || 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80'}
+            src={post.cover_image || '/images/ext/photo-1501854140801-50d01698950b-w600.webp'}
             alt={post.title}
             className={styles.image}
           />

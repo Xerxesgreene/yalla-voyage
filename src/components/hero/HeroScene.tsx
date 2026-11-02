@@ -38,14 +38,14 @@ export function HeroScene() {
     >
       {/* ── Base Hero Background Image (62% X frames the Arab traveler on the right and open sky on the left; mirrored in RTL) ── */}
       <img
-        src="/images/yalla-alula-user-hero.jpg"
+        src="/images/yalla-alula-user-hero.webp"
         alt="AlUla Landscape Sanctuary"
         className="absolute inset-0 w-full h-full object-cover object-[62%_center] sm:object-[78%_center] lg:object-center pointer-events-none z-0 rtl:scale-x-[-1]"
       />
 
       {/* ── Multi-Drop Concentric Liquid Water Ripple Canvas (Interactive WebGL Refraction) ── */}
       <div className="absolute inset-0 rtl:scale-x-[-1] pointer-events-none z-0">
-        <FluidDistortionCanvas imageSrc="/images/yalla-alula-user-hero.jpg" />
+        <FluidDistortionCanvas imageSrc="/images/yalla-alula-user-hero.webp" />
       </div>
 
       {/* ── Soft Ambient Top & Bottom Vignette ── */}

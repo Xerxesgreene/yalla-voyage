@@ -20,7 +20,7 @@ const stackedItems: StackedDestinationItem[] = [
     title: 'AlUla Hegra',
     category: 'Saudi Arabia • UNESCO Heritage',
     year: '© 2026',
-    image: '/images/saudi-hegra.png',
+    image: '/images/saudi-hegra.webp',
     href: '/explore-saudi',
     tagline: 'Where ancient stories meet quiet desert skies',
   },
@@ -29,7 +29,7 @@ const stackedItems: StackedDestinationItem[] = [
     title: 'Paris Sanctuary',
     category: 'France • City of Light & Artistry',
     year: '© 2026',
-    image: '/images/dest-paris.png',
+    image: '/images/dest-paris.webp',
     href: '/destinations',
     tagline: 'Timeless romance along the Seine',
   },
@@ -38,7 +38,7 @@ const stackedItems: StackedDestinationItem[] = [
     title: 'Maldives Sanctuary',
     category: 'Indian Ocean • Sustainable Luxury',
     year: '© 2026',
-    image: '/images/dest-maldives.jpg',
+    image: '/images/dest-maldives.webp',
     href: '/destinations',
     tagline: 'Pristine barrier reefs & overwater villas',
   },
@@ -47,7 +47,7 @@ const stackedItems: StackedDestinationItem[] = [
     title: 'Kyoto & Tokyo',
     category: 'Japan • Heritage & Innovation',
     year: '© 2026',
-    image: '/images/dest-japan.jpg',
+    image: '/images/dest-japan.webp',
     href: '/destinations',
     tagline: 'Timeless tradition meets neon horizons',
   },
@@ -56,7 +56,7 @@ const stackedItems: StackedDestinationItem[] = [
     title: 'Wadi Al Disah',
     category: 'Saudi Arabia • Rose Sandstone Canyon',
     year: '© 2026',
-    image: '/images/saudi-disah.png',
+    image: '/images/saudi-disah.webp',
     href: '/explore-saudi',
     tagline: 'Where nature slows everything down',
   },
@@ -65,7 +65,7 @@ const stackedItems: StackedDestinationItem[] = [
     title: 'Diriyah & Turaif',
     category: 'Riyadh • Birthplace of Saudi',
     year: '© 2026',
-    image: '/images/saudi-diriyah.png',
+    image: '/images/saudi-diriyah.webp',
     href: '/explore-saudi',
     tagline: 'Royal mud-brick palaces & heritage',
   },
@@ -91,7 +91,7 @@ export function StackedDestinations() {
             <div className="flex items-center gap-4">
               <div className="relative w-16 h-12 rounded-xl overflow-hidden shadow-xs flex-shrink-0 border border-[#0F2E23]/10">
                 <Image
-                  src="/images/dest-paris.png"
+                  src="/images/dest-paris.webp"
                   alt="Destinations Thumbnail"
                   fill
                   className="object-cover"

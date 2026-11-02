@@ -24,7 +24,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'Where ancient stories meet quiet desert skies',
     description:
       'AlUla is not just a destination; it is a feeling you carry home with you. Guided exclusively by Yalla Voyage local experts, explore Saudi Arabia\'s first UNESCO World Heritage Site, where ancient Nabataean tombs whisper stories carved into timeless sandstone.',
-    image: '/images/real-hegra-alula.jpg',
+    image: '/images/real-hegra-alula.webp',
     places: [
       {
         name: 'Hegra (UNESCO World Heritage Site)',
@@ -71,7 +71,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'The birthplace of a kingdom, carved in golden clay',
     description:
       'Where Saudi history was written in sun-dried mudbrick and timeless courage. Home to the UNESCO World Heritage jewel At-Turaif, Diriyah blends authentic Najdi architecture, living heritage museums, and world-class dining overlooking Wadi Hanifah.',
-    image: '/images/saudi-diriyah.png',
+    image: '/images/saudi-diriyah.webp',
     places: [
       {
         name: 'At-Turaif UNESCO World Heritage',
@@ -106,7 +106,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'Stories from the Old City to the Sea',
     description:
       'Jeddah feels like a warm sea breeze — relaxed days, vibrant nights, and memories shaped by the rhythm of the Red Sea. Experience authentic Red Sea trade heritage, traditional coral architecture, and luxury coastlines with Yalla Voyage.',
-    image: '/images/saudi-albalad.png',
+    image: '/images/saudi-albalad.webp',
     places: [
       {
         name: 'Al Balad Historical Town',
@@ -147,7 +147,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'Where tradition meets ambition',
     description:
       'In Riyadh, every moment moves between tradition and ambition — a capital full of energy, culture, and unforgettable nights. Discover where the Saudi nation began and where its bold future is unfolding.',
-    image: '/images/saudi-riyadh.jpg',
+    image: '/images/saudi-riyadh.webp',
     places: [
       {
         name: 'Al Masmak Fortress',
@@ -188,7 +188,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'Where peace and timeless beauty come together',
     description:
       'A city that touches the heart before the eyes. Madinah is where peace, spirituality, and timeless beauty unite. Yalla Voyage facilitates serene, unhurried cultural journeys through the sacred roads.',
-    image: '/images/place-prophetsmosque.jpg',
+    image: '/images/place-prophetsmosque.webp',
     places: [
       {
         name: 'Al Masjid An Nabawi',
@@ -223,7 +223,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'Modern coastal living on the pristine Red Sea',
     description:
       'A modern coastal haven featuring championship golf greens, tranquil canal waterways, luxury marinas at Bay La Sun, and pristine coastal promenades along the Red Sea. KAEC blends contemporary leisure with world-class seaside hospitality.',
-    image: '/images/real-kaec.jpg',
+    image: '/images/real-kaec.webp',
     places: [
       {
         name: 'Bay La Sun Marina & Yacht Club',
@@ -258,7 +258,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'The historic pearl of the Red Sea coast',
     description:
       'Known as the Pearl of the Red Sea, Yanbu offers a captivating contrast between its living 19th-century coral-stone historic district with distinctive wooden rawasheen windows, and its untouched coral reef diving sites in the Seven Sisters archipelago.',
-    image: '/images/real-yanbu.jpg',
+    image: '/images/real-yanbu.webp',
     places: [
       {
         name: 'Historic Yanbu & Rawasheen Alleys',
@@ -293,7 +293,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'Emerald terraced ridges and ancient marble citadels',
     description:
       'Perched high in the Sarawat mountain range, Al Baha is blessed with cool breezes, dense juniper forests, dramatic granite escarpments, and the legendary 400-year-old multi-story marble stone village of Dhee Ayn rising above lush banana groves.',
-    image: '/images/real-albaha.jpg',
+    image: '/images/real-albaha.webp',
     places: [
       {
         name: 'Dhee Ayn Ancient Marble Village',
@@ -328,7 +328,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'The ultra-luxury Red Sea Riviera and wellness haven',
     description:
       'The pinnacle of regenerative ultra-luxury and holistic wellness on Saudi Arabia’s pristine north-western coast. Amaala is a world-class coastal sanctuary featuring the Triple Bay yacht club, coral reef restoration, world-leading longevity wellness retreats, and sculptural overwater architecture.',
-    image: '/images/real-amaala.jpg',
+    image: '/images/real-amaala.webp',
     places: [
       {
         name: 'Triple Bay Marina & Yacht Club',
@@ -363,7 +363,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'The world’s largest date palm oasis and subterranean wonder',
     description:
       'A lush emerald ocean of 2.5 million date palms surrounded by dramatic desert sands. Al Ahsa is a UNESCO World Heritage cultural landscape brimming with natural thermal springs, the carved labyrinthine caves of Mount Al Qarah, and millennia of agricultural mastery.',
-    image: '/images/real-alahsa.jpg',
+    image: '/images/real-alahsa.webp',
     places: [
       {
         name: 'Al Qarah Mountain Caves',
@@ -398,7 +398,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'Misty peaks, hanging villages, and juniper-clad horizons',
     description:
       'Perched 2,200 meters above sea level in the Sarawat Mountains, Abha is Saudi Arabia’s cool green sanctuary. Discover UNESCO-inscribed gingerbread stone towers in Rijal Almaa, cloud-swept valleys, and centuries of vibrant southern hospitality and floral art.',
-    image: '/images/real-rijal-almaa.jpg',
+    image: '/images/real-rijal-almaa.webp',
     places: [
       {
         name: 'Rijal Almaa Heritage Village',
@@ -433,7 +433,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'The fragrant City of Roses atop the Sarawat escarpment',
     description:
       'Known as the summer capital of Saudi Arabia, Taif is famous for its terraced rose farms yielding the world’s most precious rosewater. Experience serpentine mountain roads, crisp alpine breezes, baboon sanctuaries, and historic royal palaces.',
-    image: '/images/real-taif.jpg',
+    image: '/images/real-taif.webp',
     places: [
       {
         name: 'Taif Rose Terraces & Distilleries',
@@ -468,7 +468,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'Where nature slows everything down',
     description:
       'Hidden between towering cliffs and flowing palms, Wadi Al Disah is where nature slows everything down and silence becomes part of the journey. A lush, palm-lined canyon framed by dramatic rose-coloured rock formations, gentle streams, and absolute peace.',
-    image: '/images/saudi-disah.png',
+    image: '/images/saudi-disah.webp',
     places: [
       {
         name: 'Rose-Coloured Canyon Cliffs',
@@ -497,7 +497,7 @@ export const saudiDestinations: SaudiDestination[] = [
     tagline: 'Where pristine heritage meets vibrant reef',
     description:
       'Where pristine Saudi heritage meets the world\'s most vibrant untouched barrier reef. A sanctuary of absolute serenity featuring ultra-luxury overwater villas, regenerative eco-resorts, and crystal clear waters — curated by Yalla Voyage.',
-    image: '/images/saudi-redsea.jpg',
+    image: '/images/saudi-redsea.webp',
     places: [
       {
         name: 'Untouched Coral Reef Barrier',

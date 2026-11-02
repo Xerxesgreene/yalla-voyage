@@ -30,7 +30,7 @@ export function TraveloProcessSection() {
       number: '01',
       title: t.process.step1Title,
       description: t.process.step1Desc,
-      image: '/images/step-consultation-arabic-lady.jpg',
+      image: '/images/step-consultation-arabic-lady.webp',
       icon: <MessageCircle className="w-5 h-5 text-[#2E6B57]" />,
     },
     {
@@ -39,7 +39,7 @@ export function TraveloProcessSection() {
       number: '02',
       title: t.process.step2Title,
       description: t.process.step2Desc,
-      image: '/images/step-plan-together.jpg',
+      image: '/images/step-plan-together.webp',
       icon: <Sparkles className="w-5 h-5 text-[#2E6B57]" />,
     },
     {
@@ -48,7 +48,7 @@ export function TraveloProcessSection() {
       number: '03',
       title: t.process.step3Title,
       description: t.process.step3Desc,
-      image: '/images/step-travel-happy.jpg',
+      image: '/images/step-travel-happy.webp',
       icon: <ShieldCheck className="w-5 h-5 text-[#2E6B57]" />,
     },
   ];

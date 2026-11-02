@@ -11,7 +11,7 @@ export default function DestinationCard({ destination }: Props) {
     <div className={styles.card}>
       <div className={styles.imageWrap}>
         <img
-          src={destination.image_url || 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80'}
+          src={destination.image_url || '/images/ext/photo-1501854140801-50d01698950b-w600.webp'}
           alt={destination.name}
           className={styles.image}
         />

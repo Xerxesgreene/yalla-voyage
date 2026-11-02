@@ -36,11 +36,11 @@ export interface AccordionGalleryProps {
 }
 
 const DEFAULT_ITEMS: AccordionGalleryItem[] = [
-  { image: '/images/saudi-alula-proper.png', label: 'AlUla & Hegra', sublabel: 'Ancient Wonders • UNESCO', index: '01', link: '/explore-saudi' },
-  { image: '/images/saudi-jeddah-proper.png', label: 'Jeddah Al-Balad', sublabel: 'Red Sea Coral Architecture', index: '02', link: '/explore-saudi' },
-  { image: '/images/saudi-diriyah.png', label: 'Riyadh & Diriyah', sublabel: 'Capital Pulse • Royal Palaces', index: '03', link: '/explore-saudi' },
-  { image: '/images/saudi-madinah-proper.png', label: 'Madinah', sublabel: 'Sacred Peace • Heritage', index: '04', link: '/explore-saudi' },
-  { image: '/images/saudi-disah.png', label: 'Wadi Al Disah', sublabel: 'Sandstone Oasis Canyon', index: '05', link: '/explore-saudi' },
+  { image: '/images/saudi-alula-proper.webp', label: 'AlUla & Hegra', sublabel: 'Ancient Wonders • UNESCO', index: '01', link: '/explore-saudi' },
+  { image: '/images/saudi-jeddah-proper.webp', label: 'Jeddah Al-Balad', sublabel: 'Red Sea Coral Architecture', index: '02', link: '/explore-saudi' },
+  { image: '/images/saudi-diriyah.webp', label: 'Riyadh & Diriyah', sublabel: 'Capital Pulse • Royal Palaces', index: '03', link: '/explore-saudi' },
+  { image: '/images/saudi-madinah-proper.webp', label: 'Madinah', sublabel: 'Sacred Peace • Heritage', index: '04', link: '/explore-saudi' },
+  { image: '/images/saudi-disah.webp', label: 'Wadi Al Disah', sublabel: 'Sandstone Oasis Canyon', index: '05', link: '/explore-saudi' },
 ];
 
 export function AccordionGallery({
@@ -271,6 +271,8 @@ export function AccordionGallery({
                   src={item.image}
                   alt={item.alt || item.label || 'Saudi destination preview'}
                   draggable={false}
+                  loading="lazy"
+                  decoding="async"
                   className="block h-full w-full select-none object-cover [-webkit-user-drag:none] scale-105 group-hover:scale-110 transition-transform duration-700"
                 />
               </span>

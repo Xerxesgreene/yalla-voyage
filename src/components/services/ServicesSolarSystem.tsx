@@ -40,7 +40,7 @@ const CATEGORIES: CategoryConfig[] = [
     tagline: 'Tailored itineraries crafted with zero templates',
     description:
       'From custom Saudi desert glamping and private dune bashing to Maldives overwater villa buyouts and luxury island-hopping catamarans.',
-    image: '/images/service-bespoke.png',
+    image: '/images/service-bespoke.webp',
     badge: 'Signature Curation',
     iconName: 'Compass',
     accentColor: '#2E6B57',
@@ -53,7 +53,7 @@ const CATEGORIES: CategoryConfig[] = [
     tagline: 'Direct FBO tarmac access & Maybach chauffeurs',
     description:
       'Charter private jets with custom manifests, executive Maybach fleet transfers, and first/business cabin allotments worldwide.',
-    image: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&q=80',
+    image: '/images/ext/photo-1583394838336-acd977736f90-w800.webp',
     badge: 'VIP Aviation',
     iconName: 'PlaneTakeoff',
     accentColor: '#0F2E23',
@@ -66,7 +66,7 @@ const CATEGORIES: CategoryConfig[] = [
     tagline: 'Turnkey exhibition production & DMC handling',
     description:
       'End-to-end management for global conferences, executive retreats, team-building trips, and on-ground Saudi DMC dispatch control.',
-    image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&q=80',
+    image: '/images/ext/photo-1517457373958-b7bdd4587205-w800.webp',
     badge: 'Enterprise B2B',
     iconName: 'Briefcase',
     accentColor: '#2E6B57',
@@ -79,7 +79,7 @@ const CATEGORIES: CategoryConfig[] = [
     tagline: 'Door-to-door passport routing & 150+ country IDPs',
     description:
       'Express eVisas, Schengen/UK/US appointment assistance, international driving permits, and worldwide insurance policies.',
-    image: 'https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?w=800&q=80',
+    image: '/images/ext/photo-1513106580091-1d82408b8cd6-w800.webp',
     badge: 'Express Desk',
     iconName: 'FileCheck',
     accentColor: '#6D8377',
@@ -92,7 +92,7 @@ const CATEGORIES: CategoryConfig[] = [
     tagline: '5-Star Haram-view suites & desert thermal spas',
     description:
       'Profound Umrah journeys with historian Ziyarah tours combined with holistic wellness retreats in AlUla and the Swiss Alps.',
-    image: '/images/saudi-madinah.jpg',
+    image: '/images/saudi-madinah.webp',
     badge: 'Spiritual VIP',
     iconName: 'Heart',
     accentColor: '#2E6B57',

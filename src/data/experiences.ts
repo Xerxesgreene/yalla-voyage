@@ -17,7 +17,7 @@ export const experiences: Experience[] = [
     description:
       'Step into a working AlUla oasis farm curated by Yalla Voyage. Watch local culinary masters prepare a heritage breakfast live using fresh orchard harvest, warm Saudi coffee, and organic desert dates.',
     category: 'culinary',
-    image: '/images/exp-roots-recipes.jpg',
+    image: '/images/exp-roots-recipes.webp',
     location: 'AlUla Oasis Sanctuary',
     duration: '3 Hours',
   },
@@ -28,7 +28,7 @@ export const experiences: Experience[] = [
     description:
       'Sadu weaving is one of Arabia\'s oldest UNESCO-recognized art forms. Through Yalla Voyage\'s private artisan access, sit alongside master Bedouin weavers and decode centuries of geometric heritage.',
     category: 'cultural',
-    image: '/images/exp-sadu-weaving.jpg',
+    image: '/images/exp-sadu-weaving.webp',
     location: 'Jeddah / AlUla',
     duration: '2.5 Hours',
   },
@@ -39,7 +39,7 @@ export const experiences: Experience[] = [
     description:
       'From ancient date palms to delicate woven heirlooms. Join a master artisan in an exclusive Yalla Voyage private workshop and craft your own authentic Saudi keepsake.',
     category: 'cultural',
-    image: '/images/exp-palm-weaving.jpg',
+    image: '/images/exp-palm-weaving.webp',
     location: 'Madinah / AlUla',
     duration: '2 Hours',
   },
@@ -50,7 +50,7 @@ export const experiences: Experience[] = [
     description:
       'Gather around a crackling starlit fire deep in AlUla\'s sandstone canyon with Yalla Voyage. Savor traditional spiced tea, live music, and generational desert folklore under one of the clearest night skies on Earth.',
     category: 'culinary',
-    image: '/images/exp-bedouin-campfire.jpg',
+    image: '/images/exp-bedouin-campfire.webp',
     location: 'AlUla Desert Sands',
     duration: 'Evening Experience',
   },
@@ -61,7 +61,7 @@ export const experiences: Experience[] = [
     description:
       'Every ancient door here whispers secrets — now it\'s time to paint yours. Guided by legacy patterns passed down through generations, breathe color into a wooden canvas and take home a tangible piece of AlUla\'s soul.',
     category: 'cultural',
-    image: '/images/saudi-hegra.png',
+    image: '/images/saudi-hegra.webp',
     location: 'AlUla Old Town',
     duration: '2 Hours',
   },
@@ -72,7 +72,7 @@ export const experiences: Experience[] = [
     description:
       'Step into the warmth of a local family home where doors and hearts are open. Dress in traditional attire, help prepare multi-generational family recipes, and gather around the table for true Saudi hospitality. This isn\'t a tour — it\'s family.',
     category: 'culinary',
-    image: '/images/saudi-albalad.png',
+    image: '/images/saudi-albalad.webp',
     location: 'Jeddah Al Balad',
     duration: '3.5 Hours',
   },
@@ -83,7 +83,7 @@ export const experiences: Experience[] = [
     description:
       'Ride through a landscape that has welcomed caravans, kings, and explorers for thousands of years. Rose-coloured cliffs rise on either side as the desert stretches endlessly ahead. Pure freedom only AlUla and Yalla Voyage can offer.',
     category: 'adventure',
-    image: '/images/saudi-hegra.png',
+    image: '/images/saudi-hegra.webp',
     location: 'AlUla Canyons',
     duration: 'Half Day',
   },
@@ -94,7 +94,7 @@ export const experiences: Experience[] = [
     description:
       'Dive into the Red Sea from Jeddah. Explore pristine coral reefs, swim with marine life, try scuba diving, snorkeling, or reel in your catch on a private fishing boat with Yalla Voyage expert guides.',
     category: 'adventure',
-    image: '/images/saudi-redsea.jpg',
+    image: '/images/saudi-redsea.webp',
     location: 'Red Sea Coast',
     duration: 'Full Day',
   },
@@ -105,7 +105,7 @@ export const experiences: Experience[] = [
     description:
       'Some landscapes don\'t feel like they belong to this world — Moon Mountain is one of them. Every step through its sculpted terrain pulls you into something raw, vast, and quietly extraordinary.',
     category: 'adventure',
-    image: '/images/saudi-albalad.png',
+    image: '/images/saudi-albalad.webp',
     location: 'Jeddah Desert',
     duration: 'Half Day',
   },
@@ -116,7 +116,7 @@ export const experiences: Experience[] = [
     description:
       'Trek to the Edge of the World and feel the ground give way to one of Arabia\'s most breathtaking 300m cliff vistas. Venture underground through Maidens Batcave for a spelunking adventure followed by a desert camel trail.',
     category: 'adventure',
-    image: '/images/saudi-diriyah.png',
+    image: '/images/saudi-diriyah.webp',
     location: 'Riyadh Escarpment',
     duration: 'Full Day',
   },
@@ -127,7 +127,7 @@ export const experiences: Experience[] = [
     description:
       'Where the desert glows crimson red under the Arabian sun. Ride quad bikes across towering sand waves and experience sunset tea high above the dunes with Yalla Voyage.',
     category: 'adventure',
-    image: '/images/saudi-diriyah.png',
+    image: '/images/saudi-diriyah.webp',
     location: 'Riyadh Desert',
     duration: 'Half Day',
   },

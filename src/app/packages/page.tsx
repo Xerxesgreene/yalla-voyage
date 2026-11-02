@@ -40,7 +40,7 @@ export default function PackagesPage() {
       <PageHero
         title={p.heroTitle}
         subtitle={p.heroSubtitle}
-        image="/images/header-real-packages.jpg"
+        image="/images/header-real-packages.webp"
         alt="Mount Fuji and Chureito Pagoda, Japan"
         positionClass="object-center"
       />

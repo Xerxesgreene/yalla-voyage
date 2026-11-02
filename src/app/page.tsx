@@ -160,7 +160,7 @@ function WhatSetsUsApart() {
                         <Award className="w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="font-heading text-lg font-medium text-[#F4EFE6]">{t.whatSetsUsApart.masteryTitle}</h4>
+                        <h3 className="font-heading text-lg font-medium text-[#F4EFE6]">{t.whatSetsUsApart.masteryTitle}</h3>
                         <p className="text-xs text-[#DAD6CD]/75 font-sans font-light mt-0.5">{t.whatSetsUsApart.masteryDesc}</p>
                       </div>
                     </div>
@@ -170,7 +170,7 @@ function WhatSetsUsApart() {
                         <Star className="w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="font-heading text-lg font-medium text-[#F4EFE6]">{t.whatSetsUsApart.accessTitle}</h4>
+                        <h3 className="font-heading text-lg font-medium text-[#F4EFE6]">{t.whatSetsUsApart.accessTitle}</h3>
                         <p className="text-xs text-[#DAD6CD]/75 font-sans font-light mt-0.5">{t.whatSetsUsApart.accessDesc}</p>
                       </div>
                     </div>
@@ -180,7 +180,7 @@ function WhatSetsUsApart() {
                         <ShieldCheck className="w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="font-heading text-lg font-medium text-[#F4EFE6]">{t.whatSetsUsApart.legacyTitle}</h4>
+                        <h3 className="font-heading text-lg font-medium text-[#F4EFE6]">{t.whatSetsUsApart.legacyTitle}</h3>
                         <p className="text-xs text-[#DAD6CD]/75 font-sans font-light mt-0.5">{t.whatSetsUsApart.legacyDesc}</p>
                       </div>
                     </div>
@@ -234,31 +234,31 @@ function ExploreSaudi() {
 
   const saudiAccordionDestinations = [
     {
-      image: '/images/saudi-alula-proper.png',
+      image: '/images/saudi-alula-proper.webp',
       label: t.exploreSaudi.destinations.alula.label,
       sublabel: t.exploreSaudi.destinations.alula.sublabel,
       link: '/explore-saudi',
     },
     {
-      image: '/images/saudi-jeddah-proper.png',
+      image: '/images/saudi-jeddah-proper.webp',
       label: t.exploreSaudi.destinations.jeddah.label,
       sublabel: t.exploreSaudi.destinations.jeddah.sublabel,
       link: '/explore-saudi',
     },
     {
-      image: '/images/saudi-diriyah.png',
+      image: '/images/saudi-diriyah.webp',
       label: t.exploreSaudi.destinations.riyadh.label,
       sublabel: t.exploreSaudi.destinations.riyadh.sublabel,
       link: '/explore-saudi',
     },
     {
-      image: '/images/saudi-madinah-proper.png',
+      image: '/images/saudi-madinah-proper.webp',
       label: t.exploreSaudi.destinations.madinah.label,
       sublabel: t.exploreSaudi.destinations.madinah.sublabel,
       link: '/explore-saudi',
     },
     {
-      image: '/images/saudi-disah.png',
+      image: '/images/saudi-disah.webp',
       label: t.exploreSaudi.destinations.disah.label,
       sublabel: t.exploreSaudi.destinations.disah.sublabel,
       link: '/explore-saudi',
@@ -418,6 +418,7 @@ function TravelJournal() {
                     className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#2E6B57] hover:text-[#0F2E23] transition-colors font-sans group"
                   >
                     <span>{t.journal.readMore}</span>
+                    <span className="sr-only">: {t.journal.featuredTitle}</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 rtl:rotate-180 transition-transform" />
                   </Link>
                 </div>

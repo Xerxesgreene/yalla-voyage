@@ -17,7 +17,7 @@
   inset: 0;
   background:
     linear-gradient(rgba(44, 26, 7, 0.6), rgba(44, 26, 7, 0.7)),
-    url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1600&q=80') center/cover no-repeat;
+    url('/images/ext/photo-1454496522488-7a8e488e8606-w1600.webp') center/cover no-repeat;
   animation: heroZoomIn 8s ease-out forwards;
 }
 

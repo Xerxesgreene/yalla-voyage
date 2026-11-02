@@ -34,42 +34,42 @@ interface DrumPanel {
 
 const PANELS: DrumPanel[] = [
   {
-    src: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=700&q=85',
+    src: '/images/ext/photo-1540959733332-eab4deabeeaf-w700.webp',
     alt: 'Vibrant Asian city lights',
     title: 'Asian Wonders',
   },
   {
-    src: 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=700&q=85',
+    src: '/images/ext/photo-1527631746610-bca00a040d60-w700.webp',
     alt: 'Traveler exploring charming historic alleyway',
     title: 'Trusted Companion',
   },
   {
-    src: 'https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=700&q=85',
+    src: '/images/ext/photo-1605281317010-fe5ffe798166-w700.webp',
     alt: 'Superyacht navigating turquoise waters',
     title: 'Breathtaking Journeys',
   },
   {
-    src: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=700&q=85',
+    src: '/images/ext/photo-1544551763-46a013bb70d5-w700.webp',
     alt: 'Pristine ocean reef expeditions',
     title: 'Ocean Expeditions',
   },
   {
-    src: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?w=700&q=85',
+    src: '/images/ext/photo-1533105079780-92b9be482077-w700.webp',
     alt: 'Mediterranean clifftop coastal beauty',
     title: 'Explore Europe',
   },
   {
-    src: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=700&q=85',
+    src: '/images/ext/photo-1514282401047-d79a71a590e8-w700.webp',
     alt: 'Overwater luxury villas on turquoise lagoon',
     title: 'Island Sanctuaries',
   },
   {
-    src: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=700&q=85',
+    src: '/images/ext/photo-1530122037265-a5f1f91d3b99-w700.webp',
     alt: 'Dramatic alpine peaks and tranquil lakes',
     title: 'Tailored Trips',
   },
   {
-    src: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=700&q=85',
+    src: '/images/ext/photo-1493976040374-85c8e12f0c0e-w700.webp',
     alt: 'Historic pagoda and tranquil gardens',
     title: 'Curated Luxury',
   },

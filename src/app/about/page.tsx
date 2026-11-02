@@ -69,7 +69,7 @@ export default function AboutPage() {
               <Reveal delay={0.2}>
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-[#0F2E23]/10 group bg-white">
                   <Image
-                    src="/images/alula-luxury-sanctuary.jpg"
+                    src="/images/alula-luxury-sanctuary.webp"
                     alt="يلا سفر AlUla Expedition"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"

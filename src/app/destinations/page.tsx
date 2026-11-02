@@ -153,7 +153,7 @@ export default function DestinationsPage() {
             ? 'استكشف وجهات عالمية ساحرة تم انتقاؤها بعناية لتجمع بين الروعة النادرة والفخامة المريحة.'
             : 'Explore breathtaking global destinations handpicked for rare wonder and unhurried luxury.'
         }
-        image="/images/header-real-destinations.jpg"
+        image="/images/header-real-destinations.webp"
         alt="Positano, Amalfi Coast, Italy"
         positionClass="object-center"
       />

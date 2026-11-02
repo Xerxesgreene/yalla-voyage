@@ -12,20 +12,20 @@ export function DriftWallDestinations() {
   const { t } = useLanguage();
 
   const localizedDestinationsData: DriftWallItem[] = [
-    { image: '/images/dest-paris.png', title: t.topDestinations.items.paris, href: '/destinations' },
-    { image: '/images/dest-mauritius.jpg', title: t.topDestinations.items.mauritius, href: '/destinations' },
-    { image: '/images/pkg-egypt.jpg', title: t.topDestinations.items.egypt, href: '/destinations' },
-    { image: '/images/dest-italy.jpg', title: t.topDestinations.items.italy, href: '/destinations' },
-    { image: '/images/dest-switzerland.jpg', title: t.topDestinations.items.switzerland, href: '/destinations' },
-    { image: '/images/dest-uae.jpg', title: t.topDestinations.items.uae, href: '/destinations' },
-    { image: '/images/dest-maldives.jpg', title: t.topDestinations.items.maldives, href: '/destinations' },
-    { image: '/images/dest-japan.jpg', title: t.topDestinations.items.japan, href: '/destinations' },
-    { image: '/images/dest-turkey.jpg', title: t.topDestinations.items.turkey, href: '/destinations' },
-    { image: '/images/dest-asia.jpg', title: t.topDestinations.items.bali, href: '/destinations' },
-    { image: '/images/dest-europe.jpg', title: t.topDestinations.items.greece, href: '/destinations' },
-    { image: '/images/pkg-chateau-story.jpg', title: t.topDestinations.items.franceRiviera, href: '/destinations' },
-    { image: '/images/pkg-italy.jpg', title: t.topDestinations.items.veniceCapri, href: '/destinations' },
-    { image: '/images/pkg-bali.jpg', title: t.topDestinations.items.ubudBali, href: '/destinations' },
+    { image: '/images/dest-paris.webp', title: t.topDestinations.items.paris, href: '/destinations' },
+    { image: '/images/dest-mauritius.webp', title: t.topDestinations.items.mauritius, href: '/destinations' },
+    { image: '/images/pkg-egypt.webp', title: t.topDestinations.items.egypt, href: '/destinations' },
+    { image: '/images/dest-italy.webp', title: t.topDestinations.items.italy, href: '/destinations' },
+    { image: '/images/dest-switzerland.webp', title: t.topDestinations.items.switzerland, href: '/destinations' },
+    { image: '/images/dest-uae.webp', title: t.topDestinations.items.uae, href: '/destinations' },
+    { image: '/images/dest-maldives.webp', title: t.topDestinations.items.maldives, href: '/destinations' },
+    { image: '/images/dest-japan.webp', title: t.topDestinations.items.japan, href: '/destinations' },
+    { image: '/images/dest-turkey.webp', title: t.topDestinations.items.turkey, href: '/destinations' },
+    { image: '/images/dest-asia.webp', title: t.topDestinations.items.bali, href: '/destinations' },
+    { image: '/images/dest-europe.webp', title: t.topDestinations.items.greece, href: '/destinations' },
+    { image: '/images/pkg-chateau-story.webp', title: t.topDestinations.items.franceRiviera, href: '/destinations' },
+    { image: '/images/pkg-italy.webp', title: t.topDestinations.items.veniceCapri, href: '/destinations' },
+    { image: '/images/pkg-bali.webp', title: t.topDestinations.items.ubudBali, href: '/destinations' },
   ];
 
   return (

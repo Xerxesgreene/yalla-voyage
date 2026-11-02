@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: 'https://www.yallavoyage.com/travel-journal',
     images: [
       {
-        url: '/images/dest-switzerland.jpg',
+        url: '/images/dest-switzerland.webp',
         width: 1200,
         height: 630,
         alt: 'Yalla Voyage Travel Journals',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Travel Journals | Yalla Voyage',
     description: 'Field dispatches, luxury guides, and curated travel reflections.',
-    images: ['/images/dest-switzerland.jpg'],
+    images: ['/images/dest-switzerland.webp'],
   },
 };
 

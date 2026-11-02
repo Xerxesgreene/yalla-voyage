@@ -10,7 +10,7 @@ export default function PackageCard({ pkg }: Props) {
     <div className={styles.card}>
       <div className={styles.imageWrap}>
         <img
-          src={pkg.image_url || 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80'}
+          src={pkg.image_url || '/images/ext/photo-1501854140801-50d01698950b-w800.webp'}
           alt={pkg.title}
           className={styles.image}
         />

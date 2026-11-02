@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { ArrowUpRight, Phone, Mail } from 'lucide-react';
+import { ArrowUpRight, Phone, Mail, MapPin } from 'lucide-react';
 import { YallaLogo } from '@/components/ui/YallaLogo';
 import { siteConfig } from '@/data/site';
 import { useLanguage } from '@/context/LanguageContext';
@@ -171,6 +171,10 @@ export function Footer() {
                     <span>@yalla__voyage</span>
                   </a>
                 </li>
+                <li className="flex items-start gap-2 text-[#DAD6CD]/85 leading-relaxed max-w-[260px]">
+                  <MapPin className="w-3.5 h-3.5 mt-0.5 shrink-0 text-[#39C27D]" />
+                  <span>{t.footer.addressVal}</span>
+                </li>
               </ul>
 
               {/* Direct Phone Capsule */}
@@ -189,11 +193,11 @@ export function Footer() {
         </div>
 
         {/* ── Sub-Footer: Copyright & Fine Print ── */}
-        <div className="pt-8 border-t border-[#2E6B57]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#DAD6CD]/60 font-sans">
+        <div className="pt-8 pb-16 sm:pb-0 border-t border-[#2E6B57]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#DAD6CD]/60 font-sans">
           <p>
             &copy; {new Date().getFullYear()} {t.footer.allRightsReserved}
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 sm:pr-20 rtl:sm:pr-0 rtl:sm:pl-20">
             <Link href="/about" className="hover:text-[#39C27D] transition-colors">
               {t.nav.about}
             </Link>

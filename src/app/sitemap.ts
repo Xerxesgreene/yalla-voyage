@@ -5,7 +5,7 @@ import { BLOG_POSTS } from '@/lib/data/seed';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.yallavoyage.com';
+  const baseUrl = 'https://yallavoyage.com';
   const now = new Date();
 
   // Core static routes with priorities and update frequencies

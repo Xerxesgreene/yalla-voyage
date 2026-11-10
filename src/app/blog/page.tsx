@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: 'Yalla Voyage Travel Blog | Stories & Guides',
     description:
       'Travel tips, destination guides, and inspiring field dispatches across Saudi Arabia and the world.',
-    url: 'https://www.yallavoyage.com/blog',
+    url: 'https://yallavoyage.com/blog',
     images: [
       {
         url: '/images/header-real-saudi.jpg',

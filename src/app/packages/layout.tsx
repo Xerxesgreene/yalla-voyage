@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Curated Travel Packages | Yalla Voyage',
     description:
       'Explore hand-designed luxury holiday packages, complete with private transfers, 5-star accommodations, and VIP experiences.',
-    url: 'https://www.yallavoyage.com/packages',
+    url: 'https://yallavoyage.com/packages',
     images: [
       {
         url: '/dest-maldives.jpg',

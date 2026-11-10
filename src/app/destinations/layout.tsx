@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Curated Worldwide Destinations | Yalla Voyage',
     description:
       'Explore handpicked global sanctuaries and immersive itineraries designed by Yalla Voyage.',
-    url: 'https://www.yallavoyage.com/destinations',
+    url: 'https://yallavoyage.com/destinations',
     images: [
       {
         url: '/dest-alula.jpg',

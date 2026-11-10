@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'Travel Journals | Yalla Voyage (يلا سفر)',
     description:
       'Curated travel journals, reflections, and field stories from the world’s most captivating landscapes and retreats.',
-    url: 'https://www.yallavoyage.com/travel-journal',
+    url: 'https://yallavoyage.com/travel-journal',
     images: [
       {
         url: '/images/dest-switzerland.webp',

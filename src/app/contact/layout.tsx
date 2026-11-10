@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Contact Yalla Voyage | Bespoke Travel Concierge',
     description:
       'Begin your journey with Yalla Voyage. Speak directly with our travel designers in Jeddah or reach out via WhatsApp concierge.',
-    url: 'https://www.yallavoyage.com/contact',
+    url: 'https://yallavoyage.com/contact',
     images: [
       {
         url: '/images/header-real-contact.jpg',

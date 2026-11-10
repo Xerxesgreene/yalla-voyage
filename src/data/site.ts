@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: 'Crafting exceptional travel experiences.',
   description:
     'Yalla Voyage crafts exceptional travel experiences — bespoke itineraries, private aviation, luxury retreats, and curated legacies with over 20 years of experience.',
-  url: 'https://www.yallavoyage.com',
+  url: 'https://yallavoyage.com',
   email: 'info@yallavoyage.com',
   phone: '+966 56 341 4649',
   whatsapp: 'https://wa.me/966563414649',

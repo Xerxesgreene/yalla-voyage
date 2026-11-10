@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: post.title,
       description: post.excerpt || undefined,
-      url: `https://www.yallavoyage.com/blog/${post.slug}`,
+      url: `https://yallavoyage.com/blog/${post.slug}`,
       type: 'article',
       publishedTime: post.published_at || undefined,
       images: [
@@ -65,19 +65,19 @@ export default async function BlogPostPage({ params }: Props) {
     author: {
       '@type': 'Organization',
       name: 'Yalla Voyage',
-      url: 'https://www.yallavoyage.com',
+      url: 'https://yallavoyage.com',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Yalla Voyage',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.yallavoyage.com/logo.png',
+        url: 'https://yallavoyage.com/logo.png',
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://www.yallavoyage.com/blog/${post.slug}`,
+      '@id': `https://yallavoyage.com/blog/${post.slug}`,
     },
   };
 

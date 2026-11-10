@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'About Yalla Voyage | Luxury Travel & Bespoke Journeys',
     description:
       'Where journeys become stories. Over 20 years of curating luxury travel, private aviation, and extraordinary worldwide expeditions.',
-    url: 'https://www.yallavoyage.com/about',
+    url: 'https://yallavoyage.com/about',
     images: [
       {
         url: '/images/header-real-about.jpg',

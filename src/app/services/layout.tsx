@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Travel Services | Yalla Voyage',
     description:
       'From corporate missions and private aviation to bespoke retreats and Mediterranean cruises — precision travel services engineered for distinction.',
-    url: 'https://www.yallavoyage.com/services',
+    url: 'https://yallavoyage.com/services',
     images: [
       {
         url: '/images/header-real-services.jpg',

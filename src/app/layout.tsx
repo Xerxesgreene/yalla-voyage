@@ -17,7 +17,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.yallavoyage.com'),
+  metadataBase: new URL('https://yallavoyage.com'),
   title: {
     default: 'Yalla Voyage | Premium Travel Agency — Saudi Arabia & Beyond',
     template: '%s | Yalla Voyage',
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
     languages: {
-      'en': 'https://www.yallavoyage.com',
-      'ar': 'https://www.yallavoyage.com?lang=ar',
+      'en': 'https://yallavoyage.com',
+      'ar': 'https://yallavoyage.com?lang=ar',
     },
   },
   openGraph: {
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     alternateLocale: 'ar_SA',
     siteName: 'Yalla Voyage',
-    url: 'https://www.yallavoyage.com',
+    url: 'https://yallavoyage.com',
     title: 'Yalla Voyage | Premium Travel Agency — Saudi Arabia & Beyond',
     description:
       'Yalla Voyage crafts extraordinary travel — corporate, luxury, cruise, and beyond — with precision, passion, and a team that never settles for ordinary. Where journeys become stories.',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  authors: [{ name: 'Yalla Voyage', url: 'https://www.yallavoyage.com' }],
+  authors: [{ name: 'Yalla Voyage', url: 'https://yallavoyage.com' }],
   category: 'travel',
   other: {
     'domain-verification': 'f043b75b167910cbcb66bc79ce7cfacf7a0beaef29597d412f8584645422807b',
@@ -107,12 +107,12 @@ const jsonLdData = {
   '@graph': [
     {
       '@type': ['TravelAgency', 'LocalBusiness'],
-      '@id': 'https://www.yallavoyage.com/#organization',
+      '@id': 'https://yallavoyage.com/#organization',
       name: 'Yalla Voyage',
       alternateName: 'يلا سفر',
-      url: 'https://www.yallavoyage.com',
-      logo: 'https://www.yallavoyage.com/logo.png',
-      image: 'https://www.yallavoyage.com/images/header-real-saudi.jpg',
+      url: 'https://yallavoyage.com',
+      logo: 'https://yallavoyage.com/logo.png',
+      image: 'https://yallavoyage.com/images/header-real-saudi.jpg',
       description:
         'Yalla Voyage crafts exceptional travel experiences — bespoke itineraries, private aviation, luxury retreats, corporate travel, and curated voyages across Saudi Arabia and worldwide.',
       telephone: '+966 56 341 4649',
@@ -149,12 +149,12 @@ const jsonLdData = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://www.yallavoyage.com/#website',
-      url: 'https://www.yallavoyage.com',
+      '@id': 'https://yallavoyage.com/#website',
+      url: 'https://yallavoyage.com',
       name: 'Yalla Voyage',
       alternateName: 'يلا سفر',
       publisher: {
-        '@id': 'https://www.yallavoyage.com/#organization',
+        '@id': 'https://yallavoyage.com/#organization',
       },
       inLanguage: ['en-US', 'ar-SA'],
     },

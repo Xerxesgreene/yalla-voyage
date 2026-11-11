@@ -185,7 +185,7 @@ export function Footer() {
                 >
                   <Phone className="w-3.5 h-3.5 text-[#39C27D]" />
                   {/* U+200E (LRM) after each group stops the bidi algorithm from reversing Arabic-Indic digit groups */}
-                  <span dir="ltr">{locale === 'ar' ? '+٩٦٦‎ ٥٦‎ ٣٤١‎ ٤٦٤٩' : siteConfig.phone}</span>
+                  <span dir="ltr">{locale === 'ar' ? '+٩٦٦‎ ٥٦‎ ٧٣٥‎ ٧٢٥٠' : siteConfig.phone}</span>
                 </a>
               </div>
             </div>

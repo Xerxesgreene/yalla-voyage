@@ -341,7 +341,7 @@ export function ServicesWork({
             </Link>
 
             <a
-              href="https://wa.me/966563414649?text=Hello%20Yalla%20Voyage%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
+              href="https://wa.me/966567357250?text=Hello%20Yalla%20Voyage%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:inline-flex items-center gap-2 px-5 py-3.5 rounded-full bg-[#163A2D] text-[#F4EFE6] border border-white/15 text-xs font-mono uppercase tracking-widest hover:border-[#2E6B57] transition-colors"

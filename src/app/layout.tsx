@@ -115,7 +115,7 @@ const jsonLdData = {
       image: 'https://yallavoyage.com/images/header-real-saudi.jpg',
       description:
         'Yalla Voyage crafts exceptional travel experiences — bespoke itineraries, private aviation, luxury retreats, corporate travel, and curated voyages across Saudi Arabia and worldwide.',
-      telephone: '+966 56 341 4649',
+      telephone: '+966 56 735 7250',
       email: 'info@yallavoyage.com',
       priceRange: '$$$$',
       address: {
@@ -145,7 +145,7 @@ const jsonLdData = {
         opens: '09:00',
         closes: '21:00',
       },
-      sameAs: ['https://wa.me/966563414649'],
+      sameAs: ['https://wa.me/966567357250'],
     },
     {
       '@type': 'WebSite',

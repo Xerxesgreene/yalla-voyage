@@ -292,7 +292,7 @@ export default function HomeClient() {
                 Plan My Trip
               </Link>
               <a
-                href="https://wa.me/966563414649"
+                href="https://wa.me/966567357250"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`btn btn-pink btn-lg`}

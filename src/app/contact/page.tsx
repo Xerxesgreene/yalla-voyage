@@ -187,7 +187,8 @@ export default function ContactPage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-sm text-[#0F2E23]">{c.whatsappTitle}</p>
-                      <p className="text-[#0F2E23]/60 text-xs mt-0.5 font-sans">{c.whatsappSub}</p>
+                      <p className="text-[#0F2E23]/80 text-xs mt-0.5 font-mono" dir="ltr">+966 56 735 7250</p>
+                      <p className="text-[#0F2E23]/60 text-[11px] font-sans">{c.whatsappSub}</p>
                     </div>
                     <ArrowRight className={`w-4 h-4 text-[#2E6B57] group-hover:translate-x-1 transition-transform ${isRTL ? 'rotate-180' : ''}`} />
                   </a>

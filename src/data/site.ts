@@ -7,6 +7,7 @@ export const siteConfig = {
   email: 'info@yallavoyage.com',
   phone: '+966 56 735 7250',
   whatsapp: 'https://wa.me/966567357250',
+  whatsappNumber: '+966 56 735 7250',
   whatsappMessage: 'Hello Yalla Voyage, I\'d like to plan an exceptional trip.',
   address: {
     street: 'Near Lulu Hypermarket, Medina Road',
